@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to mudu documentation &mdash; mudu 1.1.500 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=9edaacbc" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=513c95c4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            mudu
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-mudu">Installing <strong>mudu</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#preresquisites">Preresquisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#specifying-units">Specifying units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#unit-conversion">Unit conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#operating-with-units-multiple-prefix">Operating with units multiple prefix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#arithemetic-operations">Arithemetic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#more-usage">More Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">An Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#the-tr-curve">The Tr-curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#problem-statement">Problem statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#solution">Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-mudu">Contributing to <strong>mudu</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How To Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guideline">Coding guideline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/mudu/index.html">mudu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/mudu/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/base/index.html">mudu.base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/dimensions/index.html">mudu.dimensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/exceptions/index.html">mudu.exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/unit_registry/index.html">mudu.unit_registry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/units/index.html">mudu.units</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/mudu/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/mudu/index.html#exceptions">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/mudu/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/mudu/index.html#package-contents">Package Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.LENGTH"><code class="docutils literal notranslate"><span class="pre">LENGTH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MASS"><code class="docutils literal notranslate"><span class="pre">MASS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.TIME"><code class="docutils literal notranslate"><span class="pre">TIME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.PLANE_ANGLE"><code class="docutils literal notranslate"><span class="pre">PLANE_ANGLE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SOLID_ANGLE"><code class="docutils literal notranslate"><span class="pre">SOLID_ANGLE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.THERMODYNAMIC_TEMPERATURE"><code class="docutils literal notranslate"><span class="pre">THERMODYNAMIC_TEMPERATURE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ELECTRIC_CURRENT"><code class="docutils literal notranslate"><span class="pre">ELECTRIC_CURRENT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.AMOUNT_OF_SUBSTANCE"><code class="docutils literal notranslate"><span class="pre">AMOUNT_OF_SUBSTANCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.LUMINOUS_INTENSITY"><code class="docutils literal notranslate"><span class="pre">LUMINOUS_INTENSITY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FORCE"><code class="docutils literal notranslate"><span class="pre">FORCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ENERGY"><code class="docutils literal notranslate"><span class="pre">ENERGY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DENSITY"><code class="docutils literal notranslate"><span class="pre">DENSITY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GENERIC_DIMENSION"><code class="docutils literal notranslate"><span class="pre">GENERIC_DIMENSION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GENERIC_QUANTITY"><code class="docutils literal notranslate"><span class="pre">GENERIC_QUANTITY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GENERIC_UNIT"><code class="docutils literal notranslate"><span class="pre">GENERIC_UNIT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DIMENSIONLESS"><code class="docutils literal notranslate"><span class="pre">DIMENSIONLESS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DIMENSIONLESS_UNIT"><code class="docutils literal notranslate"><span class="pre">DIMENSIONLESS_UNIT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GIGA"><code class="docutils literal notranslate"><span class="pre">GIGA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MEGA"><code class="docutils literal notranslate"><span class="pre">MEGA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KILO"><code class="docutils literal notranslate"><span class="pre">KILO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.CENTI"><code class="docutils literal notranslate"><span class="pre">CENTI</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MILLI"><code class="docutils literal notranslate"><span class="pre">MILLI</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MICRO"><code class="docutils literal notranslate"><span class="pre">MICRO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.NANO"><code class="docutils literal notranslate"><span class="pre">NANO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.PICO"><code class="docutils literal notranslate"><span class="pre">PICO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FEMTO"><code class="docutils literal notranslate"><span class="pre">FEMTO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ATTO"><code class="docutils literal notranslate"><span class="pre">ATTO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu._UnitType"><code class="docutils literal notranslate"><span class="pre">_UnitType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.OrderUnit"><code class="docutils literal notranslate"><span class="pre">OrderUnit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.INCH"><code class="docutils literal notranslate"><span class="pre">INCH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.METER"><code class="docutils literal notranslate"><span class="pre">METER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KILOMETER"><code class="docutils literal notranslate"><span class="pre">KILOMETER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FEET"><code class="docutils literal notranslate"><span class="pre">FEET</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.YARD"><code class="docutils literal notranslate"><span class="pre">YARD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MILE"><code class="docutils literal notranslate"><span class="pre">MILE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.NAUTICAL_MILE"><code class="docutils literal notranslate"><span class="pre">NAUTICAL_MILE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GRAM"><code class="docutils literal notranslate"><span class="pre">GRAM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KILOGRAM"><code class="docutils literal notranslate"><span class="pre">KILOGRAM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.POUND"><code class="docutils literal notranslate"><span class="pre">POUND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SLUG"><code class="docutils literal notranslate"><span class="pre">SLUG</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SHORT_TON"><code class="docutils literal notranslate"><span class="pre">SHORT_TON</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.LONG_TON"><code class="docutils literal notranslate"><span class="pre">LONG_TON</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.METRIC_TON"><code class="docutils literal notranslate"><span class="pre">METRIC_TON</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SECOND"><code class="docutils literal notranslate"><span class="pre">SECOND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MINUTE"><code class="docutils literal notranslate"><span class="pre">MINUTE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.HOUR"><code class="docutils literal notranslate"><span class="pre">HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KELVIN"><code class="docutils literal notranslate"><span class="pre">KELVIN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.RANKINE"><code class="docutils literal notranslate"><span class="pre">RANKINE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.CELSIUS"><code class="docutils literal notranslate"><span class="pre">CELSIUS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FARENHEIT"><code class="docutils literal notranslate"><span class="pre">FARENHEIT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DEGREE"><code class="docutils literal notranslate"><span class="pre">DEGREE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.RADIAN"><code class="docutils literal notranslate"><span class="pre">RADIAN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.STERADIAN"><code class="docutils literal notranslate"><span class="pre">STERADIAN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.AMPERE"><code class="docutils literal notranslate"><span class="pre">AMPERE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MOLE"><code class="docutils literal notranslate"><span class="pre">MOLE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.CANDELA"><code class="docutils literal notranslate"><span class="pre">CANDELA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.NEWTON"><code class="docutils literal notranslate"><span class="pre">NEWTON</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.POUND_FORCE"><code class="docutils literal notranslate"><span class="pre">POUND_FORCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.POUNDAL"><code class="docutils literal notranslate"><span class="pre">POUNDAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DYNE"><code class="docutils literal notranslate"><span class="pre">DYNE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.PASCAL"><code class="docutils literal notranslate"><span class="pre">PASCAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.PSI"><code class="docutils literal notranslate"><span class="pre">PSI</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.mmHg"><code class="docutils literal notranslate"><span class="pre">mmHg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.inHg"><code class="docutils literal notranslate"><span class="pre">inHg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.BAR"><code class="docutils literal notranslate"><span class="pre">BAR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ATM"><code class="docutils literal notranslate"><span class="pre">ATM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.POUND_PER_SQUARE_FOOT"><code class="docutils literal notranslate"><span class="pre">POUND_PER_SQUARE_FOOT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.JOULE"><code class="docutils literal notranslate"><span class="pre">JOULE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.BRITISH_THERMAL_UNIT"><code class="docutils literal notranslate"><span class="pre">BRITISH_THERMAL_UNIT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.CALORIE"><code class="docutils literal notranslate"><span class="pre">CALORIE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.WATT_HOUR"><code class="docutils literal notranslate"><span class="pre">WATT_HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ELECTRON_VOLT"><code class="docutils literal notranslate"><span class="pre">ELECTRON_VOLT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KILOGRAM_PER_CUBIC_METER"><code class="docutils literal notranslate"><span class="pre">KILOGRAM_PER_CUBIC_METER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GRAM_PER_CUBIC_CENTIMETER"><code class="docutils literal notranslate"><span class="pre">GRAM_PER_CUBIC_CENTIMETER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GRAM_PER_CUBIC_MILLILITER"><code class="docutils literal notranslate"><span class="pre">GRAM_PER_CUBIC_MILLILITER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.POUND_PER_CUBIC_FOOT"><code class="docutils literal notranslate"><span class="pre">POUND_PER_CUBIC_FOOT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.POUND_PER_CUBIC_INCH"><code class="docutils literal notranslate"><span class="pre">POUND_PER_CUBIC_INCH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SLUG_PER_CUBIC_FOOT"><code class="docutils literal notranslate"><span class="pre">SLUG_PER_CUBIC_FOOT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.WATT"><code class="docutils literal notranslate"><span class="pre">WATT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.HORSEPOWER"><code class="docutils literal notranslate"><span class="pre">HORSEPOWER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.BTU_PER_HOUR"><code class="docutils literal notranslate"><span class="pre">BTU_PER_HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.VOLT"><code class="docutils literal notranslate"><span class="pre">VOLT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FARAD"><code class="docutils literal notranslate"><span class="pre">FARAD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.HENRY"><code class="docutils literal notranslate"><span class="pre">HENRY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.WEBER"><code class="docutils literal notranslate"><span class="pre">WEBER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.OHMS"><code class="docutils literal notranslate"><span class="pre">OHMS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.TESLA"><code class="docutils literal notranslate"><span class="pre">TESLA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SIEMENS"><code class="docutils literal notranslate"><span class="pre">SIEMENS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.LUX"><code class="docutils literal notranslate"><span class="pre">LUX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.BECQUEREL"><code class="docutils literal notranslate"><span class="pre">BECQUEREL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.CURIE"><code class="docutils literal notranslate"><span class="pre">CURIE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GRAY"><code class="docutils literal notranslate"><span class="pre">GRAY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.RAD"><code class="docutils literal notranslate"><span class="pre">RAD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SIEVERT"><code class="docutils literal notranslate"><span class="pre">SIEVERT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.REM"><code class="docutils literal notranslate"><span class="pre">REM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu._DimensionUnitBase"><code class="docutils literal notranslate"><span class="pre">_DimensionUnitBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu._DimensionType"><code class="docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DerivedQuantity"><code class="docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.custom_unit"><code class="docutils literal notranslate"><span class="pre">custom_unit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GenericUnit"><code class="docutils literal notranslate"><span class="pre">GenericUnit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GenericUnit2"><code class="docutils literal notranslate"><span class="pre">GenericUnit2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Length"><code class="docutils literal notranslate"><span class="pre">Length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Mass"><code class="docutils literal notranslate"><span class="pre">Mass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Time"><code class="docutils literal notranslate"><span class="pre">Time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Temperature"><code class="docutils literal notranslate"><span class="pre">Temperature</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Angle"><code class="docutils literal notranslate"><span class="pre">Angle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SolidAngle"><code class="docutils literal notranslate"><span class="pre">SolidAngle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ElectricCurrent"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.AmountOfSubstance"><code class="docutils literal notranslate"><span class="pre">AmountOfSubstance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.LuminousIntensity"><code class="docutils literal notranslate"><span class="pre">LuminousIntensity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Force"><code class="docutils literal notranslate"><span class="pre">Force</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Pressure"><code class="docutils literal notranslate"><span class="pre">Pressure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Energy"><code class="docutils literal notranslate"><span class="pre">Energy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Density"><code class="docutils literal notranslate"><span class="pre">Density</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Power"><code class="docutils literal notranslate"><span class="pre">Power</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Voltage"><code class="docutils literal notranslate"><span class="pre">Voltage</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Capacitance"><code class="docutils literal notranslate"><span class="pre">Capacitance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Inductance"><code class="docutils literal notranslate"><span class="pre">Inductance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MagneticFlux"><code class="docutils literal notranslate"><span class="pre">MagneticFlux</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Resistance"><code class="docutils literal notranslate"><span class="pre">Resistance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Conductance"><code class="docutils literal notranslate"><span class="pre">Conductance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MageneticFieldStrength"><code class="docutils literal notranslate"><span class="pre">MageneticFieldStrength</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Illuminance"><code class="docutils literal notranslate"><span class="pre">Illuminance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Radioactivity"><code class="docutils literal notranslate"><span class="pre">Radioactivity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.AbsorbedDose"><code class="docutils literal notranslate"><span class="pre">AbsorbedDose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DoseEquivalent"><code class="docutils literal notranslate"><span class="pre">DoseEquivalent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DimensionError"><code class="docutils literal notranslate"><span class="pre">DimensionError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ConversionError"><code class="docutils literal notranslate"><span class="pre">ConversionError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.NotIterableError"><code class="docutils literal notranslate"><span class="pre">NotIterableError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SequenceOperationErrorr"><code class="docutils literal notranslate"><span class="pre">SequenceOperationErrorr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.OperationNotAvailable"><code class="docutils literal notranslate"><span class="pre">OperationNotAvailable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">mudu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to <strong>mudu</strong> documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-mudu-documentation">
+<h1>Welcome to <strong>mudu</strong> documentation<a class="headerlink" href="#welcome-to-mudu-documentation" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="_images/logo.png"><img alt="mudu Logo" class="align-center" src="_images/logo.png" style="width: 200px;" />
+</a>
+<p><strong>mudu</strong> is a package for units and dimension handling, unit conversion and unit arithemtic, with support for custom units definition. <strong>mudu</strong> is the measurement standard used to sell grains and other food materials in most of northern Nigeria.</p>
+<p><strong>mudu</strong> was initially created as part of a larger project (my final year project), <cite>flightperformance</cite>, which is a Python package for analyzing (fixed wing) aircraft performance. As it is standard in engineering to specify the units of data so as to ensure dimensional homogeniety and reproducability, the <cite>flightperformance</cite> package required a means of specifying the units of  data, the quantity they represents, convert between units and do arithemtic operations efforlessly with emphasis on flexibiliy and readability; this is what mudu does.</p>
+<p><strong>mudu</strong> provides a set of classes and methods, while retaining Python’s expressiveness, to add unit signatures to numeric data, convert between units and perform valid arithemtic operations on dimension (or quantities) and unit objects. At its core, mudu creates dimensions using the <cite>DimensionUnitBase</cite> base class while units are all instances or child classes of the <cite>_UnitType</cite> class, both these classes are composed of other classes.</p>
+<section id="why-use-mudu">
+<h2>Why use <strong>mudu</strong><a class="headerlink" href="#why-use-mudu" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>It provides an simple and expressive way of specifying units</p></li>
+<li><p>Capability to perform conversion from one unit to another while ensuring dimensional homogeniety as it applies in mathematics</p></li>
+<li><p>Supports valid arithemtic operations on <cite>_DimensionUnitBase</cite> child objects and <cite>_UnitType</cite> objects</p></li>
+<li><p>It provides interfaces to define custom units, dimensions ( or quantities) and define relationships between custom units and existing units</p></li>
+</ul>
+</div></blockquote>
+<p>This documentation, contains information about the general structure of mudu, a quick tutorial that captures all the important functionalities of mudu and some selected examples as an easy start on the usage of the package.</p>
+</section>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-mudu">Installing <strong>mudu</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#preresquisites">Preresquisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#specifying-units">Specifying units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#unit-conversion">Unit conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#operating-with-units-multiple-prefix">Operating with units multiple prefix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#arithemetic-operations">Arithemetic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#more-usage">More Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">An Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#the-tr-curve">The Tr-curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#problem-statement">Problem statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#solution">Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-mudu">Contributing to <strong>mudu</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How To Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guideline">Coding guideline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/mudu/index.html">mudu</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="indices-and-tables">
+<h3>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Kolawole Andrew.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

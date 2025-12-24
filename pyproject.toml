@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mudu"
+version = "1.1.1"
+description = "A python package for unit-aware numerical data handling."
+readme = "README.rst"
+requires-python = ">=3.7"
+author = [
+    { name = "Kolawole Andrew", email = "andrewolakola@gmail.com" }
+]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Operating System :: OS Independent", 
+]
+keywords = [
+    "units", "physics", "engineering",
+    "dimension-analysis", "unit-conversion"
+]
+dependencies = [
+    "sympy",
+]
+
+
+[project.urls]
+"Homepage" = 
+"https://github.com/techkaduna/mudu"
+"Documentation" = 
+"https://mudu.readthedocs.io"
+"Issue Tracker" = 
+"https://github.com/techkaduna/mudu/issues"
