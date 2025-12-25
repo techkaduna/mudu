@@ -79,7 +79,6 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/base/index.html">mudu.base</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/dimensions/index.html">mudu.dimensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/exceptions/index.html">mudu.exceptions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/unit_registry/index.html">mudu.unit_registry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/units/index.html">mudu.units</a></li>
 </ul>
 </li>
@@ -255,20 +254,2800 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="mudu-base-module">
-<h2>mudu.base module<a class="headerlink" href="#mudu-base-module" title="Link to this heading"></a></h2>
+<section id="module-mudu.base">
+<span id="mudu-base-module"></span><h2>mudu.base module<a class="headerlink" href="#module-mudu.base" title="Link to this heading"></a></h2>
+<section id="mudu-base">
+<h3>mudu.base<a class="headerlink" href="#mudu-base" title="Link to this heading"></a></h3>
+<p>base module for mudu.</p>
+<p>For more information, read the documenation using</p>
+<p>in your cli</p>
 </section>
-<section id="mudu-dimensions-module">
-<h2>mudu.dimensions module<a class="headerlink" href="#mudu-dimensions-module" title="Link to this heading"></a></h2>
 </section>
-<section id="mudu-exceptions-module">
-<h2>mudu.exceptions module<a class="headerlink" href="#mudu-exceptions-module" title="Link to this heading"></a></h2>
+<section id="module-mudu.dimensions">
+<span id="mudu-dimensions-module"></span><h2>mudu.dimensions module<a class="headerlink" href="#module-mudu.dimensions" title="Link to this heading"></a></h2>
+<section id="mudu-dimensions">
+<h3>mudu.dimensions<a class="headerlink" href="#mudu-dimensions" title="Link to this heading"></a></h3>
+<p>mudu module, defines dimensions (quantities).</p>
+<p>For more information, read the documenation using</p>
+<p>in your cli</p>
 </section>
-<section id="mudu-units-module">
-<h2>mudu.units module<a class="headerlink" href="#mudu-units-module" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.AbsorbedDose">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">AbsorbedDose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.AbsorbedDose" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.AbsorbedDose.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.AbsorbedDose.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.AbsorbedDose.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.AbsorbedDose.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.AbsorbedDose.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.AbsorbedDose.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.AbsorbedDose.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.AbsorbedDose.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.AbsorbedDose.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.AbsorbedDose.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.AbsorbedDose.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.AbsorbedDose.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.AbsorbedDose.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.AbsorbedDose.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.AbsorbedDose.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.AbsorbedDose.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Angle">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Angle" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="autoapi/mudu/dimensions/index.html#mudu.dimensions._DimensionType" title="mudu.dimensions._DimensionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Angle.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Angle.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Angle.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Angle.create_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Angle.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><a class="headerlink" href="#mudu.dimensions.Angle.dimension" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Angle.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Angle.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Angle.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Angle.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Angle.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Angle.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id7" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Angle.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#mudu.dimensions.Angle.unit" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id8" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id9" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Angle.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Angle.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id10" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id11" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Angle.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Angle.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id12" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id13" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Density">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Density" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Density.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Density.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Density.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Density.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Density.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.Density.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Density.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Density.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Density.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Density.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Density.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Density.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id14" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id15">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id15" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Density.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Density.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id16" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id17" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Density.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Density.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id18" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id19">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id19" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">DerivedQuantity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">_UnitType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'generic_quantity'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="autoapi/mudu/dimensions/index.html#mudu.dimensions._DimensionUnitBase" title="mudu.dimensions._DimensionUnitBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">_DimensionUnitBase</span></code></a></p>
+<p>Base class for all derived quantities.  As an example,
+<cite>Force</cite> class is a child class of <cite>DerivedQuantity</cite>. Check
+the documenation at by running <cite>mudu –doc</cite> on the cli
+on how to extend this class.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity._conversion_standards">
+<span class="sig-name descname"><span class="pre">_conversion_standards</span></span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity._conversion_standards" title="Link to this definition"></a></dt>
+<dd><p>Same as in <cite>_DimensionUnitBase</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._ConversionTableType" title="mudu.base._ConversionTableType">_ConversionTableType</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity._dimension">
+<span class="sig-name descname"><span class="pre">_dimension</span></span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity._dimension" title="Link to this definition"></a></dt>
+<dd><p>Same as in  <cite>DimensionUnitBase</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity.value" title="Link to this definition"></a></dt>
+<dd><p>Scalar value of the quantity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._SetOnce" title="mudu.base._SetOnce">_SetOnce</a>[int | float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity.unit_type" title="Link to this definition"></a></dt>
+<dd><p>unit definition of the quantity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType">_UnitType</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity.symbol" title="Link to this definition"></a></dt>
+<dd><p>Symbolic representation of the quantity unit</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sympy.Symbol</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity.create_unit">
+<span class="sig-name descname"><span class="pre">create_unit</span></span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method for creating a new DerivedQuantity object instance
+with the same argument signature as init.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity">DerivedQuantity</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity._check_and_convert">
+<span class="sig-name descname"><span class="pre">_check_and_convert</span></span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity._check_and_convert" title="Link to this definition"></a></dt>
+<dd><p>same as the base class  ((_DimensionUnitBase))</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>x: Any, operator: Callable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity.convert_to" title="Link to this definition"></a></dt>
+<dd><p>same as the base class (_DimensionUnitBase)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_to</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id20">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#id20" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id21">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id21" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.DerivedQuantity.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DerivedQuantity.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.DerivedQuantity.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#id22" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id23">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id23" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id24">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id24" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id25">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#id25" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id26">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id26" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id27">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id27" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id28">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#id28" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id29">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id29" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id30" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.DoseEquivalent">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">DoseEquivalent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.DoseEquivalent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.DoseEquivalent.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.DoseEquivalent.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.DoseEquivalent.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.DoseEquivalent.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DoseEquivalent.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.DoseEquivalent.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DoseEquivalent.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.DoseEquivalent.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DoseEquivalent.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.DoseEquivalent.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DoseEquivalent.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.DoseEquivalent.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id31">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id31" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id32">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id32" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DoseEquivalent.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.DoseEquivalent.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id33">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id33" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id34">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id34" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.DoseEquivalent.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.DoseEquivalent.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id35">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id35" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id36">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id36" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Energy">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Energy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Energy.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Energy.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Energy.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Energy.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Energy.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.Energy.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Energy.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Energy.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Energy.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Energy.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Energy.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Energy.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id37">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id37" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id38">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id38" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Energy.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Energy.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id39">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id39" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id40">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id40" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Energy.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Energy.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id41">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id41" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id42">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id42" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Force">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Force" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Force.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Force.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Force.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Force.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Force.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.Force.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Force.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Force.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Force.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Force.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Force.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Force.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id43">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id43" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id44">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id44" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Force.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Force.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id45">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id45" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id46">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id46" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Force.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Force.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id47">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id47" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id48">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id48" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">GenericUnit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.GenericUnit" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="autoapi/mudu/dimensions/index.html#mudu.dimensions._DimensionType" title="mudu.dimensions._DimensionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.GenericUnit.create_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit.dimension" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id49">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id49" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id50">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id50" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit.unit" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id51">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id51" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id52">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id52" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id53">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id53" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id54">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id54" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id55">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id55" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id56">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id56" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">GenericUnit2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.GenericUnit2" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit2.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit2.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit2.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.GenericUnit2.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit2.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.GenericUnit2.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit2.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit2.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit2.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit2.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit2.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit2.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id57">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id57" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id58">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id58" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit2.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit2.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id59">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id59" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id60">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id60" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.GenericUnit2.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.GenericUnit2.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id61">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id61" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id62">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id62" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Length">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Length" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="autoapi/mudu/dimensions/index.html#mudu.dimensions._DimensionType" title="mudu.dimensions._DimensionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Length.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Length.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Length.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Length.create_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Length.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><a class="headerlink" href="#mudu.dimensions.Length.dimension" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Length.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Length.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Length.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Length.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Length.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Length.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id63">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id63" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id64">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id64" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Length.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#mudu.dimensions.Length.unit" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id65">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id65" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id66">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id66" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Length.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Length.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id67">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id67" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id68">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id68" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Length.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Length.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id69">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id69" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id70">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id70" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Mass">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Mass" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="autoapi/mudu/dimensions/index.html#mudu.dimensions._DimensionType" title="mudu.dimensions._DimensionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Mass.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Mass.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Mass.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Mass.create_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Mass.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><a class="headerlink" href="#mudu.dimensions.Mass.dimension" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Mass.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Mass.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Mass.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Mass.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Mass.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Mass.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id71">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id71" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id72">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id72" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Mass.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#mudu.dimensions.Mass.unit" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id73">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id73" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id74">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id74" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Mass.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Mass.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id75">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id75" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id76">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id76" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Mass.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Mass.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id77">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id77" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id78">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id78" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Power">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Power</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Power" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Power.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Power.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Power.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Power.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Power.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.Power.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Power.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Power.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Power.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Power.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Power.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Power.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id79">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id79" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id80">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id80" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Power.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Power.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id81">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id81" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id82">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id82" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Power.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Power.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id83">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id83" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id84">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id84" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Pressure">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Pressure" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Pressure.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Pressure.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Pressure.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Pressure.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Pressure.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.Pressure.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Pressure.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Pressure.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Pressure.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Pressure.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Pressure.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Pressure.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id85">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id85" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id86">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id86" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Pressure.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Pressure.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id87">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id87" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id88">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id88" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Pressure.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Pressure.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id89">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id89" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id90">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id90" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Radioactivity">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Radioactivity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Radioactivity" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Radioactivity.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Radioactivity.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Radioactivity.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Radioactivity.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Radioactivity.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.Radioactivity.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Radioactivity.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Radioactivity.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Radioactivity.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Radioactivity.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Radioactivity.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Radioactivity.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id91">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id91" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id92">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id92" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Radioactivity.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Radioactivity.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id93">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id93" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id94">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id94" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Radioactivity.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Radioactivity.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id95">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id95" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id96">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id96" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Temperature">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Temperature" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="autoapi/mudu/dimensions/index.html#mudu.dimensions._DimensionType" title="mudu.dimensions._DimensionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Temperature.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Temperature.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Temperature.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Temperature.create_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Temperature.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><a class="headerlink" href="#mudu.dimensions.Temperature.dimension" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Temperature.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Temperature.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Temperature.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Temperature.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Temperature.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Temperature.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id97">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id97" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id98">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id98" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Temperature.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#mudu.dimensions.Temperature.unit" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id99">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id99" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id100">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id100" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Temperature.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Temperature.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id101">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id101" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id102">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id102" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Temperature.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Temperature.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id103">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id103" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id104">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id104" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.Time">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">Time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Time" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="autoapi/mudu/dimensions/index.html#mudu.dimensions._DimensionType" title="mudu.dimensions._DimensionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Time.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_to</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#mudu.dimensions.Time.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.Time.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.Time.create_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Time.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><a class="headerlink" href="#mudu.dimensions.Time.dimension" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Time.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.Time.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Time.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.Time.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Time.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.Time.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id105">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id105" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id106">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id106" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Time.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#mudu.dimensions.Time.unit" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id107">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id107" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id108">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id108" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Time.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.Time.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id109">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id109" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id110">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id110" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.Time.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.Time.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id111">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id111" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id112">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id112" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.dimensions.custom_unit">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.dimensions.</span></span><span class="sig-name descname"><span class="pre">custom_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">_UnitType</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">_UnitType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">per</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">_UnitType</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">_UnitType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'generic_quantity'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.custom_unit" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.dimensions.DerivedQuantity" title="mudu.dimensions.DerivedQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<p>Custom units</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.custom_unit.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">_UnitType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.custom_unit.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="autoapi/mudu/base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.dimensions.custom_unit.create_unit">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.dimensions.custom_unit.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method to create a new DerivedQuantity object,
+the same argument signature as init.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.custom_unit.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mudu.dimensions.custom_unit.quantity" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.custom_unit.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#mudu.dimensions.custom_unit.name" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.custom_unit.expected_types">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#mudu.dimensions.custom_unit.expected_types" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.custom_unit.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.dimensions.custom_unit.symbol" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id113">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id113" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id114">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id114" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.custom_unit.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.dimensions.custom_unit.unit_type" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id115">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id115" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id116">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id116" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.dimensions.custom_unit.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.dimensions.custom_unit.value" title="Link to this definition"></a></dt>
+<dd><p>Internal base class descriptor for setting attributes only once.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id117">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#id117" title="Link to this definition"></a></dt>
+<dd><p>Attribute identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id118">
+<span class="sig-name descname"><span class="pre">expected_types</span></span><a class="headerlink" href="#id118" title="Link to this definition"></a></dt>
+<dd><p>Attribute expected type(s)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj | Sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="module-mudu.exceptions">
+<span id="mudu-exceptions-module"></span><h2>mudu.exceptions module<a class="headerlink" href="#module-mudu.exceptions" title="Link to this heading"></a></h2>
+<section id="mudu-exceptions">
+<h3>mudu.exceptions<a class="headerlink" href="#mudu-exceptions" title="Link to this heading"></a></h3>
+<p>mudu module, defines all dimensionunit exceptions.</p>
+<p>For more information, read the documenation using</p>
+<p>in your cli</p>
+</section>
+<dl class="py exception">
+<dt class="sig sig-object py" id="mudu.exceptions.ConversionError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.exceptions.</span></span><span class="sig-name descname"><span class="pre">ConversionError</span></span><a class="headerlink" href="#mudu.exceptions.ConversionError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ArithmeticError</span></code></p>
+<p>Base class for conversion errors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.exceptions.ConversionError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.exceptions.ConversionError.add_note" title="Link to this definition"></a></dt>
+<dd><p>Add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.exceptions.ConversionError.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#mudu.exceptions.ConversionError.args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.exceptions.ConversionError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.exceptions.ConversionError.with_traceback" title="Link to this definition"></a></dt>
+<dd><p>Set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mudu.exceptions.DimensionError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.exceptions.</span></span><span class="sig-name descname"><span class="pre">DimensionError</span></span><a class="headerlink" href="#mudu.exceptions.DimensionError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ArithmeticError</span></code></p>
+<p>Base class for dimension errors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.exceptions.DimensionError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.exceptions.DimensionError.add_note" title="Link to this definition"></a></dt>
+<dd><p>Add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.exceptions.DimensionError.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#mudu.exceptions.DimensionError.args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.exceptions.DimensionError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.exceptions.DimensionError.with_traceback" title="Link to this definition"></a></dt>
+<dd><p>Set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mudu.exceptions.NotIterableError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.exceptions.</span></span><span class="sig-name descname"><span class="pre">NotIterableError</span></span><a class="headerlink" href="#mudu.exceptions.NotIterableError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base class for iteration errors</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.exceptions.NotIterableError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.exceptions.NotIterableError.add_note" title="Link to this definition"></a></dt>
+<dd><p>Add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.exceptions.NotIterableError.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#mudu.exceptions.NotIterableError.args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.exceptions.NotIterableError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.exceptions.NotIterableError.with_traceback" title="Link to this definition"></a></dt>
+<dd><p>Set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mudu.exceptions.OperationNotAvailable">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.exceptions.</span></span><span class="sig-name descname"><span class="pre">OperationNotAvailable</span></span><a class="headerlink" href="#mudu.exceptions.OperationNotAvailable" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Operation is not available in this version</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.exceptions.OperationNotAvailable.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.exceptions.OperationNotAvailable.add_note" title="Link to this definition"></a></dt>
+<dd><p>Add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.exceptions.OperationNotAvailable.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#mudu.exceptions.OperationNotAvailable.args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.exceptions.OperationNotAvailable.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.exceptions.OperationNotAvailable.with_traceback" title="Link to this definition"></a></dt>
+<dd><p>Set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mudu.exceptions.SequenceOperationErrorr">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.exceptions.</span></span><span class="sig-name descname"><span class="pre">SequenceOperationErrorr</span></span><a class="headerlink" href="#mudu.exceptions.SequenceOperationErrorr" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base class for sequence operation errors</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.exceptions.SequenceOperationErrorr.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.exceptions.SequenceOperationErrorr.add_note" title="Link to this definition"></a></dt>
+<dd><p>Add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.exceptions.SequenceOperationErrorr.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#mudu.exceptions.SequenceOperationErrorr.args" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.exceptions.SequenceOperationErrorr.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.exceptions.SequenceOperationErrorr.with_traceback" title="Link to this definition"></a></dt>
+<dd><p>Set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mudu.units">
+<span id="mudu-units-module"></span><h2>mudu.units module<a class="headerlink" href="#module-mudu.units" title="Link to this heading"></a></h2>
+<p>mudu module, defines all dimensionunit units and their
+conversion table.</p>
+<p>For more information, read the documenation using</p>
+<p>in your cli</p>
+</section>
+<section id="module-mudu">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mudu" title="Link to this heading"></a></h2>
+<section id="mudu">
+<h3>mudu<a class="headerlink" href="#mudu" title="Link to this heading"></a></h3>
+<p>A Python package for unit and dimension handling, unit conversion, units arithemtic, with support for custom units definition.</p>
+<p>To read a well written web version of the package documentation, go to your cli and try</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mudu<span class="w"> </span>--doc
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 

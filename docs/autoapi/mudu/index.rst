@@ -29,7 +29,6 @@ Submodules
    /autoapi/mudu/base/index
    /autoapi/mudu/dimensions/index
    /autoapi/mudu/exceptions/index
-   /autoapi/mudu/unit_registry/index
    /autoapi/mudu/units/index
 
 
