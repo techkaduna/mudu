@@ -1,26 +1,26 @@
 ![mudu Logo](https://raw.githubusercontent.com/techkaduna/mudu/main/logo.png)
 
-# WELCOME TO mudu
+# WELCOME TO `mudu`
 
-**mudu** is a package for units and dimension handling, unit conversion
+`mudu` is a package for units and dimension handling, unit conversion
 and unit arithemtic, with support for custom units definition.
 
-**mudu** was created as part of a larger project (my final year
-project), [flightperformance]{.title-ref}, which is a Python package for
+`mudu` was created as part of a larger project (my final year
+project), `flightperformance`, a Python package for
 analyzing aircraft (fixed wing) performance. As it is standard in
 engineering to specify the units of data so as to ensure dimensional
-homogeniety and reproducability, the [flightperformance]{.title-ref}
+homogeniety and reproducability, the `flightperformance`
 package required a means of specifying the units of data, the quantity
 they represents, convert between units and do arithemtic operations
 efforlessly with emphasis on flexibiliy and readability, this is what
-mudu does.
+`mudu` does.
 
-**mudu** provides a set of classes and methods, while retaining
+`mudu` provides a set of classes and methods, while retaining
 Python\'s expressiveness, to add unit signatures to numeric data,
 convert between units and perform valid arithemtic operations on
 dimension (or quantities) and unit objects. At its core, mudu creates
-dimensions using the [DimensionUnitBase]{.title-ref} base class while
-units are all instances or child classes of the [\_UnitType]{.title-ref}
+dimensions using the `DimensionUnitBase` base class while
+units are all instances or child classes of the `_UnitType`
 class, both these classes are composed of other classes.
 
 ## Why use **mudu**
@@ -45,18 +45,7 @@ To install using pip, run:
 > ```
 
 You can view a better documentation of this project on
-<https://mudu.readthedocs.io> or if you already have the package
-installed, use:
-
-> ``` shell
-> $ mudu --doc
-> ```
-
-local webpage version of the documentation.
-
-```{=html
-<hr style='border-top: 3px dashed #2e7d32; margin: 30px 0'>}
-```
+<https://mudu.readthedocs.io>
 
 ## Usage Guide
 
@@ -101,16 +90,16 @@ force = Force(1, NEWTON)
 pressure = Pressure(12, PASCAL)
 ```
 
-Objects like [Length]{.title-ref}, [Mass]{.title-ref},
-[Time]{.title-ref} are called dimensions while [METER]{.title-ref},
-[INCH]{.title-ref} and [NEWTON]{.title-ref} are called units. Also note
-that [dimensions are defined in title case]{.title-ref}, while [units
-are defined in all caps]{.title-ref}. For a more comprehensive list of
-dimensions and unit, check the [API Reference]{.title-ref} section.
+Objects like `Length`, `Mass`, 
+`Time` are called `dimensions` while `METER`,
+`INCH` and `NEWTON` are called `units`. Also note
+that *dimensions are defined in title case*, while *units
+are defined in all caps*. For a more comprehensive list of
+dimensions and unit, check the *API Reference* section.
 
 ## Unit conversion
 
-Unit conversion is done by using the dimension [convert_to]{.title-ref}
+Unit conversion is done by using the dimension [convert_to]
 method.
 
 ``` python
@@ -128,7 +117,7 @@ pressure.convert_to(NEWTON)     # definitely does not make sense
 ```
 
 **NOTE** Converting between units representing different dimensions
-raises an [exceptions.ConversionError]{.title-ref}.
+raises an *exceptions.ConversionError*.
 
 The scalar value, symbol, dimension and quantity (for derived
 quantities) can also be accessed e.g.
@@ -146,7 +135,7 @@ force.dimension # -> L*M/T**2
 force.unit_type # -> N
 ```
 
-**NOTE** *obj.dimension* returns a sympy [sympy.core]{.title-ref} child
+**NOTE** *obj.dimension* returns a sympy *sympy.core* child
 object that represents the dimension of the unit, and in the case of
 derived quantities, it does some sort dimensional analysis.
 
@@ -183,11 +172,11 @@ err_area = area.convert_to(METER)   # throws an error
 pressure = F / new_area
 ```
 
-The [OrderUnit]{.title-ref} is subclass of [\_UnitType]{.title-ref} used
+The `OrderUnit` is subclass of `_UnitType` used
 to create units in their multiples, and supports the same operations as
-[\_UnitType]{.title-ref}. [KILO]{.title-ref} and [MILLI]{.title-ref}
+`_UnitType`. `KILO` and `MILLI`
 (and other multiple prefixes) are instances of
-[\_OrderType]{.title-ref}. See the API Reference page for more
+`_OrderType`. See the API Reference page for more
 information.
 
 ## Arithemetic Operations
@@ -228,7 +217,7 @@ t_l = t + l     # adding time and length dimensions does not make sense
 ```
 
 adding time and length dimension objects does not make sense, so this
-operation raises an [exceptions.DimensionError]{.title-ref}.
+operation raises an [exceptions.DimensionError].
 
 Multiplication and division operation follow all dimensional rules as
 well.
@@ -250,8 +239,8 @@ p_inv = 1 / pressure
 ```
 
 **NOTE** It is important to note that, multiplication and division
-operations between two or more [\_DimensionType]{.title-ref} objects
-return a [DerivedQuantity]{.title-ref} object, its mathematics really.
+operations between two or more `_DimensionType` objects
+return a `DerivedQuantity` object, its mathematics really.
 In the case where the arithemetic operation is between data of the same
 dimension but different unit, the right hand operand is implicity
 converted to the same unit as the left operand.
@@ -264,9 +253,9 @@ total_length = length + length_in_m # total_length is now in INCHes
 l_sqr = length_in_m * length    # l_sqr is in METERs
 ```
 
-By checking the type of [length]{.title-ref} and [force]{.title-ref},
-their types are [mudu.dimensions.Length]{.title-ref} and
-[mudu.dimensions.Force]{.title-ref} respectively, but if you try:
+By checking the type of `length` and `force`,
+their types are `mudu.dimensions.Length` and
+`mudu.dimensions.Force` respectively, but if you try:
 
 ``` python
 surface_tension = force * length
@@ -274,14 +263,14 @@ isinstance(force, type(surface_tension))    # the result is True
 ```
 
 So it is worthy to note that every derived quantity is a child class of
-[mudu.dimensions.DerivedQuantity]{.title-ref} while every fundamental
+`mudu.dimensions.DerivedQuantity` while every fundamental
 quantity is a child class of
-[mudu.dimensions.\_DimensionType]{.title-ref}. Both classes inherit from
-[\_DimensionUnitBase]{.title-ref}.
+`mudu.dimensions.\_DimensionType`. Both classes inherit from
+`_DimensionUnitBase`.
 
-Other operations such as [int]{.title-ref}, [float]{.title-ref},
-[round]{.title-ref} are also possible. For more information about
-possible operators and operations, check the [API Reference]{.title-ref}
+Other operations such as `int`, `float`,
+`round` are also possible. For more information about
+possible operators and operations, check the `API Reference`
 section.
 
 ``` python
@@ -322,18 +311,18 @@ functionalities, check the API reference.
 
 ## More Usage
 
-Dimension objects like [Length]{.title-ref}, [Time]{.title-ref} and
-[Force]{.title-ref} have some built-in conversion standards defined as
-the class attribute, [\_conversion_standards]{.title-ref}, that is why
+Dimension objects like `Length`, `Time` and
+`Force` have some built-in conversion standards defined as
+the class attribute, `_conversion_standards`, that is why
 it is possible to convert between units provided the dimensions are the
 same. This is not always the case for all dimensions or quantites,
 hence, to convert a dimension objects with an empty
-[\_conversion_standards]{.title-ref} attribute to a new unit, the new
+`_conversion_standards` attribute to a new unit, the new
 unit must:
 
 -   first be created
 -   then the conversion standard is defined
--   then the [Dimension.\_conversion_standards]{.title-ref} is extended
+-   then the `Dimension._conversion_standards` is extended
 
 This process, though it seems like a lot, is actually very simple and
 straightforward. This topic will be the main course of this tutorial
@@ -364,7 +353,7 @@ p2 = p1.convert_to(NEW_UNIT) + 4    # p2 is in units of NEW_UNIT
 ```
 
 To create a custom quantity or \'dimension\', simply inherit from
-[\_DimensionType]{.title-ref} class or [DerivedQuantity]{.title-ref}
+`_DimensionType` class or `DerivedQuantity`
 class. The API reference has more details about the implementation of
 both classes.
 
@@ -440,8 +429,7 @@ TypeError: unsupported operand type(s) for +: '_UnitType' and '_UnitType'
 ```
 
 The idea behind the above example is to illustrate the way
-[\_UnitType]{.title-ref} objects can perform arithemetic operations. I
-hope you now have a grasp on how to use **mudu** and its features. I
+`_UnitType` objects can perform arithemetic operations. I
+hope you now have a grasp on how to use `mudu` and its features. I
 hope you find mudu useful and beneficial to your scientific computation
 projects.
-
