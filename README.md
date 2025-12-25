@@ -1,3 +1,5 @@
+![mudu Logo](https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/logo.png)
+
 # WELCOME TO mudu
 
 **mudu** is a package for units and dimension handling, unit conversion

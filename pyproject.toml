@@ -16,7 +16,7 @@ authors = [
 requires-python = ">=3.12"
 
 dependencies = [
-  "sympy==1.13.3"
+  "sympy>=1.13.3"
 ]
 
 keywords = [
