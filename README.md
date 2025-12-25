@@ -1,4 +1,4 @@
-![mudu Logo](https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/logo.png)
+![mudu Logo](https://raw.githubusercontent.com/techkaduna/mudu/main/logo.png)
 
 # WELCOME TO mudu
 
