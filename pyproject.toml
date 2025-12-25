@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mudu"
-version = "1.1.500"
+version = "1.1.501"
 description = "A python package for unit-aware numerical data handling."
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { text = "MIT" }
