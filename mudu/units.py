@@ -28,6 +28,7 @@ from .base import (
     THERMODYNAMIC_TEMPERATURE,
     PLANE_ANGLE,
     FORCE,
+    SPEED,
     PRESSURE,
     ENERGY,
     DENSITY,
@@ -57,37 +58,44 @@ from .base import (
 # =============
 # Length Units
 # =============
+LENGTH_QUANTITY = "length"
 INCH = _UnitType(
+    _quantity=LENGTH_QUANTITY,
     _dimension=LENGTH,
     _unit_name="inch",
     _unit_symbol="in",
 )
 
 METER = _UnitType(
+    _quantity=LENGTH_QUANTITY,
     _dimension=LENGTH,
     _unit_name="meter",
     _unit_symbol="m",
 )
 
 FEET = _UnitType(
+    _quantity=LENGTH_QUANTITY,
     _dimension=LENGTH,
     _unit_name="feet",
     _unit_symbol="ft",
 )
 
 YARD = _UnitType(
+    _quantity=LENGTH_QUANTITY,
     _dimension=LENGTH,
     _unit_name="yard",
     _unit_symbol="y",
 )
 
 MILE = _UnitType(
+    _quantity=LENGTH_QUANTITY,
     _dimension=LENGTH,
     _unit_name="mile",
     _unit_symbol="mi",
 )
 
 NAUTICAL_MILE = _UnitType(
+    _quantity=LENGTH_QUANTITY,
     _dimension=LENGTH,
     _unit_name="nautical mile",
     _unit_symbol="NM",
@@ -96,44 +104,51 @@ NAUTICAL_MILE = _UnitType(
 # ===========
 # Mass Units
 # ===========
+MASS_QUANTITY = "mass"
 GRAM = _UnitType(
+    _quantity=MASS_QUANTITY,
     _dimension=MASS,
     _unit_name="gram",
     _unit_symbol="g",
 )
 
-OUNCE = _UnitType(_dimension=MASS, _unit_name="ounce", _unit_symbol="oz")
+OUNCE = _UnitType(_quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="ounce", _unit_symbol="oz")
 
-POUND = _UnitType(_dimension=MASS, _unit_name="pound", _unit_symbol="lb")
+POUND = _UnitType(_quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="pound", _unit_symbol="lb")
 
 SLUG = _UnitType(
+    _quantity=MASS_QUANTITY,
     _dimension=MASS,
     _unit_name="slug",
     _unit_symbol="slug",
 )
 
-SHORT_TON = _UnitType(_dimension=MASS, _unit_name="short_ton", _unit_symbol="t")
+SHORT_TON = _UnitType(_quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="short_ton", _unit_symbol="t")
 
-LONG_TON = _UnitType(_dimension=MASS, _unit_name="long_ton", _unit_symbol="t")
+LONG_TON = _UnitType(_quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="long_ton", _unit_symbol="t")
 
-METRIC_TON = _UnitType(_dimension=MASS, _unit_name="metric_ton", _unit_symbol="t")
+METRIC_TON = _UnitType(_quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="metric_ton", _unit_symbol="t")
 
 # ===========
 # Time Units
 # ===========
+TIME_QUANTITY = "time"
 SECOND = _UnitType(
+    _quantity=TIME_QUANTITY,
     _dimension=TIME,
     _unit_name="second",
     _unit_symbol="s",
 )
 
 MINUTE = _UnitType(
+    _quantity=TIME_QUANTITY,
     _dimension=TIME,
     _unit_name="minute",
     _unit_symbol="min",
 )
 
 HOUR = _UnitType(
+    _quantity=TIME_QUANTITY,
     _dimension=TIME,
     _unit_name="hour",
     _unit_symbol="hr",
@@ -142,41 +157,44 @@ HOUR = _UnitType(
 # ==================
 # Temperature Units
 # ==================
+TEMP_QUANTITY = "temperature"
 KELVIN = _UnitType(
-    _dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="kelvin", _unit_symbol="K"
+    _quantity=TEMP_QUANTITY, _dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="kelvin", _unit_symbol="K"
 )
 
 RANKINE = _UnitType(
-    _dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="rankine", _unit_symbol="R"
+    _quantity=TEMP_QUANTITY, _dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="rankine", _unit_symbol="R"
 )
 
 CELSIUS = _UnitType(
-    _dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="celsius", _unit_symbol="C"
+    _quantity=TEMP_QUANTITY,_dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="celsius", _unit_symbol="C"
 )
 
 FARENHEIT = _UnitType(
-    _dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="farenheit", _unit_symbol="F"
+    _quantity=TEMP_QUANTITY,_dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="farenheit", _unit_symbol="F"
 )
 
 # ============
 # Angle Units
 # ============
-RADIAN = _UnitType(_dimension=PLANE_ANGLE, _unit_name="radian", _unit_symbol="rad")
+ANGLE_QUANTITY = "angle"
+RADIAN = _UnitType(_quantity=ANGLE_QUANTITY,_dimension=PLANE_ANGLE, _unit_name="radian", _unit_symbol="rad")
 
-DEGREE = _UnitType(_dimension=PLANE_ANGLE, _unit_name="degree", _unit_symbol="deg")
+DEGREE = _UnitType(_quantity=ANGLE_QUANTITY,_dimension=PLANE_ANGLE, _unit_name="degree", _unit_symbol="deg")
 
 # SOLID ANGLE
-STERADIAN = _UnitType(_dimension=SOLID_ANGLE, _unit_name="steradian", _unit_symbol="sr")
+STERADIAN = _UnitType(_quantity=ANGLE_QUANTITY,_dimension=SOLID_ANGLE, _unit_name="steradian", _unit_symbol="sr")
 
 # ==============
 # AMPERE UNIT
 # ==============
-AMPERE = _UnitType(_dimension=ELECTRIC_CURRENT, _unit_name="current", _unit_symbol="A")
+AMPERE = _UnitType(_quantity=ELECTRIC_CURRENT,_dimension=ELECTRIC_CURRENT, _unit_name="current", _unit_symbol="A")
 
 # ===================================
 # Units for the amount of substances
 # ===================================
 MOLE = _UnitType(
+    _quantity=AMOUNT_OF_SUBSTANCE,
     _dimension=AMOUNT_OF_SUBSTANCE,
     _unit_name="mole",
     _unit_symbol="mol",
@@ -186,7 +204,7 @@ MOLE = _UnitType(
 # =========================
 # Luminous Intensity Unit
 # =========================
-CANDELA = _UnitType(_dimension=LUMINOUS_INTENSITY, _unit_name="candela", _unit_symbol="cd")
+CANDELA = _UnitType(_quantity=LUMINOUS_INTENSITY,_dimension=LUMINOUS_INTENSITY, _unit_name="candela", _unit_symbol="cd")
 
 # ==================================================================================
 
@@ -228,6 +246,50 @@ DYNE = _UnitType(
     _dimension=__force_dimension,
     _unit_name="dyne",
     _unit_symbol="dyn",
+    _order=None,
+)
+
+# ==============
+# Speed Units
+# ==============
+__speed_dimension = (METER / SECOND)._dimension
+METER_PER_SECOND = _UnitType(
+    _quantity=SPEED,
+    _dimension=__speed_dimension,
+    _unit_name="meter_per_second",
+    _unit_symbol="m/s",
+    _order=None,
+)
+
+KM_PER_HOUR = _UnitType(
+    _quantity=SPEED,
+    _dimension=__speed_dimension,
+    _unit_name="km_per_hour",
+    _unit_symbol="km/h",
+    _order=None,
+)
+
+FOOT_PER_SECOND = _UnitType(
+    _quantity=SPEED,
+    _dimension=__speed_dimension,
+    _unit_name="foot_per_second",
+    _unit_symbol="ft/s",
+    _order=None,
+)
+
+MILE_PER_HOUR = _UnitType(
+    _quantity=SPEED,
+    _dimension=__speed_dimension,
+    _unit_name="mile_per_hour",
+    _unit_symbol="mph",
+    _order=None,
+)
+
+KNOT = _UnitType(
+    _quantity=SPEED,
+    _dimension=__speed_dimension,
+    _unit_name="knot",
+    _unit_symbol="kn",
     _order=None,
 )
 
@@ -631,6 +693,28 @@ _FORCE_CONVERSION_TABLE = _ConversionTableType(
         (
             (POUNDAL, NEWTON),
                 functools.partial(_basic_unit_converter, y=0.138255)
+        ),
+    )
+)
+
+_SPEED_CONVERSION_TABLE = _ConversionTableType(
+    dimension=SPEED,
+    conversion_table=(
+        (
+            (KM_PER_HOUR, METER_PER_SECOND),
+            functools.partial(_basic_unit_converter, y=1000/3600)
+        ),
+        (
+            (MILE_PER_HOUR, METER_PER_SECOND),
+                functools.partial(_basic_unit_converter, y=0.44704)
+        ),
+        (
+            (KNOT, METER_PER_SECOND),
+                functools.partial(_basic_unit_converter, y=1852/3600)
+        ),
+        (
+            (FOOT_PER_SECOND, METER_PER_SECOND),
+                functools.partial(_basic_unit_converter, y=0.3048)
         ),
     )
 )

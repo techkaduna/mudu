@@ -5,12 +5,6 @@ mudu
 
 A Python package for unit and dimension handling, unit conversion, units arithemtic, with \\
 support for custom units definition.
-
-To read a well written web version of the package documentation, go to your cli and try 
-
-.. code-block:: shell
-
-    mudu --doc
 """
 
 from .base import (
@@ -24,6 +18,7 @@ from .base import (
     AMOUNT_OF_SUBSTANCE,
     LUMINOUS_INTENSITY,
     FORCE,
+    SPEED,
     ENERGY,
     DENSITY,
     GENERIC_DIMENSION,
@@ -112,6 +107,11 @@ from .units import (
     RAD,
     SIEVERT,
     REM,
+    METER_PER_SECOND,
+    MILE_PER_HOUR,
+    KM_PER_HOUR,
+    FOOT_PER_SECOND,
+    KNOT,
 )
 
 from .dimensions import (
@@ -146,6 +146,7 @@ from .dimensions import (
     Radioactivity,
     AbsorbedDose,
     DoseEquivalent,
+    Speed,
 )
 
 from .exceptions import (

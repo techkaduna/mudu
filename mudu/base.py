@@ -4,14 +4,6 @@ mudu.base
 ===================
 
 base module for mudu.
-
-For more information, read the documenation using
-
-.. code-block:: shell
-    mudu --doc
-    
-in your cli
-
 """
 
 from typing import Self, Sequence
@@ -41,6 +33,7 @@ PRESSURE = "pressure"   # same unit as stress
 ENERGY = "energy"   # same as heat and work
 DENSITY = "density"
 POWER = "power"
+SPEED = "speed" # also doubles for velocity vector
 ILLUMINANCE = "illuminance" # physics -> optics
 # === Electrical Derived Units ======
 VOLTAGE = "voltage" # Electromotive Force or Potential Difference

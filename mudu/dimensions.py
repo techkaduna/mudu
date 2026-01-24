@@ -15,7 +15,7 @@ in your cli
 """
 
 import operator
-from collections import abc
+from collections import abc, Counter
 from typing import Any, Callable, Self
 import functools
 
@@ -32,6 +32,7 @@ from .base import (
     TIME,
     THERMODYNAMIC_TEMPERATURE,
     PLANE_ANGLE,
+    SPEED,
     FORCE,
     PRESSURE,
     ENERGY,
@@ -72,6 +73,7 @@ from .units import (
     _RADIOACTIVITY_CONVERSION_TABLE,
     _ABSORBED_DOSE_CONVERSION_TABLE,
     _DOSE_EQUIVALENT_TABLE,
+    _SPEED_CONVERSION_TABLE,
 )
 from . import exceptions
 
@@ -1255,6 +1257,15 @@ class Force(DerivedQuantity):
 
 
 # ============================================================================================
+# Speed and Velocity
+class Speed(DerivedQuantity):
+    _conversion_standards = _SPEED_CONVERSION_TABLE
+
+    def __init__(self, value, unit_definition):
+        super().__init__(value, unit_definition, quantity=SPEED)
+
+
+# ============================================================================================
 # Pressure
 class Pressure(DerivedQuantity):
     _conversion_standards = _PRESSURE_CONVERSION_TABLE
@@ -1351,44 +1362,76 @@ class custom_unit(DerivedQuantity):
     """Custom units"""
     
     __numerator_unit = 1
-    __denuminator_unit = 1
+    __denominator_unit = 1
     __numerator = []
-    __denuminator = []
+    __denominator = []
 
     def __init__(self,
                  value:(int|float),
                  *, 
-                 num:(abc.Sequence[_UnitType] | _UnitType), 
-                 per:(int | abc.Sequence[_UnitType] | _UnitType)=1,
+                 num:abc.Sequence[_UnitType], # numerator (even a single numerator) must be passed as a sequence
+                 per:(abc.Sequence[int] | abc.Sequence[_UnitType], )=(1, ), # denominator (even a single denominator) must be passed as a sequence
                  quantity=GENERIC_QUANTITY,
                  ):
         
-        self.__numerator_unit = self.__list2unit(num,)
-        self.__denuminator_unit = self.__list2unit(per)
+        self.__numerator_unit = self.__list2unit(num, allow_int=False)
+        self.__denominator_unit = self.__list2unit(per, allow_int=True)
         self.__numerator.append(num)
-        self.__denuminator.append(per)
-        super().__init__(value=value, unit_definition=self.__numerator_unit/self.__denuminator_unit, quantity=quantity)
+        self.__denominator.append(per)
+        self.__unit_definition = self.__numerator_unit / self.__denominator_unit
+        super().__init__(value=value, unit_definition=self.__unit_definition, quantity=quantity)
 
-        
-    def __list2unit(self, _from: int | _UnitType | abc.Sequence[_UnitType], 
-                        check_length=False):
+    def __check_condition(self, _from, allow_int=False):
+        # there will be only two conditons:
+        # there must be at least one unit each 
+        # at the numerator and at the denominator (denominator could be an integer)
+        if not isinstance(_from, abc.Sequence) is True:
+            raise ValueError("numerator or denominator must be a sequence of units")
+        elif allow_int is False and (not all([isinstance(x, _UnitType) for x in list(_from)])):
+            # not all the input are units
+            raise ValueError("numerator sequence must contain one or more units")
+        elif allow_int is True and (not all([isinstance(x, (_UnitType, int)) for x in list(_from)])):
+            # not all the units in the denominator are ints or unit
+            raise ValueError("denominator sequence must contain intergers or units")
+
+    def __list2unit(self, _from: int | abc.Sequence[_UnitType], 
+                        allow_int=False):
         _to = 1
-        if check_length is True and isinstance(_from, abc.Sequence) is False:
-            raise ValueError("numerator must be a sequence of _UnitType instances")
+        self.__check_condition(_from, allow_int)
+        self.__repr_only_one_quantity(_from, is_denum=allow_int)
+        for unit in _from:
+            _to = _to * unit
         
-        elif isinstance(_from, abc.Sequence) is True:
-            if check_length is True and len(_from) <= 1:
-                raise ValueError("numerator must contain more that one unit type")
-            
-            for unit in _from:
-                _to = _to * unit
-        else:
-            _to = _to * _from
-
         return _to
     
-    def convert_to(self, num:_UnitType | abc.Sequence):
-        pass
+    def __repr_only_one_quantity(self, _from: abc.Sequence, is_denum=False):
+        """Ensure that each unit represent exclusively only one quanitity"""
+        quantities = [x._quantity for x in _from]
+        counts = Counter(quantities)
+        duplicates = [s for s, c in counts.items() if c > 1]
+
+        if duplicates:
+            err_str = f"duplicate quantities are not allowed: {counts}"
+            raise ValueError("Numerator: " + err_str if not is_denum else "Denonimator: "+ err_str)
+    
+    def convert_to(self, num:abc.Sequence, per:abc.Sequence):
+        # first, map units with matching quantities
+        # convert each unit first by multiplications or division
+        # return output
+
+        # check if the input are correct
+        numerator_unit = self.__list2unit(num)
+        denominator_unit = self.__list2unit(per, allow_int=True)
+
+        # is the conversion operation to the right dimension
+        if not (numerator_unit / denominator_unit)._dimension == self.__unit_definition._dimension:
+            raise ValueError("conversion is only legal where the dimensions are legal")
+        
+        # map which units are affected
+        print(self.__numerator)
+        print(self.__denominator)
+
+        
 
 
 
