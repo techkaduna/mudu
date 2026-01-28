@@ -438,4 +438,6 @@ on Python repl.
 The idea behind the above example is to illustrate the way ``_UnitType``
 objects can perform arithemetic operations. I hope you now have a grasp
 on how to use ``mudu`` and its features. I hope you find mudu useful and
-beneficial to your scientific computation projects.
+beneficial to your scientific computation projects. For more information 
+about the mudu project, checkout the rapidling updating documentation at 
+`<https://mudu.readthedocs.io/en/latest/>`_. 
