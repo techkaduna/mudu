@@ -6,11 +6,11 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to mudu documentation &mdash; mudu 1.1.500 documentation</title>
+  <title>Welcome to mudu Documentation &mdash; mudu 1.1.500 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
-      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=9edaacbc" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3454c4f8" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="installation.html" /> 
+    <link rel="next" title="Installation mudu" href="installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,19 +46,52 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-mudu">Installing <strong>mudu</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation <strong>mudu</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#preresquisites">Preresquisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#basic-usage">Basic Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#specifying-units">Specifying units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#unit-conversion">Unit conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#operating-with-units-multiple-prefix">Operating with units multiple prefix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#arithemetic-operations">Arithemetic Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#more-usage">More Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#prerequisites">Prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#basic-usage">Basic Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#specifying-dimensions-and-units">Specifying Dimensions and Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#unit-conversion">Unit Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#inspecting-quantity-attributes">Inspecting Quantity Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#units-with-order-prefixes">Units with Order Prefixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#arithmetic-operations">Arithmetic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#type-hierarchy">Type Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#other-supported-operations">Other Supported Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#dimensional-homogeneity-example">Dimensional Homogeneity Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#advanced-usage">Advanced Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#generic-quantities">Generic Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#derived-generic-quantities">Derived Generic Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#extending-conversion-standards">Extending Conversion Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#custom-dimensions">Custom Dimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#interactive-exploration">Interactive Exploration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#creating-vectorized-quantities">Creating Vectorized Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#element-wise-arithmetic">Element-wise Arithmetic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#operations-with-other-quantities">Operations with Other Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#vectorized-derived-quantities">Vectorized Derived Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#dimensional-semantics">Dimensional Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#design-notes-and-limitations">Design Notes and Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#terminology">Terminology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#future-work">Future Work</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="usage.html#custom-units-experimental">Custom Units (Experimental)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#creating-a-custom-unit">Creating a Custom Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#inspecting-attributes">Inspecting Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#arithmetic-and-comparison-semantics">Arithmetic and Comparison Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#id1">Dimensional Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#conversion-limitations">Conversion Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#design-rationale">Design Rationale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#limitations-and-experimental-status">Limitations and Experimental Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#future-directions">Future Directions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">An Example</a><ul>
@@ -67,10 +100,18 @@
 <li class="toctree-l2"><a class="reference internal" href="examples.html#solution">Solution</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0-2026-01-28">Version 1.2.0 (2026-01-28)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#added">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#changed">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#fixed">Fixed</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-mudu">Contributing to <strong>mudu</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How To Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guideline">Coding guideline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guidelines">Coding Guidelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
 </ul>
 </li>
@@ -97,6 +138,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.AMOUNT_OF_SUBSTANCE"><code class="docutils literal notranslate"><span class="pre">AMOUNT_OF_SUBSTANCE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.LUMINOUS_INTENSITY"><code class="docutils literal notranslate"><span class="pre">LUMINOUS_INTENSITY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FORCE"><code class="docutils literal notranslate"><span class="pre">FORCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SPEED"><code class="docutils literal notranslate"><span class="pre">SPEED</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ENERGY"><code class="docutils literal notranslate"><span class="pre">ENERGY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DENSITY"><code class="docutils literal notranslate"><span class="pre">DENSITY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GENERIC_DIMENSION"><code class="docutils literal notranslate"><span class="pre">GENERIC_DIMENSION</span></code></a></li>
@@ -182,12 +224,17 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.RAD"><code class="docutils literal notranslate"><span class="pre">RAD</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SIEVERT"><code class="docutils literal notranslate"><span class="pre">SIEVERT</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.REM"><code class="docutils literal notranslate"><span class="pre">REM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.METER_PER_SECOND"><code class="docutils literal notranslate"><span class="pre">METER_PER_SECOND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MILE_PER_HOUR"><code class="docutils literal notranslate"><span class="pre">MILE_PER_HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KM_PER_HOUR"><code class="docutils literal notranslate"><span class="pre">KM_PER_HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FOOT_PER_SECOND"><code class="docutils literal notranslate"><span class="pre">FOOT_PER_SECOND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KNOT"><code class="docutils literal notranslate"><span class="pre">KNOT</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu._DimensionUnitBase"><code class="docutils literal notranslate"><span class="pre">_DimensionUnitBase</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu._DimensionType"><code class="docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DerivedQuantity"><code class="docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.custom_unit"><code class="docutils literal notranslate"><span class="pre">custom_unit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GenericUnit"><code class="docutils literal notranslate"><span class="pre">GenericUnit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GenericUnit2"><code class="docutils literal notranslate"><span class="pre">GenericUnit2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.custom_unit"><code class="docutils literal notranslate"><span class="pre">custom_unit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Length"><code class="docutils literal notranslate"><span class="pre">Length</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Mass"><code class="docutils literal notranslate"><span class="pre">Mass</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Time"><code class="docutils literal notranslate"><span class="pre">Time</span></code></a></li>
@@ -213,6 +260,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Radioactivity"><code class="docutils literal notranslate"><span class="pre">Radioactivity</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.AbsorbedDose"><code class="docutils literal notranslate"><span class="pre">AbsorbedDose</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DoseEquivalent"><code class="docutils literal notranslate"><span class="pre">DoseEquivalent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Speed"><code class="docutils literal notranslate"><span class="pre">Speed</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DimensionError"><code class="docutils literal notranslate"><span class="pre">DimensionError</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ConversionError"><code class="docutils literal notranslate"><span class="pre">ConversionError</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.NotIterableError"><code class="docutils literal notranslate"><span class="pre">NotIterableError</span></code></a></li>
@@ -240,7 +288,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Welcome to <strong>mudu</strong> documentation</li>
+      <li class="breadcrumb-item active">Welcome to <strong>mudu</strong> Documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -251,14 +299,19 @@
            <div itemprop="articleBody">
              
   <section id="welcome-to-mudu-documentation">
-<h1>Welcome to <strong>mudu</strong> documentation<a class="headerlink" href="#welcome-to-mudu-documentation" title="Link to this heading"></a></h1>
-<a class="reference internal image-reference" href="_images/logo.png"><img alt="mudu Logo" class="align-center" src="_images/logo.png" style="width: 200px;" />
-</a>
-<p><strong>mudu</strong> is a package for units and dimension handling, unit conversion and unit arithemtic, with support for custom units definition. <strong>mudu</strong> is the measurement standard used to sell grains and other food materials in most of northern Nigeria.</p>
-<p><strong>mudu</strong> was initially created as part of a larger project (my final year project), <cite>flightperformance</cite>, which is a Python package for analyzing (fixed wing) aircraft performance. As it is standard in engineering to specify the units of data so as to ensure dimensional homogeniety and reproducability, the <cite>flightperformance</cite> package required a means of specifying the units of  data, the quantity they represents, convert between units and do arithemtic operations efforlessly with emphasis on flexibiliy and readability; this is what mudu does.</p>
-<p><strong>mudu</strong> provides a set of classes and methods, while retaining Python’s expressiveness, to add unit signatures to numeric data, convert between units and perform valid arithemtic operations on dimension (or quantities) and unit objects. At its core, mudu creates dimensions using the <cite>DimensionUnitBase</cite> base class while units are all instances or child classes of the <cite>_UnitType</cite> class, both these classes are composed of other classes.</p>
+<h1>Welcome to <strong>mudu</strong> Documentation<a class="headerlink" href="#welcome-to-mudu-documentation" title="Link to this heading"></a></h1>
+<p><strong>mudu</strong> is a package for units and dimension handling, unit conversion and unit arithemtic, with support for custom units definition.
+<strong>mudu</strong> is the measurement standard used to sell grains and other food materials in most of northern Nigeria. <strong>mudu</strong> was initially
+created as part of a larger project (my final year project), <cite>flightperformance</cite>, which is a Python package for analyzing (fixed wing)
+aircraft performance. As it is standard in engineering to specify the units of data so as to ensure dimensional homogeniety and
+reproducability, the <cite>flightperformance</cite> package required a means of specifying the units of  data, the quantity they represents,
+convert between units and do arithemtic operations efforlessly with emphasis on flexibiliy and readability; this is what mudu does.</p>
+<p><strong>mudu</strong> provides a set of classes and methods, while retaining Python’s expressiveness, to add unit signatures to numeric data, convert
+between units and perform valid arithemtic operations on dimension (or quantities) and unit objects. At its core, mudu creates dimensions
+using the <cite>DimensionUnitBase</cite> base class while units are all instances or child classes of the <cite>_UnitType</cite> class, both these classes are
+composed of other classes.</p>
 <section id="why-use-mudu">
-<h2>Why use <strong>mudu</strong><a class="headerlink" href="#why-use-mudu" title="Link to this heading"></a></h2>
+<h2>Why use <strong>mudu</strong>?<a class="headerlink" href="#why-use-mudu" title="Link to this heading"></a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>It provides an simple and expressive way of specifying units</p></li>
@@ -267,26 +320,30 @@
 <li><p>It provides interfaces to define custom units, dimensions ( or quantities) and define relationships between custom units and existing units</p></li>
 </ul>
 </div></blockquote>
-<p>This documentation, contains information about the general structure of mudu, a quick tutorial that captures all the important functionalities of mudu and some selected examples as an easy start on the usage of the package.</p>
-</section>
-<section id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<p>This documentation, contains information about the general structure of mudu, a quick tutorial that captures all the important functionalities
+of mudu and some selected examples as an easy start on the usage of the package.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-mudu">Installing <strong>mudu</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation <strong>mudu</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#preresquisites">Preresquisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#basic-usage">Basic Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#specifying-units">Specifying units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#unit-conversion">Unit conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#operating-with-units-multiple-prefix">Operating with units multiple prefix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#arithemetic-operations">Arithemetic Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#more-usage">More Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#specifying-dimensions-and-units">Specifying Dimensions and Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#unit-conversion">Unit Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#inspecting-quantity-attributes">Inspecting Quantity Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#units-with-order-prefixes">Units with Order Prefixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#arithmetic-operations">Arithmetic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#type-hierarchy">Type Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#other-supported-operations">Other Supported Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#dimensional-homogeneity-example">Dimensional Homogeneity Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#generic-quantities">Generic Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#derived-generic-quantities">Derived Generic Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#extending-conversion-standards">Extending Conversion Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#custom-dimensions">Custom Dimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#interactive-exploration">Interactive Exploration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">An Example</a><ul>
@@ -295,10 +352,13 @@
 <li class="toctree-l2"><a class="reference internal" href="examples.html#solution">Solution</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0-2026-01-28">Version 1.2.0 (2026-01-28)</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-mudu">Contributing to <strong>mudu</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How To Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guideline">Coding guideline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guidelines">Coding Guidelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
 </ul>
 </li>
@@ -323,7 +383,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation mudu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

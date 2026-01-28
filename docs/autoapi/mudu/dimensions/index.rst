@@ -54,6 +54,7 @@ Classes
    mudu.dimensions.Angle
    mudu.dimensions.GenericUnit
    mudu.dimensions.Force
+   mudu.dimensions.Speed
    mudu.dimensions.Pressure
    mudu.dimensions.Energy
    mudu.dimensions.Density
@@ -1003,6 +1004,69 @@ Module Contents
    .. py:attribute:: _conversion_standards
 
 
+.. py:class:: Speed(value, unit_definition)
+
+   Bases: :py:obj:`DerivedQuantity`
+
+
+   Base class for all derived quantities.  As an example,
+   `Force` class is a child class of `DerivedQuantity`. Check
+   the documenation at by running `mudu --doc` on the cli
+   on how to extend this class.
+
+   .. attribute:: _conversion_standards
+
+      Same as in `_DimensionUnitBase`
+
+      :type: _ConversionTableType
+
+   .. attribute:: _dimension
+
+      Same as in  `DimensionUnitBase`
+
+      :type: str
+
+   .. attribute:: value
+
+      Scalar value of the quantity
+
+      :type: _SetOnce[int | float]
+
+   .. attribute:: unit_type
+
+      unit definition of the quantity
+
+      :type: _UnitType
+
+   .. attribute:: symbol
+
+      Symbolic representation of the quantity unit
+
+      :type: sympy.Symbol
+
+   .. attribute:: create_unit
+
+      Internal class method for creating a new DerivedQuantity object instance
+      with the same argument signature as init.
+
+      :type: DerivedQuantity
+
+   .. attribute:: _check_and_convert
+
+      same as the base class  ((_DimensionUnitBase))
+
+      :type: x: Any, operator: Callable
+
+   .. attribute:: convert_to
+
+      same as the base class (_DimensionUnitBase)
+
+      :type: _to
+
+
+   .. py:attribute:: _conversion_standards
+
+
 .. py:class:: Pressure(value, unit_definition)
 
    Bases: :py:obj:`DerivedQuantity`
@@ -1520,7 +1584,7 @@ Module Contents
 
 .. py:data:: Illuminance
 
-.. py:class:: custom_unit(value: int | float, *, num: collections.abc.Sequence[mudu.base._UnitType] | mudu.base._UnitType, per: int | collections.abc.Sequence[mudu.base._UnitType] | mudu.base._UnitType = 1, quantity=GENERIC_QUANTITY)
+.. py:class:: custom_unit(value: int | float, *, num: collections.abc.Sequence[mudu.base._UnitType], per: (collections.abc.Sequence[int] | collections.abc.Sequence[mudu.base._UnitType]) = (1, ), quantity=GENERIC_QUANTITY)
 
    Bases: :py:obj:`DerivedQuantity`
 
@@ -1533,7 +1597,7 @@ Module Contents
 
 
 
-   .. py:attribute:: __denuminator_unit
+   .. py:attribute:: __denominator_unit
       :value: 1
 
 
@@ -1543,15 +1607,31 @@ Module Contents
 
 
 
-   .. py:attribute:: __denuminator
+   .. py:attribute:: __denominator
       :value: []
 
 
 
-   .. py:method:: __list2unit(_from: int | mudu.base._UnitType | collections.abc.Sequence[mudu.base._UnitType], check_length=False)
+   .. py:attribute:: __unit_definition
+      :value: 1.0
 
 
-   .. py:method:: convert_to(num: mudu.base._UnitType | collections.abc.Sequence)
+
+   .. py:method:: __check_condition(_from, allow_int=False)
+
+
+   .. py:method:: __list2unit(_from: int | collections.abc.Sequence[mudu.base._UnitType], allow_int=False)
+
+
+   .. py:method:: __repr_only_one_quantity(_from: collections.abc.Sequence, is_denum=False)
+
+      Ensure that each unit represent exclusively only one quanitity
+
+
+
+   .. py:method:: convert_to(num: collections.abc.Sequence, per: collections.abc.Sequence)
+      :abstractmethod:
+
 
       Converts from one unit to another, provided that there is a conversion standard
       defined for the units involved.

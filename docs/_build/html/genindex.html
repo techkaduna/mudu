@@ -9,7 +9,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
-      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=9edaacbc" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3454c4f8" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -44,19 +44,52 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-mudu">Installing <strong>mudu</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation <strong>mudu</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#preresquisites">Preresquisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#basic-usage">Basic Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#specifying-units">Specifying units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#unit-conversion">Unit conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#operating-with-units-multiple-prefix">Operating with units multiple prefix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#arithemetic-operations">Arithemetic Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#more-usage">More Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#prerequisites">Prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#basic-usage">Basic Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#specifying-dimensions-and-units">Specifying Dimensions and Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#unit-conversion">Unit Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#inspecting-quantity-attributes">Inspecting Quantity Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#units-with-order-prefixes">Units with Order Prefixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#arithmetic-operations">Arithmetic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#type-hierarchy">Type Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#other-supported-operations">Other Supported Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#dimensional-homogeneity-example">Dimensional Homogeneity Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#advanced-usage">Advanced Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#generic-quantities">Generic Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#derived-generic-quantities">Derived Generic Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#extending-conversion-standards">Extending Conversion Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#custom-dimensions">Custom Dimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#interactive-exploration">Interactive Exploration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#creating-vectorized-quantities">Creating Vectorized Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#element-wise-arithmetic">Element-wise Arithmetic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#operations-with-other-quantities">Operations with Other Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#vectorized-derived-quantities">Vectorized Derived Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#dimensional-semantics">Dimensional Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#design-notes-and-limitations">Design Notes and Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#terminology">Terminology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#future-work">Future Work</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="usage.html#custom-units-experimental">Custom Units (Experimental)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#creating-a-custom-unit">Creating a Custom Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#inspecting-attributes">Inspecting Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#arithmetic-and-comparison-semantics">Arithmetic and Comparison Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#id1">Dimensional Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#conversion-limitations">Conversion Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#design-rationale">Design Rationale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#limitations-and-experimental-status">Limitations and Experimental Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#future-directions">Future Directions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">An Example</a><ul>
@@ -65,10 +98,18 @@
 <li class="toctree-l2"><a class="reference internal" href="examples.html#solution">Solution</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0-2026-01-28">Version 1.2.0 (2026-01-28)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#added">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#changed">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#fixed">Fixed</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-mudu">Contributing to <strong>mudu</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How To Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guideline">Coding guideline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guidelines">Coding Guidelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
 </ul>
 </li>
@@ -95,6 +136,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.AMOUNT_OF_SUBSTANCE"><code class="docutils literal notranslate"><span class="pre">AMOUNT_OF_SUBSTANCE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.LUMINOUS_INTENSITY"><code class="docutils literal notranslate"><span class="pre">LUMINOUS_INTENSITY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FORCE"><code class="docutils literal notranslate"><span class="pre">FORCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SPEED"><code class="docutils literal notranslate"><span class="pre">SPEED</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ENERGY"><code class="docutils literal notranslate"><span class="pre">ENERGY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DENSITY"><code class="docutils literal notranslate"><span class="pre">DENSITY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GENERIC_DIMENSION"><code class="docutils literal notranslate"><span class="pre">GENERIC_DIMENSION</span></code></a></li>
@@ -180,12 +222,17 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.RAD"><code class="docutils literal notranslate"><span class="pre">RAD</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SIEVERT"><code class="docutils literal notranslate"><span class="pre">SIEVERT</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.REM"><code class="docutils literal notranslate"><span class="pre">REM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.METER_PER_SECOND"><code class="docutils literal notranslate"><span class="pre">METER_PER_SECOND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MILE_PER_HOUR"><code class="docutils literal notranslate"><span class="pre">MILE_PER_HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KM_PER_HOUR"><code class="docutils literal notranslate"><span class="pre">KM_PER_HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FOOT_PER_SECOND"><code class="docutils literal notranslate"><span class="pre">FOOT_PER_SECOND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KNOT"><code class="docutils literal notranslate"><span class="pre">KNOT</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu._DimensionUnitBase"><code class="docutils literal notranslate"><span class="pre">_DimensionUnitBase</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu._DimensionType"><code class="docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DerivedQuantity"><code class="docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.custom_unit"><code class="docutils literal notranslate"><span class="pre">custom_unit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GenericUnit"><code class="docutils literal notranslate"><span class="pre">GenericUnit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GenericUnit2"><code class="docutils literal notranslate"><span class="pre">GenericUnit2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.custom_unit"><code class="docutils literal notranslate"><span class="pre">custom_unit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Length"><code class="docutils literal notranslate"><span class="pre">Length</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Mass"><code class="docutils literal notranslate"><span class="pre">Mass</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Time"><code class="docutils literal notranslate"><span class="pre">Time</span></code></a></li>
@@ -211,6 +258,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Radioactivity"><code class="docutils literal notranslate"><span class="pre">Radioactivity</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.AbsorbedDose"><code class="docutils literal notranslate"><span class="pre">AbsorbedDose</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DoseEquivalent"><code class="docutils literal notranslate"><span class="pre">DoseEquivalent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Speed"><code class="docutils literal notranslate"><span class="pre">Speed</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DimensionError"><code class="docutils literal notranslate"><span class="pre">DimensionError</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ConversionError"><code class="docutils literal notranslate"><span class="pre">ConversionError</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.NotIterableError"><code class="docutils literal notranslate"><span class="pre">NotIterableError</span></code></a></li>
@@ -289,20 +337,26 @@
       </ul></li>
       <li><a href="autoapi/mudu/base/index.html#mudu.base._OrderUnitType.__call__">__call__() (mudu.base._OrderUnitType method)</a>
 </li>
+      <li><a href="autoapi/mudu/index.html#mudu.custom_unit.__check_condition">__check_condition() (mudu.custom_unit method)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.custom_unit.__check_condition">(mudu.dimensions.custom_unit method)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/mudu/index.html#mudu.custom_unit.__denominator">__denominator (mudu.custom_unit attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.custom_unit.__denominator">(mudu.dimensions.custom_unit attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/mudu/index.html#mudu.custom_unit.__denominator_unit">__denominator_unit (mudu.custom_unit attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.custom_unit.__denominator_unit">(mudu.dimensions.custom_unit attribute)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/mudu/units/index.html#mudu.units.__density_dimension">__density_dimension (in module mudu.units)</a>
 </li>
-      <li><a href="autoapi/mudu/index.html#mudu.custom_unit.__denuminator">__denuminator (mudu.custom_unit attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.custom_unit.__denuminator">(mudu.dimensions.custom_unit attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="autoapi/mudu/index.html#mudu.custom_unit.__denuminator_unit">__denuminator_unit (mudu.custom_unit attribute)</a>
-
-      <ul>
-        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.custom_unit.__denuminator_unit">(mudu.dimensions.custom_unit attribute)</a>
-</li>
-      </ul></li>
       <li><a href="autoapi/mudu/units/index.html#mudu.units.__energy_dimension">__energy_dimension (in module mudu.units)</a>
 </li>
       <li><a href="autoapi/mudu/index.html#mudu._DimensionUnitBase.__eq__">__eq__() (mudu._DimensionUnitBase method)</a>
@@ -467,6 +521,12 @@
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.DerivedQuantity.__repr__">(mudu.dimensions.DerivedQuantity method)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/mudu/index.html#mudu.custom_unit.__repr_only_one_quantity">__repr_only_one_quantity() (mudu.custom_unit method)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.custom_unit.__repr_only_one_quantity">(mudu.dimensions.custom_unit method)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/mudu/index.html#mudu._DimensionUnitBase.__rfloordiv__">__rfloordiv__() (mudu._DimensionUnitBase method)</a>
 
       <ul>
@@ -523,6 +583,8 @@
       </ul></li>
       <li><a href="autoapi/mudu/base/index.html#mudu.base._SetOnce.__set__">__set__() (mudu.base._SetOnce method)</a>
 </li>
+      <li><a href="autoapi/mudu/units/index.html#mudu.units.__speed_dimension">__speed_dimension (in module mudu.units)</a>
+</li>
       <li><a href="autoapi/mudu/index.html#mudu._DimensionType.__str__">__str__() (mudu._DimensionType method)</a>
 
       <ul>
@@ -559,6 +621,12 @@
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions._DimensionUnitBase.__truediv__">(mudu.dimensions._DimensionUnitBase method)</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.DerivedQuantity.__truediv__">(mudu.dimensions.DerivedQuantity method)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/mudu/index.html#mudu.custom_unit.__unit_definition">__unit_definition (mudu.custom_unit attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.custom_unit.__unit_definition">(mudu.dimensions.custom_unit attribute)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/mudu/index.html#mudu._DimensionType.__value_not_seq">__value_not_seq (mudu._DimensionType property)</a>
@@ -650,6 +718,8 @@
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Radioactivity._check_and_convert">(mudu.dimensions.Radioactivity attribute)</a>
 </li>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Speed._check_and_convert">(mudu.dimensions.Speed attribute)</a>
+</li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Temperature._check_and_convert">(mudu.dimensions.Temperature attribute)</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Time._check_and_convert">(mudu.dimensions.Time attribute)</a>
@@ -673,6 +743,8 @@
         <li><a href="autoapi/mudu/index.html#mudu.Pressure._check_and_convert">(mudu.Pressure attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Radioactivity._check_and_convert">(mudu.Radioactivity attribute)</a>
+</li>
+        <li><a href="autoapi/mudu/index.html#mudu.Speed._check_and_convert">(mudu.Speed attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Temperature._check_and_convert">(mudu.Temperature attribute)</a>
 </li>
@@ -712,17 +784,17 @@
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#id0">(mudu.dimensions._DimensionUnitBase attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions._DimensionUnitBase._conversion_standards">[1]</a>
 </li>
-        <li><a href="autoapi/mudu/dimensions/index.html#id37">(mudu.dimensions.AbsorbedDose attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.AbsorbedDose._conversion_standards">[1]</a>
+        <li><a href="autoapi/mudu/dimensions/index.html#id38">(mudu.dimensions.AbsorbedDose attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.AbsorbedDose._conversion_standards">[1]</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#id28">(mudu.dimensions.Angle attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Angle._conversion_standards">[1]</a>
 </li>
-        <li><a href="autoapi/mudu/dimensions/index.html#id34">(mudu.dimensions.Density attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Density._conversion_standards">[1]</a>
+        <li><a href="autoapi/mudu/dimensions/index.html#id35">(mudu.dimensions.Density attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Density._conversion_standards">[1]</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#id5">(mudu.dimensions.DerivedQuantity attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.DerivedQuantity._conversion_standards">[1]</a>, <a href="mudu.html#mudu.dimensions.DerivedQuantity._conversion_standards">[2]</a>
 </li>
-        <li><a href="autoapi/mudu/dimensions/index.html#id38">(mudu.dimensions.DoseEquivalent attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.DoseEquivalent._conversion_standards">[1]</a>
+        <li><a href="autoapi/mudu/dimensions/index.html#id39">(mudu.dimensions.DoseEquivalent attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.DoseEquivalent._conversion_standards">[1]</a>
 </li>
-        <li><a href="autoapi/mudu/dimensions/index.html#id33">(mudu.dimensions.Energy attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Energy._conversion_standards">[1]</a>
+        <li><a href="autoapi/mudu/dimensions/index.html#id34">(mudu.dimensions.Energy attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Energy._conversion_standards">[1]</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#id31">(mudu.dimensions.Force attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Force._conversion_standards">[1]</a>
 </li>
@@ -734,11 +806,13 @@
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#id22">(mudu.dimensions.Mass attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Mass._conversion_standards">[1]</a>
 </li>
-        <li><a href="autoapi/mudu/dimensions/index.html#id35">(mudu.dimensions.Power attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Power._conversion_standards">[1]</a>
+        <li><a href="autoapi/mudu/dimensions/index.html#id36">(mudu.dimensions.Power attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Power._conversion_standards">[1]</a>
 </li>
-        <li><a href="autoapi/mudu/dimensions/index.html#id32">(mudu.dimensions.Pressure attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Pressure._conversion_standards">[1]</a>
+        <li><a href="autoapi/mudu/dimensions/index.html#id33">(mudu.dimensions.Pressure attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Pressure._conversion_standards">[1]</a>
 </li>
-        <li><a href="autoapi/mudu/dimensions/index.html#id36">(mudu.dimensions.Radioactivity attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Radioactivity._conversion_standards">[1]</a>
+        <li><a href="autoapi/mudu/dimensions/index.html#id37">(mudu.dimensions.Radioactivity attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Radioactivity._conversion_standards">[1]</a>
+</li>
+        <li><a href="autoapi/mudu/dimensions/index.html#id32">(mudu.dimensions.Speed attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Speed._conversion_standards">[1]</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#id26">(mudu.dimensions.Temperature attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Temperature._conversion_standards">[1]</a>
 </li>
@@ -763,6 +837,8 @@
         <li><a href="autoapi/mudu/index.html#id41">(mudu.Pressure attribute)</a>, <a href="autoapi/mudu/index.html#mudu.Pressure._conversion_standards">[1]</a>
 </li>
         <li><a href="autoapi/mudu/index.html#id45">(mudu.Radioactivity attribute)</a>, <a href="autoapi/mudu/index.html#mudu.Radioactivity._conversion_standards">[1]</a>
+</li>
+        <li><a href="autoapi/mudu/index.html#id48">(mudu.Speed attribute)</a>, <a href="autoapi/mudu/index.html#mudu.Speed._conversion_standards">[1]</a>
 </li>
         <li><a href="autoapi/mudu/index.html#id36">(mudu.Temperature attribute)</a>, <a href="autoapi/mudu/index.html#mudu.Temperature._conversion_standards">[1]</a>
 </li>
@@ -822,6 +898,8 @@
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Radioactivity._dimension">(mudu.dimensions.Radioactivity attribute)</a>
 </li>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Speed._dimension">(mudu.dimensions.Speed attribute)</a>
+</li>
         <li><a href="autoapi/mudu/dimensions/index.html#id27">(mudu.dimensions.Temperature attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Temperature._dimension">[1]</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#id25">(mudu.dimensions.Time attribute)</a>, <a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Time._dimension">[1]</a>
@@ -845,6 +923,8 @@
         <li><a href="autoapi/mudu/index.html#mudu.Pressure._dimension">(mudu.Pressure attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Radioactivity._dimension">(mudu.Radioactivity attribute)</a>
+</li>
+        <li><a href="autoapi/mudu/index.html#mudu.Speed._dimension">(mudu.Speed attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#id37">(mudu.Temperature attribute)</a>, <a href="autoapi/mudu/index.html#mudu.Temperature._dimension">[1]</a>
 </li>
@@ -896,6 +976,8 @@
       <li><a href="autoapi/mudu/units/index.html#mudu.units._RADIOACTIVITY_CONVERSION_TABLE">_RADIOACTIVITY_CONVERSION_TABLE (in module mudu.units)</a>
 </li>
       <li><a href="autoapi/mudu/base/index.html#mudu.base._SetOnce">_SetOnce (class in mudu.base)</a>
+</li>
+      <li><a href="autoapi/mudu/units/index.html#mudu.units._SPEED_CONVERSION_TABLE">_SPEED_CONVERSION_TABLE (in module mudu.units)</a>
 </li>
       <li><a href="autoapi/mudu/units/index.html#mudu.units._TEMPERATURE_CONVERSION_TABLE">_TEMPERATURE_CONVERSION_TABLE (in module mudu.units)</a>
 </li>
@@ -959,20 +1041,22 @@
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.AmountOfSubstance">(in module mudu.dimensions)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/mudu/index.html#mudu.AMPERE">AMPERE (in module mudu)</a>
 
       <ul>
         <li><a href="autoapi/mudu/units/index.html#mudu.units.AMPERE">(in module mudu.units)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/mudu/index.html#mudu.Angle">Angle (class in mudu)</a>
 
       <ul>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Angle">(class in mudu.dimensions)</a>, <a href="mudu.html#mudu.dimensions.Angle">[1]</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/mudu/units/index.html#mudu.units.ANGLE_QUANTITY">ANGLE_QUANTITY (in module mudu.units)</a>
+</li>
       <li><a href="mudu.html#mudu.exceptions.ConversionError.args">args (mudu.exceptions.ConversionError attribute)</a>
 
       <ul>
@@ -1120,6 +1204,8 @@
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Radioactivity.convert_to">(mudu.dimensions.Radioactivity attribute)</a>
 </li>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Speed.convert_to">(mudu.dimensions.Speed attribute)</a>
+</li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Temperature.convert_to">(mudu.dimensions.Temperature attribute)</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Time.convert_to">(mudu.dimensions.Time attribute)</a>
@@ -1143,6 +1229,8 @@
         <li><a href="autoapi/mudu/index.html#mudu.Pressure.convert_to">(mudu.Pressure attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Radioactivity.convert_to">(mudu.Radioactivity attribute)</a>
+</li>
+        <li><a href="autoapi/mudu/index.html#mudu.Speed.convert_to">(mudu.Speed attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Temperature.convert_to">(mudu.Temperature attribute)</a>
 </li>
@@ -1191,6 +1279,8 @@
         <li><a href="mudu.html#mudu.dimensions.Pressure.convert_to">(mudu.dimensions.Pressure method)</a>
 </li>
         <li><a href="mudu.html#mudu.dimensions.Radioactivity.convert_to">(mudu.dimensions.Radioactivity method)</a>
+</li>
+        <li><a href="mudu.html#mudu.dimensions.Speed.convert_to">(mudu.dimensions.Speed method)</a>
 </li>
         <li><a href="mudu.html#mudu.dimensions.Temperature.convert_to">(mudu.dimensions.Temperature method)</a>
 </li>
@@ -1244,6 +1334,8 @@
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Radioactivity.create_unit">(mudu.dimensions.Radioactivity attribute)</a>
 </li>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Speed.create_unit">(mudu.dimensions.Speed attribute)</a>
+</li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Temperature.create_unit">(mudu.dimensions.Temperature attribute)</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Time.create_unit">(mudu.dimensions.Time attribute)</a>
@@ -1267,6 +1359,8 @@
         <li><a href="autoapi/mudu/index.html#mudu.Pressure.create_unit">(mudu.Pressure attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Radioactivity.create_unit">(mudu.Radioactivity attribute)</a>
+</li>
+        <li><a href="autoapi/mudu/index.html#mudu.Speed.create_unit">(mudu.Speed attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Temperature.create_unit">(mudu.Temperature attribute)</a>
 </li>
@@ -1313,6 +1407,8 @@
         <li><a href="mudu.html#mudu.dimensions.Pressure.create_unit">(mudu.dimensions.Pressure class method)</a>
 </li>
         <li><a href="mudu.html#mudu.dimensions.Radioactivity.create_unit">(mudu.dimensions.Radioactivity class method)</a>
+</li>
+        <li><a href="mudu.html#mudu.dimensions.Speed.create_unit">(mudu.dimensions.Speed class method)</a>
 </li>
         <li><a href="mudu.html#mudu.dimensions.Temperature.create_unit">(mudu.dimensions.Temperature class method)</a>
 </li>
@@ -1458,7 +1554,7 @@
 </li>
         <li><a href="mudu.html#id11">(mudu.dimensions.Angle attribute)</a>, <a href="mudu.html#id13">[1]</a>, <a href="mudu.html#id7">[2]</a>, <a href="mudu.html#id9">[3]</a>, <a href="mudu.html#mudu.dimensions.Angle.expected_types">[4]</a>
 </li>
-        <li><a href="mudu.html#id114">(mudu.dimensions.custom_unit attribute)</a>, <a href="mudu.html#id116">[1]</a>, <a href="mudu.html#id118">[2]</a>, <a href="mudu.html#mudu.dimensions.custom_unit.expected_types">[3]</a>
+        <li><a href="mudu.html#id120">(mudu.dimensions.custom_unit attribute)</a>, <a href="mudu.html#id122">[1]</a>, <a href="mudu.html#id124">[2]</a>, <a href="mudu.html#mudu.dimensions.custom_unit.expected_types">[3]</a>
 </li>
         <li><a href="mudu.html#id15">(mudu.dimensions.Density attribute)</a>, <a href="mudu.html#id17">[1]</a>, <a href="mudu.html#id19">[2]</a>, <a href="mudu.html#mudu.dimensions.Density.expected_types">[3]</a>
 </li>
@@ -1484,9 +1580,11 @@
 </li>
         <li><a href="mudu.html#id92">(mudu.dimensions.Radioactivity attribute)</a>, <a href="mudu.html#id94">[1]</a>, <a href="mudu.html#id96">[2]</a>, <a href="mudu.html#mudu.dimensions.Radioactivity.expected_types">[3]</a>
 </li>
-        <li><a href="mudu.html#id100">(mudu.dimensions.Temperature attribute)</a>, <a href="mudu.html#id102">[1]</a>, <a href="mudu.html#id104">[2]</a>, <a href="mudu.html#id98">[3]</a>, <a href="mudu.html#mudu.dimensions.Temperature.expected_types">[4]</a>
+        <li><a href="mudu.html#id100">(mudu.dimensions.Speed attribute)</a>, <a href="mudu.html#id102">[1]</a>, <a href="mudu.html#id98">[2]</a>, <a href="mudu.html#mudu.dimensions.Speed.expected_types">[3]</a>
 </li>
-        <li><a href="mudu.html#id106">(mudu.dimensions.Time attribute)</a>, <a href="mudu.html#id108">[1]</a>, <a href="mudu.html#id110">[2]</a>, <a href="mudu.html#id112">[3]</a>, <a href="mudu.html#mudu.dimensions.Time.expected_types">[4]</a>
+        <li><a href="mudu.html#id104">(mudu.dimensions.Temperature attribute)</a>, <a href="mudu.html#id106">[1]</a>, <a href="mudu.html#id108">[2]</a>, <a href="mudu.html#id110">[3]</a>, <a href="mudu.html#mudu.dimensions.Temperature.expected_types">[4]</a>
+</li>
+        <li><a href="mudu.html#id112">(mudu.dimensions.Time attribute)</a>, <a href="mudu.html#id114">[1]</a>, <a href="mudu.html#id116">[2]</a>, <a href="mudu.html#id118">[3]</a>, <a href="mudu.html#mudu.dimensions.Time.expected_types">[4]</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1519,12 +1617,18 @@
         <li><a href="autoapi/mudu/units/index.html#mudu.units.FEET">(in module mudu.units)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/mudu/index.html#mudu.FEMTO">FEMTO (in module mudu)</a>
 
       <ul>
         <li><a href="autoapi/mudu/base/index.html#mudu.base.FEMTO">(in module mudu.base)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/mudu/index.html#mudu.FOOT_PER_SECOND">FOOT_PER_SECOND (in module mudu)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/units/index.html#mudu.units.FOOT_PER_SECOND">(in module mudu.units)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/mudu/index.html#mudu.Force">Force (class in mudu)</a>
@@ -1707,18 +1811,30 @@
         <li><a href="autoapi/mudu/units/index.html#mudu.units.KILOGRAM">(in module mudu.units)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/mudu/index.html#mudu.KILOGRAM_PER_CUBIC_METER">KILOGRAM_PER_CUBIC_METER (in module mudu)</a>
 
       <ul>
         <li><a href="autoapi/mudu/units/index.html#mudu.units.KILOGRAM_PER_CUBIC_METER">(in module mudu.units)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/mudu/index.html#mudu.KILOMETER">KILOMETER (in module mudu)</a>
 
       <ul>
         <li><a href="autoapi/mudu/units/index.html#mudu.units.KILOMETER">(in module mudu.units)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/mudu/index.html#mudu.KM_PER_HOUR">KM_PER_HOUR (in module mudu)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/units/index.html#mudu.units.KM_PER_HOUR">(in module mudu.units)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/mudu/index.html#mudu.KNOT">KNOT (in module mudu)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/units/index.html#mudu.units.KNOT">(in module mudu.units)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1739,6 +1855,8 @@
         <li><a href="autoapi/mudu/base/index.html#mudu.base.LENGTH">(in module mudu.base)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/mudu/units/index.html#mudu.units.LENGTH_QUANTITY">LENGTH_QUANTITY (in module mudu.units)</a>
+</li>
       <li><a href="autoapi/mudu/index.html#mudu.LONG_TON">LONG_TON (in module mudu)</a>
 
       <ul>
@@ -1799,6 +1917,8 @@
         <li><a href="autoapi/mudu/base/index.html#mudu.base.MASS">(in module mudu.base)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/mudu/units/index.html#mudu.units.MASS_QUANTITY">MASS_QUANTITY (in module mudu.units)</a>
+</li>
       <li><a href="autoapi/mudu/index.html#mudu.MEGA">MEGA (in module mudu)</a>
 
       <ul>
@@ -1809,6 +1929,12 @@
 
       <ul>
         <li><a href="autoapi/mudu/units/index.html#mudu.units.METER">(in module mudu.units)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/mudu/index.html#mudu.METER_PER_SECOND">METER_PER_SECOND (in module mudu)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/units/index.html#mudu.units.METER_PER_SECOND">(in module mudu.units)</a>
 </li>
       </ul></li>
       <li><a href="autoapi/mudu/index.html#mudu.METRIC_TON">METRIC_TON (in module mudu)</a>
@@ -1829,14 +1955,20 @@
         <li><a href="autoapi/mudu/units/index.html#mudu.units.MILE">(in module mudu.units)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/mudu/index.html#mudu.MILE_PER_HOUR">MILE_PER_HOUR (in module mudu)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/units/index.html#mudu.units.MILE_PER_HOUR">(in module mudu.units)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/mudu/index.html#mudu.MILLI">MILLI (in module mudu)</a>
 
       <ul>
         <li><a href="autoapi/mudu/base/index.html#mudu.base.MILLI">(in module mudu.base)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/mudu/index.html#mudu.MINUTE">MINUTE (in module mudu)</a>
 
       <ul>
@@ -1920,7 +2052,7 @@
 </li>
         <li><a href="mudu.html#id10">(mudu.dimensions.Angle attribute)</a>, <a href="mudu.html#id12">[1]</a>, <a href="mudu.html#id6">[2]</a>, <a href="mudu.html#id8">[3]</a>, <a href="mudu.html#mudu.dimensions.Angle.name">[4]</a>
 </li>
-        <li><a href="mudu.html#id113">(mudu.dimensions.custom_unit attribute)</a>, <a href="mudu.html#id115">[1]</a>, <a href="mudu.html#id117">[2]</a>, <a href="mudu.html#mudu.dimensions.custom_unit.name">[3]</a>
+        <li><a href="mudu.html#id119">(mudu.dimensions.custom_unit attribute)</a>, <a href="mudu.html#id121">[1]</a>, <a href="mudu.html#id123">[2]</a>, <a href="mudu.html#mudu.dimensions.custom_unit.name">[3]</a>
 </li>
         <li><a href="mudu.html#id14">(mudu.dimensions.Density attribute)</a>, <a href="mudu.html#id16">[1]</a>, <a href="mudu.html#id18">[2]</a>, <a href="mudu.html#mudu.dimensions.Density.name">[3]</a>
 </li>
@@ -1946,9 +2078,11 @@
 </li>
         <li><a href="mudu.html#id91">(mudu.dimensions.Radioactivity attribute)</a>, <a href="mudu.html#id93">[1]</a>, <a href="mudu.html#id95">[2]</a>, <a href="mudu.html#mudu.dimensions.Radioactivity.name">[3]</a>
 </li>
-        <li><a href="mudu.html#id101">(mudu.dimensions.Temperature attribute)</a>, <a href="mudu.html#id103">[1]</a>, <a href="mudu.html#id97">[2]</a>, <a href="mudu.html#id99">[3]</a>, <a href="mudu.html#mudu.dimensions.Temperature.name">[4]</a>
+        <li><a href="mudu.html#id101">(mudu.dimensions.Speed attribute)</a>, <a href="mudu.html#id97">[1]</a>, <a href="mudu.html#id99">[2]</a>, <a href="mudu.html#mudu.dimensions.Speed.name">[3]</a>
 </li>
-        <li><a href="mudu.html#id105">(mudu.dimensions.Time attribute)</a>, <a href="mudu.html#id107">[1]</a>, <a href="mudu.html#id109">[2]</a>, <a href="mudu.html#id111">[3]</a>, <a href="mudu.html#mudu.dimensions.Time.name">[4]</a>
+        <li><a href="mudu.html#id103">(mudu.dimensions.Temperature attribute)</a>, <a href="mudu.html#id105">[1]</a>, <a href="mudu.html#id107">[2]</a>, <a href="mudu.html#id109">[3]</a>, <a href="mudu.html#mudu.dimensions.Temperature.name">[4]</a>
+</li>
+        <li><a href="mudu.html#id111">(mudu.dimensions.Time attribute)</a>, <a href="mudu.html#id113">[1]</a>, <a href="mudu.html#id115">[2]</a>, <a href="mudu.html#id117">[3]</a>, <a href="mudu.html#mudu.dimensions.Time.name">[4]</a>
 </li>
       </ul></li>
   </ul></td>
@@ -2112,6 +2246,8 @@
 </li>
         <li><a href="mudu.html#mudu.dimensions.Radioactivity.quantity">(mudu.dimensions.Radioactivity attribute)</a>
 </li>
+        <li><a href="mudu.html#mudu.dimensions.Speed.quantity">(mudu.dimensions.Speed attribute)</a>
+</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -2215,6 +2351,18 @@
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.SolidAngle">(in module mudu.dimensions)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/mudu/index.html#mudu.Speed">Speed (class in mudu)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Speed">(class in mudu.dimensions)</a>, <a href="mudu.html#mudu.dimensions.Speed">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/mudu/index.html#mudu.SPEED">SPEED (in module mudu)</a>
+
+      <ul>
+        <li><a href="autoapi/mudu/base/index.html#mudu.base.SPEED">(in module mudu.base)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/mudu/index.html#mudu.STERADIAN">STERADIAN (in module mudu)</a>
 
       <ul>
@@ -2266,6 +2414,8 @@
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Radioactivity.symbol">(mudu.dimensions.Radioactivity attribute)</a>, <a href="mudu.html#mudu.dimensions.Radioactivity.symbol">[1]</a>
 </li>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Speed.symbol">(mudu.dimensions.Speed attribute)</a>, <a href="mudu.html#mudu.dimensions.Speed.symbol">[1]</a>
+</li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Temperature.symbol">(mudu.dimensions.Temperature attribute)</a>, <a href="mudu.html#mudu.dimensions.Temperature.symbol">[1]</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Time.symbol">(mudu.dimensions.Time attribute)</a>, <a href="mudu.html#mudu.dimensions.Time.symbol">[1]</a>
@@ -2290,6 +2440,8 @@
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Radioactivity.symbol">(mudu.Radioactivity attribute)</a>
 </li>
+        <li><a href="autoapi/mudu/index.html#mudu.Speed.symbol">(mudu.Speed attribute)</a>
+</li>
         <li><a href="autoapi/mudu/index.html#mudu.Temperature.symbol">(mudu.Temperature attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Time.symbol">(mudu.Time attribute)</a>
@@ -2301,6 +2453,8 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/mudu/units/index.html#mudu.units.TEMP_QUANTITY">TEMP_QUANTITY (in module mudu.units)</a>
+</li>
       <li><a href="autoapi/mudu/index.html#mudu.Temperature">Temperature (class in mudu)</a>
 
       <ul>
@@ -2333,6 +2487,8 @@
         <li><a href="autoapi/mudu/base/index.html#mudu.base.TIME">(in module mudu.base)</a>
 </li>
       </ul></li>
+      <li><a href="autoapi/mudu/units/index.html#mudu.units.TIME_QUANTITY">TIME_QUANTITY (in module mudu.units)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -2400,6 +2556,8 @@
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Radioactivity.unit_type">(mudu.dimensions.Radioactivity attribute)</a>, <a href="mudu.html#mudu.dimensions.Radioactivity.unit_type">[1]</a>
 </li>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Speed.unit_type">(mudu.dimensions.Speed attribute)</a>, <a href="mudu.html#mudu.dimensions.Speed.unit_type">[1]</a>
+</li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Temperature.unit_type">(mudu.dimensions.Temperature attribute)</a>, <a href="mudu.html#mudu.dimensions.Temperature.unit_type">[1]</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Time.unit_type">(mudu.dimensions.Time attribute)</a>, <a href="mudu.html#mudu.dimensions.Time.unit_type">[1]</a>
@@ -2423,6 +2581,8 @@
         <li><a href="autoapi/mudu/index.html#mudu.Pressure.unit_type">(mudu.Pressure attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Radioactivity.unit_type">(mudu.Radioactivity attribute)</a>
+</li>
+        <li><a href="autoapi/mudu/index.html#mudu.Speed.unit_type">(mudu.Speed attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Temperature.unit_type">(mudu.Temperature attribute)</a>
 </li>
@@ -2480,6 +2640,8 @@
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Radioactivity.value">(mudu.dimensions.Radioactivity attribute)</a>, <a href="mudu.html#mudu.dimensions.Radioactivity.value">[1]</a>
 </li>
+        <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Speed.value">(mudu.dimensions.Speed attribute)</a>, <a href="mudu.html#mudu.dimensions.Speed.value">[1]</a>
+</li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Temperature.value">(mudu.dimensions.Temperature attribute)</a>, <a href="mudu.html#mudu.dimensions.Temperature.value">[1]</a>
 </li>
         <li><a href="autoapi/mudu/dimensions/index.html#mudu.dimensions.Time.value">(mudu.dimensions.Time attribute)</a>, <a href="mudu.html#mudu.dimensions.Time.value">[1]</a>
@@ -2503,6 +2665,8 @@
         <li><a href="autoapi/mudu/index.html#mudu.Pressure.value">(mudu.Pressure attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Radioactivity.value">(mudu.Radioactivity attribute)</a>
+</li>
+        <li><a href="autoapi/mudu/index.html#mudu.Speed.value">(mudu.Speed attribute)</a>
 </li>
         <li><a href="autoapi/mudu/index.html#mudu.Temperature.value">(mudu.Temperature attribute)</a>
 </li>

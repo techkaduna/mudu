@@ -26,12 +26,14 @@ Attributes
 
 .. autoapisummary::
 
+   mudu.units.LENGTH_QUANTITY
    mudu.units.INCH
    mudu.units.METER
    mudu.units.FEET
    mudu.units.YARD
    mudu.units.MILE
    mudu.units.NAUTICAL_MILE
+   mudu.units.MASS_QUANTITY
    mudu.units.GRAM
    mudu.units.OUNCE
    mudu.units.POUND
@@ -39,13 +41,16 @@ Attributes
    mudu.units.SHORT_TON
    mudu.units.LONG_TON
    mudu.units.METRIC_TON
+   mudu.units.TIME_QUANTITY
    mudu.units.SECOND
    mudu.units.MINUTE
    mudu.units.HOUR
+   mudu.units.TEMP_QUANTITY
    mudu.units.KELVIN
    mudu.units.RANKINE
    mudu.units.CELSIUS
    mudu.units.FARENHEIT
+   mudu.units.ANGLE_QUANTITY
    mudu.units.RADIAN
    mudu.units.DEGREE
    mudu.units.STERADIAN
@@ -59,6 +64,12 @@ Attributes
    mudu.units.POUND_FORCE
    mudu.units.POUNDAL
    mudu.units.DYNE
+   mudu.units.__speed_dimension
+   mudu.units.METER_PER_SECOND
+   mudu.units.KM_PER_HOUR
+   mudu.units.FOOT_PER_SECOND
+   mudu.units.MILE_PER_HOUR
+   mudu.units.KNOT
    mudu.units.__pressure_dimension
    mudu.units.PASCAL
    mudu.units.PSI
@@ -106,6 +117,7 @@ Attributes
    mudu.units._TEMPERATURE_CONVERSION_TABLE
    mudu.units._ANGLE_CONVERSION_TABLE
    mudu.units._FORCE_CONVERSION_TABLE
+   mudu.units._SPEED_CONVERSION_TABLE
    mudu.units._PRESSURE_CONVERSION_TABLE
    mudu.units._ENERGY_CONVERSION_TABLE
    mudu.units._DENSITY_CONVERSION_TABLE
@@ -118,6 +130,10 @@ Attributes
 Module Contents
 ---------------
 
+.. py:data:: LENGTH_QUANTITY
+   :value: 'length'
+
+
 .. py:data:: INCH
 
 .. py:data:: METER
@@ -129,6 +145,10 @@ Module Contents
 .. py:data:: MILE
 
 .. py:data:: NAUTICAL_MILE
+
+.. py:data:: MASS_QUANTITY
+   :value: 'mass'
+
 
 .. py:data:: GRAM
 
@@ -144,11 +164,19 @@ Module Contents
 
 .. py:data:: METRIC_TON
 
+.. py:data:: TIME_QUANTITY
+   :value: 'time'
+
+
 .. py:data:: SECOND
 
 .. py:data:: MINUTE
 
 .. py:data:: HOUR
+
+.. py:data:: TEMP_QUANTITY
+   :value: 'temperature'
+
 
 .. py:data:: KELVIN
 
@@ -157,6 +185,10 @@ Module Contents
 .. py:data:: CELSIUS
 
 .. py:data:: FARENHEIT
+
+.. py:data:: ANGLE_QUANTITY
+   :value: 'angle'
+
 
 .. py:data:: RADIAN
 
@@ -183,6 +215,18 @@ Module Contents
 .. py:data:: POUNDAL
 
 .. py:data:: DYNE
+
+.. py:data:: __speed_dimension
+
+.. py:data:: METER_PER_SECOND
+
+.. py:data:: KM_PER_HOUR
+
+.. py:data:: FOOT_PER_SECOND
+
+.. py:data:: MILE_PER_HOUR
+
+.. py:data:: KNOT
 
 .. py:data:: __pressure_dimension
 
@@ -277,6 +321,8 @@ Module Contents
 .. py:data:: _ANGLE_CONVERSION_TABLE
 
 .. py:data:: _FORCE_CONVERSION_TABLE
+
+.. py:data:: _SPEED_CONVERSION_TABLE
 
 .. py:data:: _PRESSURE_CONVERSION_TABLE
 

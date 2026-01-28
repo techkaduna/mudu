@@ -2,38 +2,59 @@
 Contributing
 ============
 
-Contributing to **mudu**
-""""""""""""""""""""""""
+Thank you for considering contributing to **mudu**. Contributions of all forms are welcome and appreciated.
 
-Thanks you for considering to contribte to this project, it is really appreciated.
+The project encourages contributions in the following areas, including but not limited to:
 
-We welcome contribution in the following (but not limited to) aspects:
+- Bug fixes and defect resolution
+- Code improvements and performance optimizations
+- Documentation enhancements and tutorial development
+- Issue reporting, feature requests, and design discussions
 
-- Bug fixes
-- Code improvement and optimizations
-- Documentations and Tutorials
-- Issue reporting and feature requests
-
-How To Contribute
+How to Contribute
 """""""""""""""""
 
-1. Fork the project repository at `<https://github.com/techkaduna/mudu>_`
-2. Create a new branck for your code
-3. Make changes
-4. Write (or update) tests where neccesary
-5. Commit your changes with intuitive an commit message
-6. Open a pull request with a breif and concise explantion about your change(s)
+1. Fork the project repository at  
+   `<https://github.com/techkaduna/mudu>`_
 
-Coding guideline
-""""""""""""""""
+2. Create a new branch for your changes.
 
-- Follow PEP8 style guidelines
-- Use desciptive commit messages
-- Write beautiful Numpy/Scipy style docstrings
+3. Implement your changes, ensuring they align with the existing design and coding standards.
+
+4. Add new tests or update existing ones where appropriate.
+
+5. Commit your changes using clear, descriptive commit messages.
+
+6. Open a pull request with a concise explanation of the motivation, scope, and impact of your changes.
+
+Coding Guidelines
+"""""""""""""""""
+
+- Follow the PEP 8 style guide for Python code.
+- Use descriptive and meaningful commit messages.
+- Write clear and comprehensive NumPy/SciPy-style docstrings for public functions, classes, and modules.
+- Maintain consistency with existing naming conventions and architectural patterns.
 
 Testing
 """""""
 
-mudu uses `pytest` for testing. Run `pytest` locally and make sure all tests are passed before submitting pull request.
+**mudu** uses `pytest` for automated testing. Before submitting a pull request, run the test suite locally and ensure that all tests pass.
 
-Once again, thanks for trying to make mudu better.
+.. code-block:: shell
+
+    pytest
+
+Pull requests that introduce new functionality should include corresponding test coverage.
+
+Thank you for helping improve **mudu** and for contributing to its continued development.
+```
+
+---
+
+If you want to go one level more formal, the next refinements could include:
+
+* a short “Development Setup” subsection,
+* contribution scope expectations (e.g. API stability),
+* or a lightweight code-of-conduct reference.
+
+At this point, your documentation is already at a level consistent with serious technical Python libraries.

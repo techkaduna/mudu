@@ -271,6 +271,13 @@ For derived quantities without explicit dimension classes, `GenericUnit2` is pro
 
     Voltage = functools.partial(GenericUnit2, unit_definition=VOLT)
 
+Usage:
+ .. code-block:: python
+    from mudu import Voltage, Inductance
+
+    V = Voltage(10)
+    H = Inductance(10)
+
 Extending Conversion Standards
 """""""""""""""""""""""""""""
 

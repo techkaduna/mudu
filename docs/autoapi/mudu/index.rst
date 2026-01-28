@@ -12,12 +12,6 @@ mudu
    A Python package for unit and dimension handling, unit conversion, units arithemtic, with \
    support for custom units definition.
 
-   To read a well written web version of the package documentation, go to your cli and try
-
-   .. code-block:: shell
-
-       mudu --doc
-
 
 
 Submodules
@@ -47,6 +41,7 @@ Attributes
    mudu.AMOUNT_OF_SUBSTANCE
    mudu.LUMINOUS_INTENSITY
    mudu.FORCE
+   mudu.SPEED
    mudu.ENERGY
    mudu.DENSITY
    mudu.GENERIC_DIMENSION
@@ -131,6 +126,11 @@ Attributes
    mudu.RAD
    mudu.SIEVERT
    mudu.REM
+   mudu.METER_PER_SECOND
+   mudu.MILE_PER_HOUR
+   mudu.KM_PER_HOUR
+   mudu.FOOT_PER_SECOND
+   mudu.KNOT
    mudu.SolidAngle
    mudu.ElectricCurrent
    mudu.AmountOfSubstance
@@ -166,9 +166,9 @@ Classes
    mudu._DimensionUnitBase
    mudu._DimensionType
    mudu.DerivedQuantity
-   mudu.custom_unit
    mudu.GenericUnit
    mudu.GenericUnit2
+   mudu.custom_unit
    mudu.Length
    mudu.Mass
    mudu.Time
@@ -182,6 +182,7 @@ Classes
    mudu.Radioactivity
    mudu.AbsorbedDose
    mudu.DoseEquivalent
+   mudu.Speed
 
 
 Package Contents
@@ -207,6 +208,10 @@ Package Contents
 
 .. py:data:: FORCE
    :value: 'force'
+
+
+.. py:data:: SPEED
+   :value: 'speed'
 
 
 .. py:data:: ENERGY
@@ -536,6 +541,16 @@ Package Contents
 .. py:data:: SIEVERT
 
 .. py:data:: REM
+
+.. py:data:: METER_PER_SECOND
+
+.. py:data:: MILE_PER_HOUR
+
+.. py:data:: KM_PER_HOUR
+
+.. py:data:: FOOT_PER_SECOND
+
+.. py:data:: KNOT
 
 .. py:class:: _DimensionUnitBase
 
@@ -977,49 +992,6 @@ Package Contents
 
 
 
-.. py:class:: custom_unit(value: int | float, *, num: collections.abc.Sequence[mudu.base._UnitType] | mudu.base._UnitType, per: int | collections.abc.Sequence[mudu.base._UnitType] | mudu.base._UnitType = 1, quantity=GENERIC_QUANTITY)
-
-   Bases: :py:obj:`DerivedQuantity`
-
-
-   Custom units
-
-
-   .. py:attribute:: __numerator_unit
-      :value: 1
-
-
-
-   .. py:attribute:: __denuminator_unit
-      :value: 1
-
-
-
-   .. py:attribute:: __numerator
-      :value: []
-
-
-
-   .. py:attribute:: __denuminator
-      :value: []
-
-
-
-   .. py:method:: __list2unit(_from: int | mudu.base._UnitType | collections.abc.Sequence[mudu.base._UnitType], check_length=False)
-
-
-   .. py:method:: convert_to(num: mudu.base._UnitType | collections.abc.Sequence)
-
-      Converts from one unit to another, provided that there is a conversion standard
-      defined for the units involved.
-
-      :param unit_type: The _UnitType instance to be converted to.
-      :type unit_type: _UnitType
-      :param return:
-      :type return: _DimensionType object with the `unit_type` as the unit.
-
-
-
 .. py:class:: GenericUnit(value, unit)
 
    Bases: :py:obj:`_DimensionType`
@@ -1141,6 +1113,65 @@ Package Contents
       same as the base class (_DimensionUnitBase)
 
       :type: _to
+
+
+.. py:class:: custom_unit(value: int | float, *, num: collections.abc.Sequence[mudu.base._UnitType], per: (collections.abc.Sequence[int] | collections.abc.Sequence[mudu.base._UnitType]) = (1, ), quantity=GENERIC_QUANTITY)
+
+   Bases: :py:obj:`DerivedQuantity`
+
+
+   Custom units
+
+
+   .. py:attribute:: __numerator_unit
+      :value: 1
+
+
+
+   .. py:attribute:: __denominator_unit
+      :value: 1
+
+
+
+   .. py:attribute:: __numerator
+      :value: []
+
+
+
+   .. py:attribute:: __denominator
+      :value: []
+
+
+
+   .. py:attribute:: __unit_definition
+      :value: 1.0
+
+
+
+   .. py:method:: __check_condition(_from, allow_int=False)
+
+
+   .. py:method:: __list2unit(_from: int | collections.abc.Sequence[mudu.base._UnitType], allow_int=False)
+
+
+   .. py:method:: __repr_only_one_quantity(_from: collections.abc.Sequence, is_denum=False)
+
+      Ensure that each unit represent exclusively only one quanitity
+
+
+
+   .. py:method:: convert_to(num: collections.abc.Sequence, per: collections.abc.Sequence)
+      :abstractmethod:
+
+
+      Converts from one unit to another, provided that there is a conversion standard
+      defined for the units involved.
+
+      :param unit_type: The _UnitType instance to be converted to.
+      :type unit_type: _UnitType
+      :param return:
+      :type return: _DimensionType object with the `unit_type` as the unit.
+
 
 
 .. py:class:: Length(value, unit)
@@ -1951,6 +1982,69 @@ Package Contents
 
 
 .. py:class:: DoseEquivalent(value, unit_definition)
+
+   Bases: :py:obj:`DerivedQuantity`
+
+
+   Base class for all derived quantities.  As an example,
+   `Force` class is a child class of `DerivedQuantity`. Check
+   the documenation at by running `mudu --doc` on the cli
+   on how to extend this class.
+
+   .. attribute:: _conversion_standards
+
+      Same as in `_DimensionUnitBase`
+
+      :type: _ConversionTableType
+
+   .. attribute:: _dimension
+
+      Same as in  `DimensionUnitBase`
+
+      :type: str
+
+   .. attribute:: value
+
+      Scalar value of the quantity
+
+      :type: _SetOnce[int | float]
+
+   .. attribute:: unit_type
+
+      unit definition of the quantity
+
+      :type: _UnitType
+
+   .. attribute:: symbol
+
+      Symbolic representation of the quantity unit
+
+      :type: sympy.Symbol
+
+   .. attribute:: create_unit
+
+      Internal class method for creating a new DerivedQuantity object instance
+      with the same argument signature as init.
+
+      :type: DerivedQuantity
+
+   .. attribute:: _check_and_convert
+
+      same as the base class  ((_DimensionUnitBase))
+
+      :type: x: Any, operator: Callable
+
+   .. attribute:: convert_to
+
+      same as the base class (_DimensionUnitBase)
+
+      :type: _to
+
+
+   .. py:attribute:: _conversion_standards
+
+
+.. py:class:: Speed(value, unit_definition)
 
    Bases: :py:obj:`DerivedQuantity`
 

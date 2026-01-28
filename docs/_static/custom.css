@@ -1,31 +1,59 @@
+/* Body text */
 body {
-    background-color:#196c21;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 10px;
-    color: #333;
-    line-height: 1.4;
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 14px; 
+    line-height: 1.6;
+    text-align: justify; 
+    color: #333333; 
 }
 
+/* Headers */
 h1, h2, h3, h4, h5, h6 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 600;
+    color: #2e7d32; 
+}
+
+/* Links */
+a {
+    color: #43a047; 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Code blocks */
+pre, code {
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #e8f5e9;
+}
+
+/* Sidebar / navigation links */
+.wy-nav-side a {
     color: #2e7d32;
 }
 
-.wy-side-nav-search {
-    background: #c8e6c9;
-}
-
-.wy-menu-nav-vertical a {
-    color: #1b3e20;
-}
-
-.wy-menu-vertical a:hover {
-    background-color: #a5d6a7;
-    color: black;
-}
-
-.wy-side-nav-search img {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
+.wy-nav-side a:hover {
+    color: #43a047;
 }

@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
-      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=9edaacbc" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3454c4f8" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="An Example" href="examples.html" />
-    <link rel="prev" title="Installation" href="installation.html" /> 
+    <link rel="prev" title="Installation mudu" href="installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,19 +47,52 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-mudu">Installing <strong>mudu</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation <strong>mudu</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#preresquisites">Preresquisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#specifying-units">Specifying units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unit-conversion">Unit conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#operating-with-units-multiple-prefix">Operating with units multiple prefix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#arithemetic-operations">Arithemetic Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#more-usage">More Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#specifying-dimensions-and-units">Specifying Dimensions and Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unit-conversion">Unit Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inspecting-quantity-attributes">Inspecting Quantity Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#units-with-order-prefixes">Units with Order Prefixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arithmetic-operations">Arithmetic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-hierarchy">Type Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-supported-operations">Other Supported Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dimensional-homogeneity-example">Dimensional Homogeneity Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-usage">Advanced Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#generic-quantities">Generic Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#derived-generic-quantities">Derived Generic Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extending-conversion-standards">Extending Conversion Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-dimensions">Custom Dimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-exploration">Interactive Exploration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-vectorized-quantities">Creating Vectorized Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#element-wise-arithmetic">Element-wise Arithmetic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operations-with-other-quantities">Operations with Other Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vectorized-derived-quantities">Vectorized Derived Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dimensional-semantics">Dimensional Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#design-notes-and-limitations">Design Notes and Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#terminology">Terminology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#future-work">Future Work</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#custom-units-experimental">Custom Units (Experimental)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-custom-unit">Creating a Custom Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inspecting-attributes">Inspecting Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arithmetic-and-comparison-semantics">Arithmetic and Comparison Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Dimensional Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conversion-limitations">Conversion Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#design-rationale">Design Rationale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#limitations-and-experimental-status">Limitations and Experimental Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#future-directions">Future Directions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">An Example</a><ul>
@@ -68,10 +101,18 @@
 <li class="toctree-l2"><a class="reference internal" href="examples.html#solution">Solution</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0-2026-01-28">Version 1.2.0 (2026-01-28)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#added">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#changed">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#fixed">Fixed</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-to-mudu">Contributing to <strong>mudu</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How To Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guideline">Coding guideline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#coding-guidelines">Coding Guidelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
 </ul>
 </li>
@@ -98,6 +139,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.AMOUNT_OF_SUBSTANCE"><code class="docutils literal notranslate"><span class="pre">AMOUNT_OF_SUBSTANCE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.LUMINOUS_INTENSITY"><code class="docutils literal notranslate"><span class="pre">LUMINOUS_INTENSITY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FORCE"><code class="docutils literal notranslate"><span class="pre">FORCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SPEED"><code class="docutils literal notranslate"><span class="pre">SPEED</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ENERGY"><code class="docutils literal notranslate"><span class="pre">ENERGY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DENSITY"><code class="docutils literal notranslate"><span class="pre">DENSITY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GENERIC_DIMENSION"><code class="docutils literal notranslate"><span class="pre">GENERIC_DIMENSION</span></code></a></li>
@@ -183,12 +225,17 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.RAD"><code class="docutils literal notranslate"><span class="pre">RAD</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.SIEVERT"><code class="docutils literal notranslate"><span class="pre">SIEVERT</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.REM"><code class="docutils literal notranslate"><span class="pre">REM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.METER_PER_SECOND"><code class="docutils literal notranslate"><span class="pre">METER_PER_SECOND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.MILE_PER_HOUR"><code class="docutils literal notranslate"><span class="pre">MILE_PER_HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KM_PER_HOUR"><code class="docutils literal notranslate"><span class="pre">KM_PER_HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.FOOT_PER_SECOND"><code class="docutils literal notranslate"><span class="pre">FOOT_PER_SECOND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.KNOT"><code class="docutils literal notranslate"><span class="pre">KNOT</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu._DimensionUnitBase"><code class="docutils literal notranslate"><span class="pre">_DimensionUnitBase</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu._DimensionType"><code class="docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DerivedQuantity"><code class="docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.custom_unit"><code class="docutils literal notranslate"><span class="pre">custom_unit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GenericUnit"><code class="docutils literal notranslate"><span class="pre">GenericUnit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.GenericUnit2"><code class="docutils literal notranslate"><span class="pre">GenericUnit2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.custom_unit"><code class="docutils literal notranslate"><span class="pre">custom_unit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Length"><code class="docutils literal notranslate"><span class="pre">Length</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Mass"><code class="docutils literal notranslate"><span class="pre">Mass</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Time"><code class="docutils literal notranslate"><span class="pre">Time</span></code></a></li>
@@ -214,6 +261,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Radioactivity"><code class="docutils literal notranslate"><span class="pre">Radioactivity</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.AbsorbedDose"><code class="docutils literal notranslate"><span class="pre">AbsorbedDose</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DoseEquivalent"><code class="docutils literal notranslate"><span class="pre">DoseEquivalent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.Speed"><code class="docutils literal notranslate"><span class="pre">Speed</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.DimensionError"><code class="docutils literal notranslate"><span class="pre">DimensionError</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.ConversionError"><code class="docutils literal notranslate"><span class="pre">ConversionError</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/mudu/index.html#mudu.NotIterableError"><code class="docutils literal notranslate"><span class="pre">NotIterableError</span></code></a></li>
@@ -253,228 +301,247 @@
              
   <section id="usage-guide">
 <h1>Usage Guide<a class="headerlink" href="#usage-guide" title="Link to this heading"></a></h1>
-<p>This section provides a brief but comprehensive tutorial on how to use mudu and its features. The section is divided into two sub-sections:</p>
+<p>This section provides a structured tutorial on the usage of <strong>mudu</strong>. It introduces the fundamental concepts required to work with unit-aware numerical data and progressively moves toward advanced usage patterns such as custom units, custom dimensions, and extension of conversion standards.</p>
+<p>The guide is divided into two main parts:</p>
 <ul class="simple">
-<li><p>Basic usage: covers the basics of specifying units and dimensions as well as arithemetic operations using mudu</p></li>
-<li><p>More usage: which covers more advanced features such as extending conversion standards, creating custom unit and dimensions e.t.c</p></li>
+<li><p><strong>Basic usage</strong>: specification of units and dimensions, unit conversion, and arithmetic operations</p></li>
+<li><p><strong>Advanced usage</strong>: extension of conversion standards, creation of custom units, and definition of custom quantities</p></li>
 </ul>
-<section id="preresquisites">
-<h2>Preresquisites<a class="headerlink" href="#preresquisites" title="Link to this heading"></a></h2>
-<p>To follow this tutorial and get the most out of it, it is assumed that readers have:</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<p>To follow this guide effectively, the reader is expected to have:</p>
 <ul class="simple">
-<li><p>Basic understanding of Python programming language</p></li>
-<li><p>Secondary school (or equivalent) knowledge of dimensions and dimensional analysis</p></li>
+<li><p>Basic proficiency in Python programming</p></li>
+<li><p>Secondary school–level understanding of physical dimensions and dimensional analysis</p></li>
 </ul>
-</section>
 <section id="basic-usage">
-<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading"></a></h2>
+<h3>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading"></a></h3>
 </section>
-<section id="specifying-units">
-<h2>Specifying units<a class="headerlink" href="#specifying-units" title="Link to this heading"></a></h2>
-<p>To specify units, simply import the neccesary dimensions and units, and create a dimension object.</p>
+</section>
+<section id="specifying-dimensions-and-units">
+<h2>Specifying Dimensions and Units<a class="headerlink" href="#specifying-dimensions-and-units" title="Link to this heading"></a></h2>
+<p>In <strong>mudu</strong>, numerical values are associated with physical meaning through <em>dimensions</em> and <em>units</em>. A dimension represents a physical quantity (e.g. length, time, force), while a unit represents a particular scale or measurement standard for that dimension.</p>
+<p>To create a quantity, import the required dimension class and unit, then instantiate the dimension with a numerical value and unit definition.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Length</span><span class="p">,</span> <span class="n">METER</span><span class="p">,</span> <span class="n">INCH</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Time</span><span class="p">,</span> <span class="n">SECOND</span><span class="p">,</span> <span class="n">HOUR</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Force</span><span class="p">,</span> <span class="n">NEWTON</span><span class="p">,</span> <span class="n">DYNE</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pressure</span><span class="p">,</span> <span class="n">PASCAL</span><span class="p">,</span> <span class="n">mmHg</span>
 
-<span class="c1"># create a fundamental quantity</span>
 <span class="n">length</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">INCH</span><span class="p">)</span>
-
 <span class="n">t0</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">HOUR</span><span class="p">)</span>
 
-<span class="c1"># create a derived quantity</span>
 <span class="n">force</span> <span class="o">=</span> <span class="n">Force</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">NEWTON</span><span class="p">)</span>
-
 <span class="n">pressure</span> <span class="o">=</span> <span class="n">Pressure</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">PASCAL</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Objects like <cite>Length</cite>, <cite>Mass</cite>, <cite>Time</cite> are  called dimensions while <cite>METER</cite>, <cite>INCH</cite> and <cite>NEWTON</cite> are called units. Also note that <cite>dimensions are defined in title case</cite>, while <cite>units are defined in all caps</cite>. For a more comprehensive list of dimensions and unit, check the <cite>API Reference</cite> section.</p>
+<p>Here, <cite>Length</cite>, <cite>Time</cite>, <cite>Force</cite>, and <cite>Pressure</cite> are <em>dimension classes</em>, while <cite>INCH</cite>, <cite>METER</cite>, and <cite>NEWTON</cite> are <em>unit definitions</em>.</p>
+<p>By convention:
+- Dimension classes are defined in <em>TitleCase</em>
+- Unit definitions are defined in <em>UPPERCASE</em></p>
+<p>A complete list of available dimensions and units is provided in the API Reference.</p>
 </section>
 <section id="unit-conversion">
-<h2>Unit conversion<a class="headerlink" href="#unit-conversion" title="Link to this heading"></a></h2>
-<p>Unit conversion is done by using the dimension <cite>convert_to</cite> method.</p>
+<h2>Unit Conversion<a class="headerlink" href="#unit-conversion" title="Link to this heading"></a></h2>
+<p>Unit conversion is performed using the <cite>convert_to</cite> method of a dimension instance.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">length</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">METER</span><span class="p">)</span>
-
 <span class="n">t0</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">SECOND</span><span class="p">)</span>
-
-<span class="n">t0</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">METER</span><span class="p">)</span>    <span class="c1"># does not make sense</span>
-
-<span class="c1"># there is also support for conversion between some derived quantities</span>
-<span class="n">force</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">DYNE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Attempting to convert between incompatible dimensions raises an exception.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">METER</span><span class="p">)</span>      <span class="c1"># invalid</span>
+<span class="n">pressure</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">NEWTON</span><span class="p">)</span>  <span class="c1"># invalid</span>
+</pre></div>
+</div>
+<p>Conversions between compatible derived units are supported when conversion standards exist.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">force</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">DYNE</span><span class="p">)</span>
 <span class="n">pressure</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">mmHg</span><span class="p">)</span>
-
-<span class="n">pressure</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">NEWTON</span><span class="p">)</span>     <span class="c1"># definitely does not make sense</span>
 </pre></div>
 </div>
-<p><strong>NOTE</strong> Converting between units representing different dimensions raises an <cite>exceptions.ConversionError</cite>.</p>
-<p>The scalar value, symbol, dimension and quantity (for derived quantities) can also be accessed e.g.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># for fundamental quantites</span>
-<span class="n">length</span><span class="o">.</span><span class="n">value</span>    <span class="c1"># -&gt; 12</span>
-<span class="n">length</span><span class="o">.</span><span class="n">symbol</span>   <span class="c1"># -&gt; in</span>
-<span class="n">length</span><span class="o">.</span><span class="n">dimension</span>    <span class="c1"># -&gt; L</span>
-
-<span class="c1"># for derived quantity</span>
-<span class="n">force</span><span class="o">.</span><span class="n">value</span> <span class="c1"># -&gt; 1</span>
-<span class="n">force</span><span class="o">.</span><span class="n">quantity</span>  <span class="c1"># -&gt; Force</span>
-<span class="n">force</span><span class="o">.</span><span class="n">dimension</span> <span class="c1"># -&gt; L*M/T**2</span>
-<span class="n">force</span><span class="o">.</span><span class="n">unit_type</span> <span class="c1"># -&gt; N</span>
+<p><strong>Note:</strong> Converting between units of different dimensions raises <cite>exceptions.ConversionError</cite>.</p>
+</section>
+<section id="inspecting-quantity-attributes">
+<h2>Inspecting Quantity Attributes<a class="headerlink" href="#inspecting-quantity-attributes" title="Link to this heading"></a></h2>
+<p>Each dimension object exposes several useful attributes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">length</span><span class="o">.</span><span class="n">value</span>        <span class="c1"># numerical value</span>
+<span class="n">length</span><span class="o">.</span><span class="n">symbol</span>       <span class="c1"># unit symbol</span>
+<span class="n">length</span><span class="o">.</span><span class="n">dimension</span>    <span class="c1"># symbolic dimension (e.g. L)</span>
 </pre></div>
 </div>
-<p><strong>NOTE</strong> <em>obj.dimension</em> returns a sympy <cite>sympy.core</cite> child object that represents the dimension of the unit, and in the case of derived quantities, it does some sort dimensional analysis.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">velocity</span> <span class="o">=</span> <span class="n">length</span><span class="o">/</span><span class="n">t0</span>
-<span class="n">velocity</span><span class="o">.</span><span class="n">dimension</span>  <span class="c1"># -&gt; L/T</span>
+<p>For derived quantities:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">force</span><span class="o">.</span><span class="n">value</span>
+<span class="n">force</span><span class="o">.</span><span class="n">quantity</span>
+<span class="n">force</span><span class="o">.</span><span class="n">dimension</span>     <span class="c1"># e.g. L*M/T**2</span>
+<span class="n">force</span><span class="o">.</span><span class="n">unit_type</span>
+</pre></div>
+</div>
+<p>The <cite>dimension</cite> attribute returns a SymPy symbolic expression representing the dimensional form of the quantity. This enables automatic dimensional analysis during arithmetic operations.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">velocity</span> <span class="o">=</span> <span class="n">length</span> <span class="o">/</span> <span class="n">t0</span>
+<span class="n">velocity</span><span class="o">.</span><span class="n">dimension</span>   <span class="c1"># -&gt; L/T</span>
 </pre></div>
 </div>
 </section>
-<section id="operating-with-units-multiple-prefix">
-<h2>Operating with units multiple prefix<a class="headerlink" href="#operating-with-units-multiple-prefix" title="Link to this heading"></a></h2>
-<p>It is also possible to create units with multiples by specifying their multiple prefixes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Length</span><span class="p">,</span> <span class="n">METER</span><span class="p">,</span> <span class="n">INCH</span><span class="p">,</span> <span class="n">Force</span><span class="p">,</span> <span class="n">KILO</span><span class="p">,</span> <span class="n">MILLI</span><span class="p">,</span> <span class="n">OrderUnit</span>
+<section id="units-with-order-prefixes">
+<h2>Units with Order Prefixes<a class="headerlink" href="#units-with-order-prefixes" title="Link to this heading"></a></h2>
+<p><strong>mudu</strong> supports the construction of units with metric order prefixes such as kilo-, milli-, etc.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderUnit</span><span class="p">,</span> <span class="n">KILO</span><span class="p">,</span> <span class="n">MILLI</span>
 
-<span class="c1"># creating units in their multiples</span>
 <span class="n">KILONEWTON</span> <span class="o">=</span> <span class="n">OrderUnit</span><span class="p">(</span><span class="n">KILO</span><span class="p">,</span> <span class="n">NEWTON</span><span class="p">)</span>
 <span class="n">MILLIMETER</span> <span class="o">=</span> <span class="n">OrderUnit</span><span class="p">(</span><span class="n">MILLI</span><span class="p">,</span> <span class="n">METER</span><span class="p">)</span>
-<span class="n">KILOINCH</span> <span class="o">=</span> <span class="n">OrderUnit</span><span class="p">(</span><span class="n">KILO</span><span class="p">,</span> <span class="n">INCH</span><span class="p">)</span>    <span class="c1"># if it makes sense to you</span>
 
 <span class="n">l</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">MILLIMETER</span><span class="p">)</span>
 <span class="n">F</span> <span class="o">=</span> <span class="n">Force</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">KILONEWTON</span><span class="p">)</span>
-
-<span class="n">area</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="n">l</span>
-
-<span class="c1"># you can also convert units with multiples</span>
-<span class="n">l_in_meter</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">METER</span><span class="p">)</span>    <span class="c1"># very valid</span>
-<span class="n">new_area</span> <span class="o">=</span> <span class="n">l_in_meter</span> <span class="o">*</span> <span class="n">l_in_meter</span>
-
-<span class="c1"># Note</span>
-<span class="n">err_area</span> <span class="o">=</span> <span class="n">area</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">METER</span><span class="p">)</span>   <span class="c1"># throws an error</span>
-
-<span class="n">pressure</span> <span class="o">=</span> <span class="n">F</span> <span class="o">/</span> <span class="n">new_area</span>
 </pre></div>
 </div>
-<p>The <cite>OrderUnit</cite> is subclass of <cite>_UnitType</cite> used to create units in their multiples, and supports the same operations as <cite>_UnitType</cite>. <cite>KILO</cite> and <cite>MILLI</cite> (and other multiple prefixes) are instances of <cite>_OrderType</cite>. See the API Reference page for more information.</p>
+<p>These prefixed units behave identically to base units and support conversion and arithmetic.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">METER</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Attempting to convert quantities with incompatible dimensions still raises errors.</p>
 </section>
-<section id="arithemetic-operations">
-<h2>Arithemetic Operations<a class="headerlink" href="#arithemetic-operations" title="Link to this heading"></a></h2>
-<p>mudu objects also support arithemetic operations provided they are legal in the context provided. Illegal operations trigger exceptions. For example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># legal arthemetic operations</span>
-<span class="n">total_length</span> <span class="o">=</span> <span class="n">length</span> <span class="o">+</span> <span class="n">length</span>  <span class="c1"># in inches</span>
-
-<span class="c1"># adding a unit object to a scalar returns a scalar</span>
-<span class="n">small_length</span> <span class="o">=</span> <span class="n">total_length</span> <span class="o">+</span> <span class="mi">1</span>     <span class="c1"># same as total_length.value + 1</span>
-<span class="n">large_length</span> <span class="o">=</span> <span class="mf">5.3</span> <span class="o">+</span> <span class="n">small_length</span>  <span class="c1"># same as 5.3 + small_length.value</span>
+<section id="arithmetic-operations">
+<h2>Arithmetic Operations<a class="headerlink" href="#arithmetic-operations" title="Link to this heading"></a></h2>
+<p>Dimension objects support arithmetic operations where mathematically valid.</p>
+<p>Addition and subtraction are permitted only between quantities of the same dimension.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_length</span> <span class="o">=</span> <span class="n">length</span> <span class="o">+</span> <span class="n">length</span>
+<span class="n">reduced_length</span> <span class="o">=</span> <span class="n">length</span> <span class="o">-</span> <span class="n">Length</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">INCH</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Subraction operator treats data just like the addition operator would.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">small_length</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">INCH</span><span class="p">)</span>
-<span class="n">total_length</span> <span class="o">=</span> <span class="n">length</span> <span class="o">-</span> <span class="n">small_length</span>  <span class="c1"># in inches</span>
-
-<span class="c1"># adding a unit object to a scalar returns a scalar</span>
-<span class="n">smaller_length</span> <span class="o">=</span> <span class="n">total_length</span> <span class="o">-</span> <span class="mi">1</span>     <span class="c1"># same as total_length.value - 1</span>
+<p>Adding or subtracting scalars returns a scalar value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_length</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="mf">5.3</span> <span class="o">+</span> <span class="n">total_length</span>
 </pre></div>
 </div>
-<p><strong>NOTE</strong> Not all addition and subtraction operations are valid, some would cause errors because they are dimensionally incompatible. For example:</p>
+<p>Illegal operations raise <cite>exceptions.DimensionError</cite>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">SECOND</span><span class="p">)</span>
 <span class="n">l</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="mi">144</span><span class="p">,</span> <span class="n">METER</span><span class="p">)</span>
 
-<span class="c1"># an illegal arithemetic would look like</span>
-<span class="n">t_l</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">l</span>     <span class="c1"># adding time and length dimensions does not make sense</span>
+<span class="n">t</span> <span class="o">+</span> <span class="n">l</span>   <span class="c1"># invalid</span>
 </pre></div>
 </div>
-<p>adding time and length dimension objects does not make sense, so this operation raises an <cite>exceptions.DimensionError</cite>.</p>
-<p>Multiplication and division operation follow all dimensional rules as well.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># unit multiplication and division operation</span>
-<span class="n">area</span> <span class="o">=</span> <span class="n">length</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># result is a DerivedQuantity object</span>
-<span class="n">pressure</span> <span class="o">=</span> <span class="n">force</span> <span class="o">/</span> <span class="n">area</span> <span class="c1"># also a DerivedQuantity object</span>
-
-<span class="c1"># and you can still check the following</span>
-<span class="n">pressure</span><span class="o">.</span><span class="n">value</span>
+<p>Multiplication and division follow dimensional rules and typically produce derived quantities.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="n">length</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">pressure</span> <span class="o">=</span> <span class="n">force</span> <span class="o">/</span> <span class="n">area</span>
+</pre></div>
+</div>
+<p>These derived quantities retain accessible attributes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pressure</span><span class="o">.</span><span class="n">value</span>
 <span class="n">pressure</span><span class="o">.</span><span class="n">quantity</span>
 <span class="n">pressure</span><span class="o">.</span><span class="n">dimension</span>
 <span class="n">pressure</span><span class="o">.</span><span class="n">symbol</span>
-
-<span class="c1"># operations like these are also allowed</span>
-<span class="n">p0</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">pressure</span>
-<span class="n">p_inv</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">pressure</span>
 </pre></div>
 </div>
-<p><strong>NOTE</strong> It is important to note that, multiplication and division operations between two or more <cite>_DimensionType</cite> objects return a <cite>DerivedQuantity</cite> object, its mathematics really. In the case where the arithemetic operation is between data of the same dimension but different unit, the right hand operand is implicity converted to the same unit as the left operand.</p>
+<p>Scalar interactions are also supported.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="n">pressure</span>
+<span class="mi">1</span> <span class="o">/</span> <span class="n">pressure</span>
+</pre></div>
+</div>
+<p>When operating on quantities of the same dimension but different units, the right-hand operand is implicitly converted to the unit of the left-hand operand.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">length_in_m</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">METER</span><span class="p">)</span>
-
-<span class="n">total_length</span> <span class="o">=</span> <span class="n">length</span> <span class="o">+</span> <span class="n">length_in_m</span> <span class="c1"># total_length is now in INCHes</span>
-
-<span class="n">l_sqr</span> <span class="o">=</span> <span class="n">length_in_m</span> <span class="o">*</span> <span class="n">length</span>    <span class="c1"># l_sqr is in METERs</span>
+<span class="n">total_length</span> <span class="o">=</span> <span class="n">length</span> <span class="o">+</span> <span class="n">length_in_m</span>
 </pre></div>
 </div>
-<p>By checking the type of <cite>length</cite> and <cite>force</cite>, their types are <cite>mudu.dimensions.Length</cite> and <cite>mudu.dimensions.Force</cite> respectively, but if you try:</p>
+</section>
+<section id="type-hierarchy">
+<h2>Type Hierarchy<a class="headerlink" href="#type-hierarchy" title="Link to this heading"></a></h2>
+<p>Fundamental quantities (e.g. <cite>Length</cite>, <cite>Time</cite>) inherit from <cite>_DimensionType</cite>, while derived quantities inherit from <cite>DerivedQuantity</cite>. Both derive from <cite>_DimensionUnitBase</cite>.</p>
+<p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">surface_tension</span> <span class="o">=</span> <span class="n">force</span> <span class="o">*</span> <span class="n">length</span>
-<span class="nb">isinstance</span><span class="p">(</span><span class="n">force</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">surface_tension</span><span class="p">))</span>    <span class="c1"># the result is True</span>
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">surface_tension</span><span class="p">,</span> <span class="n">force</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>  <span class="c1"># False</span>
 </pre></div>
 </div>
-<p>So it is worthy to note that every derived quantity is a child class of <cite>mudu.dimensions.DerivedQuantity</cite> while every fundamental quantity is a child class of <cite>mudu.dimensions._DimensionType</cite>. Both classes inherit from <cite>_DimensionUnitBase</cite>.</p>
-<p>Other operations such as <cite>int</cite>, <cite>float</cite>, <cite>round</cite> are also possible. For more information about possible operators and operations, check the <cite>API Reference</cite> section.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># same as int(length.value)</span>
-<span class="nb">int</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-
-<span class="c1"># same as float(length.value)</span>
+<p>All derived quantities are instances of <cite>DerivedQuantity</cite>.</p>
+</section>
+<section id="other-supported-operations">
+<h2>Other Supported Operations<a class="headerlink" href="#other-supported-operations" title="Link to this heading"></a></h2>
+<p>Built-in numerical operations are supported.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
 <span class="nb">float</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-
-<span class="c1"># round length.value to x decimal place, the unit is preserved</span>
-<span class="nb">round</span><span class="p">(</span><span class="n">length</span><span class="o">*</span><span class="mf">0.0122</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># round to 2 decimal places</span>
-
-<span class="c1"># floor division is also possible</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="mf">12.23</span><span class="p">,</span> <span class="n">METER</span><span class="p">)</span>
-<span class="n">r</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># -&gt; 6.0</span>
+<span class="nb">round</span><span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="mf">0.0122</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Lets try something</p>
+<p>Floor division is also defined.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="mf">12.23</span><span class="p">,</span> <span class="n">METER</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="dimensional-homogeneity-example">
+<h2>Dimensional Homogeneity Example<a class="headerlink" href="#dimensional-homogeneity-example" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Length</span><span class="p">,</span> <span class="n">METER</span><span class="p">,</span> <span class="n">Pressure</span><span class="p">,</span> <span class="n">PSI</span><span class="p">,</span> <span class="n">Force</span><span class="p">,</span> <span class="n">NEWTON</span>
 
 <span class="n">length</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">METER</span><span class="p">)</span>
 <span class="n">force</span> <span class="o">=</span> <span class="n">Force</span><span class="p">(</span><span class="mi">112</span><span class="p">,</span> <span class="n">NEWTON</span><span class="p">)</span>
-<span class="n">pressure</span> <span class="o">=</span> <span class="n">Pressure</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">PSI</span><span class="p">)</span>
 
 <span class="n">area</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">length</span>
 <span class="n">pressure_2</span> <span class="o">=</span> <span class="n">force</span> <span class="o">/</span> <span class="n">area</span>
 
-<span class="n">pressure</span> <span class="o">==</span> <span class="n">pressure_2</span>  <span class="c1"># is False</span>
+<span class="n">pressure</span> <span class="o">=</span> <span class="n">Pressure</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">PSI</span><span class="p">)</span>
 
-<span class="n">pressure</span><span class="o">.</span><span class="n">dimension</span> <span class="o">==</span> <span class="n">pressure_2</span><span class="o">.</span><span class="n">dimension</span>  <span class="c1"># is True</span>
+<span class="n">pressure</span> <span class="o">==</span> <span class="n">pressure_2</span>               <span class="c1"># False</span>
+<span class="n">pressure</span><span class="o">.</span><span class="n">dimension</span> <span class="o">==</span> <span class="n">pressure_2</span><span class="o">.</span><span class="n">dimension</span>  <span class="c1"># True</span>
 </pre></div>
 </div>
-<p>That example was intended to show the idea of dimensional homogeniety - I hope it did. For more information about available methods and functionalities, check the API reference.</p>
+<p>This illustrates dimensional homogeneity: quantities may differ numerically yet share the same dimension.</p>
+<section id="advanced-usage">
+<h3>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Link to this heading"></a></h3>
 </section>
-<section id="more-usage">
-<h2>More Usage<a class="headerlink" href="#more-usage" title="Link to this heading"></a></h2>
-<p>Dimension objects like <cite>Length</cite>, <cite>Time</cite> and <cite>Force</cite> have some built-in conversion standards defined as the class attribute, <cite>_conversion_standards</cite>, that is why it is possible to convert between units provided the dimensions are the same. This is not always the case for all dimensions or quantites, hence, to convert a dimension objects with an empty <cite>_conversion_standards</cite> attribute to a new unit, the new unit must:</p>
-<ul class="simple">
-<li><p>first be created</p></li>
-<li><p>then the conversion standard is defined</p></li>
-<li><p>then the  <cite>Dimension._conversion_standards</cite> is extended</p></li>
-</ul>
-<p>This process, though it seems like a lot, is actually very simple and straightforward. This topic will be the main course of this tutorial section.</p>
-<p>So with the problem defined, lets get coding.</p>
+</section>
+<section id="generic-quantities">
+<h2>Generic Quantities<a class="headerlink" href="#generic-quantities" title="Link to this heading"></a></h2>
+<p>Some quantities are defined using <cite>GenericUnit</cite>, such as electric current and solid angle.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericUnit</span><span class="p">,</span> <span class="n">AMPERE</span><span class="p">,</span> <span class="n">STERADIAN</span>
+
+<span class="n">ElectricCurrent</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">GenericUnit</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">AMPERE</span><span class="p">)</span>
+<span class="n">SolidAngle</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">GenericUnit</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">STERADIAN</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">ElectricCurrent</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">SolidAngle</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="derived-generic-quantities">
+<h2>Derived Generic Quantities<a class="headerlink" href="#derived-generic-quantities" title="Link to this heading"></a></h2>
+<p>For derived quantities without explicit dimension classes, <cite>GenericUnit2</cite> is provided.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericUnit2</span><span class="p">,</span> <span class="n">VOLT</span>
+
+<span class="n">Voltage</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">GenericUnit2</span><span class="p">,</span> <span class="n">unit_definition</span><span class="o">=</span><span class="n">VOLT</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="extending-conversion-standards">
+<h2>Extending Conversion Standards<a class="headerlink" href="#extending-conversion-standards" title="Link to this heading"></a></h2>
+<p>Dimension classes store conversion logic in <cite>_conversion_standards</cite>. To extend conversion support:</p>
+<ol class="arabic simple">
+<li><p>Define a new unit</p></li>
+<li><p>Define a conversion function</p></li>
+<li><p>Extend the dimension’s conversion table</p></li>
+</ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pressure</span><span class="p">,</span> <span class="n">PSI</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">mudu.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">_UnitType</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">mudu.units</span><span class="w"> </span><span class="kn">import</span> <span class="n">_basic_unit_converter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
 
-<span class="c1"># define a new unit type</span>
 <span class="n">NEW_UNIT</span> <span class="o">=</span> <span class="n">_UnitType</span><span class="p">(</span>
-    <span class="n">_dimension</span><span class="o">=</span><span class="n">LENGTH</span><span class="p">,</span>
+    <span class="n">_dimension</span><span class="o">=</span><span class="n">Pressure</span><span class="o">.</span><span class="n">_dimension</span><span class="p">,</span>
     <span class="n">_unit_name</span><span class="o">=</span><span class="s2">&quot;new_unit&quot;</span><span class="p">,</span>
     <span class="n">_unit_symbol</span><span class="o">=</span><span class="s2">&quot;nu&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
+<span class="p">)</span>
 
-<span class="c1"># create a conversion standard with METER</span>
-<span class="n">seq</span> <span class="o">=</span> <span class="p">((</span><span class="n">NEW_UNIT</span><span class="p">,</span> <span class="n">PSI</span><span class="p">),</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">_basic_unit_converter</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.001</span><span class="p">))</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="p">((</span><span class="n">NEW_UNIT</span><span class="p">,</span> <span class="n">PSI</span><span class="p">),</span>
+       <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">_basic_unit_converter</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.001</span><span class="p">))</span>
 
-<span class="c1"># extend the conversion table</span>
 <span class="n">Pressure</span><span class="o">.</span><span class="n">_conversion_standards</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
-
-<span class="n">p1</span> <span class="o">=</span> <span class="n">Pressure</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">PSI</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">NEW_UNIT</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span>    <span class="c1"># p2 is in units of NEW_UNIT</span>
 </pre></div>
 </div>
-<p>To create a custom quantity or ‘dimension’, simply inherit from <cite>_DimensionType</cite> class or <cite>DerivedQuantity</cite> class. The API reference has more details about the implementation of both classes.</p>
+</section>
+<section id="custom-dimensions">
+<h2>Custom Dimensions<a class="headerlink" href="#custom-dimensions" title="Link to this heading"></a></h2>
+<p>Custom quantities can be defined by subclassing <cite>DerivedQuantity</cite> or <cite>_DimensionType</cite>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu.dimensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">DerivedQuantity</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Power</span><span class="p">(</span><span class="n">DerivedQuantity</span><span class="p">):</span>
@@ -482,63 +549,265 @@
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">unit_definition</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">unit_definition</span><span class="p">,</span> <span class="n">quantity</span><span class="o">=</span><span class="s2">&quot;power&quot;</span><span class="p">)</span>
-
-<span class="n">JOULES</span> <span class="o">=</span> <span class="n">_UnitType</span><span class="p">(</span>
-    <span class="n">_dimension</span><span class="o">=</span><span class="p">((</span><span class="n">NEWTON</span><span class="o">*</span><span class="n">METER</span><span class="p">)</span><span class="o">/</span><span class="n">SECOND</span><span class="p">)</span><span class="o">.</span><span class="n">_dimension</span><span class="p">,</span>
-    <span class="n">_unit_name</span><span class="o">=</span><span class="s2">&quot;joules&quot;</span><span class="p">,</span>
-    <span class="n">_unit_symbol</span><span class="o">=</span><span class="s2">&quot;J&quot;</span><span class="p">,</span>
-    <span class="n">_quantity</span><span class="o">=</span><span class="s2">&quot;power&quot;</span><span class="p">,</span>
-    <span class="n">_order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">power</span> <span class="o">=</span> <span class="n">Power</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">JOULES</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>NOTE</strong> As of this current version, some derived quantites have not been implemented, other quantites and units will be implemented as soon as possible. A good practice will be creating all custom defined units in a different file and then extending the dimension in the main file, but then, the decision is up to you.</p>
-<p>As a way of ending this tutorial, I recommend trying out the following on Python repl.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\U</span>sers<span class="se">\U</span>SER<span class="se">\D</span>esktop<span class="se">\m</span>udu&gt;python
-Python<span class="w"> </span><span class="m">3</span>.14.2<span class="w"> </span><span class="o">(</span>tags/v3.14.2:df79316,<span class="w"> </span>Dec<span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="m">2025</span>,<span class="w"> </span><span class="m">17</span>:18:21<span class="o">)</span><span class="w"> </span><span class="o">[</span>MSC<span class="w"> </span>v.1944<span class="w"> </span><span class="m">64</span><span class="w"> </span>bit<span class="w"> </span><span class="o">(</span>AMD64<span class="o">)]</span><span class="w"> </span>on<span class="w"> </span>win32
-Type<span class="w"> </span><span class="s2">&quot;help&quot;</span>,<span class="w"> </span><span class="s2">&quot;copyright&quot;</span>,<span class="w"> </span><span class="s2">&quot;credits&quot;</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;license&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information.
-&gt;&gt;&gt;
-&gt;&gt;&gt;<span class="w"> </span>from<span class="w"> </span>mudu<span class="w"> </span>import<span class="w"> </span>Pressure,<span class="w"> </span>PSI,<span class="w"> </span>METER,<span class="w"> </span>SECOND
-&gt;&gt;&gt;
-&gt;&gt;&gt;<span class="w"> </span>METER
-m
-&gt;&gt;&gt;
-&gt;&gt;&gt;<span class="w"> </span>METER<span class="w"> </span>*<span class="w"> </span>METER
-m^2
-&gt;&gt;&gt;
-&gt;&gt;&gt;<span class="w"> </span>PSI<span class="w"> </span>/<span class="w"> </span>METER
-psi/m
-&gt;&gt;&gt;
-&gt;&gt;&gt;<span class="w"> </span><span class="m">3</span><span class="w"> </span>*<span class="w"> </span>PSI
-psi
-&gt;&gt;&gt;
-&gt;&gt;&gt;<span class="w"> </span>PSI<span class="w"> </span>/<span class="w"> </span><span class="m">3</span>
-psi
-&gt;&gt;&gt;
-&gt;&gt;&gt;<span class="w"> </span>PSI<span class="w"> </span>*<span class="w"> </span><span class="m">3</span>
-psi
-&gt;&gt;&gt;
-&gt;&gt;&gt;<span class="w"> </span><span class="m">4</span><span class="w"> </span>/<span class="w"> </span>PSI
+<p><strong>Note:</strong> Some quantities are not yet implemented in the current version. Users are encouraged to define custom units and quantities as needed.</p>
+</section>
+<section id="interactive-exploration">
+<h2>Interactive Exploration<a class="headerlink" href="#interactive-exploration" title="Link to this heading"></a></h2>
+<p>The Python REPL is a useful environment for exploring unit arithmetic.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span>from<span class="w"> </span>mudu<span class="w"> </span>import<span class="w"> </span>PSI,<span class="w"> </span>METER
+&gt;&gt;&gt;<span class="w"> </span>PSI<span class="w"> </span>*<span class="w"> </span>METER
+psi·m
+&gt;&gt;&gt;<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>PSI
 <span class="m">1</span>/psi
-&gt;&gt;&gt;
-&gt;&gt;&gt;
 &gt;&gt;&gt;<span class="w"> </span>PSI<span class="w"> </span>+<span class="w"> </span>METER
-Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
-File<span class="w"> </span><span class="s2">&quot;&lt;python-input-18&gt;&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
-<span class="w">    </span>PSI<span class="w"> </span>+<span class="w"> </span>METER
-<span class="w">    </span>~~~~^~~~~~~
-TypeError:<span class="w"> </span>unsupported<span class="w"> </span>operand<span class="w"> </span>type<span class="o">(</span>s<span class="o">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>+:<span class="w"> </span><span class="s1">&#39;_UnitType&#39;</span><span class="w"> </span>and<span class="w"> </span><span class="s1">&#39;_UnitType&#39;</span>
-&gt;&gt;&gt;
-&gt;&gt;&gt;<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span><span class="o">(</span>PSI<span class="w"> </span>*<span class="w"> </span>METER<span class="o">)</span>
-<span class="m">1</span>/<span class="o">(</span>mpsi<span class="o">)</span>
-&gt;&gt;&gt;
-&gt;&gt;&gt;
+TypeError
 </pre></div>
 </div>
-<p>The idea behind the above example is to illustrate the way <cite>_UnitType</cite> objects can perform arithemetic operations.
-I hope you now have a grasp on how to use <strong>mudu</strong> and its features. I hope you find mudu useful and beneficial to your scientific computation projects.</p>
+<p>In addition to scalar-valued quantities, <strong>mudu</strong> provides <em>experimental</em> support for <strong>vectorized quantities</strong>, where the numerical magnitude of a dimension object is an array-like structure (e.g. list or iterable). This enables element-wise arithmetic, unit conversion, and dimensional analysis over collections of values while preserving unit safety and dimensional correctness.</p>
+<p>This feature is intended to support lightweight batch computations and exploratory numerical analysis without requiring explicit NumPy arrays or external vectorization frameworks.</p>
+<p>Conceptually, a vectorized quantity in <strong>mudu</strong> is:</p>
+<ul class="simple">
+<li><p>a <em>single physical quantity</em>,</p></li>
+<li><p>with a <em>uniform unit definition</em>,</p></li>
+<li><p>and an <em>array-valued magnitude</em>.</p></li>
+</ul>
+<p>This is distinct from an array of independent quantity objects.</p>
+<section id="creating-vectorized-quantities">
+<h3>Creating Vectorized Quantities<a class="headerlink" href="#creating-vectorized-quantities" title="Link to this heading"></a></h3>
+<p>A vectorized quantity is created by passing an iterable as the value argument when instantiating a dimension object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Length</span><span class="p">,</span> <span class="n">METER</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="n">Length</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)],</span> <span class="n">METER</span><span class="p">)</span>
+<span class="n">l</span>
+
+<span class="c1"># Output:</span>
+<span class="c1"># [0 m 1 m 2 m 3 m 4 m 5 m 6 m 7 m 8 m 9 m 10 m 11 m]</span>
+</pre></div>
+</div>
+<p>Here, <cite>l</cite> represents a vectorized length quantity whose magnitude is a sequence of values, all expressed in meters.</p>
+</section>
+<section id="element-wise-arithmetic">
+<h3>Element-wise Arithmetic<a class="headerlink" href="#element-wise-arithmetic" title="Link to this heading"></a></h3>
+<p>Arithmetic operations involving vectorized quantities are applied <strong>element-wise</strong> to the underlying magnitude, provided the operation is dimensionally valid.</p>
+<p>Scalar operations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="c1"># Output:</span>
+<span class="c1"># [0.0 m 0.5 m 1.0 m 1.5 m 2.0 m 2.5 m 3.0 m 3.5 m 4.0 m 4.5 m 5.0 m 5.5 m]</span>
+</pre></div>
+</div>
+<p>Division by a scalar preserves the unit and applies the operation to each element independently.</p>
+</section>
+<section id="operations-with-other-quantities">
+<h3>Operations with Other Quantities<a class="headerlink" href="#operations-with-other-quantities" title="Link to this heading"></a></h3>
+<p>Vectorized quantities may participate in arithmetic with scalar-valued quantities of compatible dimensions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Time</span><span class="p">,</span> <span class="n">SECOND</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">SECOND</span><span class="p">)</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="n">l</span> <span class="o">/</span> <span class="n">t</span>
+<span class="n">speed</span>
+
+<span class="c1"># Output:</span>
+<span class="c1"># [0 m/s 12 m/s 24 m/s 36 m/s 48 m/s 60 m/s</span>
+<span class="c1">#  72 m/s 84 m/s 96 m/s 108 m/s 120 m/s 132 m/s]</span>
+</pre></div>
+</div>
+<p>In this example, division is performed element-wise, producing a vectorized derived quantity with dimension L/T.</p>
+</section>
+<section id="vectorized-derived-quantities">
+<h3>Vectorized Derived Quantities<a class="headerlink" href="#vectorized-derived-quantities" title="Link to this heading"></a></h3>
+<p>Derived quantities may also be vectorized.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Force</span><span class="p">,</span> <span class="n">NEWTON</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">Force</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="n">NEWTON</span><span class="p">)</span>
+<span class="n">f</span>
+
+<span class="c1"># Output:</span>
+<span class="c1"># [12 N 24 N 45 N]</span>
+</pre></div>
+</div>
+<p>Unit conversion remains fully supported.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">DYNE</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">DYNE</span><span class="p">)</span>
+
+<span class="c1"># Output:</span>
+<span class="c1"># [1200000.0 dyn 2400000.0 dyn 4500000.0 dyn]</span>
+</pre></div>
+</div>
+<p>Conversion is applied element-wise while enforcing dimensional compatibility.</p>
+</section>
+<section id="dimensional-semantics">
+<h3>Dimensional Semantics<a class="headerlink" href="#dimensional-semantics" title="Link to this heading"></a></h3>
+<p>Vectorized quantities in <strong>mudu</strong> obey the same dimensional rules as scalar quantities:</p>
+<ul class="simple">
+<li><p>All arithmetic operations are checked for dimensional validity.</p></li>
+<li><p>Illegal operations raise the same exceptions (<cite>DimensionError</cite>, <cite>ConversionError</cite>).</p></li>
+<li><p>The resulting object retains a well-defined dimension and unit.</p></li>
+</ul>
+<p>The <cite>dimension</cite> attribute of a vectorized quantity represents the <em>symbolic dimension</em> of the quantity, not the shape or size of the underlying data.</p>
+</section>
+<section id="design-notes-and-limitations">
+<h3>Design Notes and Limitations<a class="headerlink" href="#design-notes-and-limitations" title="Link to this heading"></a></h3>
+<p>This feature is currently <strong>experimental</strong> and subject to change. In particular:</p>
+<ul class="simple">
+<li><p>Broadcasting rules are minimal and intentionally conservative.</p></li>
+<li><p>Mixed-shape vector operations are not guaranteed to behave consistently.</p></li>
+<li><p>Performance is not optimized for large numerical arrays.</p></li>
+<li><p>NumPy interoperability is not yet formalized.</p></li>
+</ul>
+<p>Vectorized quantities are best suited for:
+- small to medium-sized datasets,
+- exploratory analysis,
+- pedagogical demonstrations of dimensional analysis.</p>
+<p>For large-scale numerical computation, explicit NumPy-based workflows may be more appropriate.</p>
+</section>
+<section id="terminology">
+<h3>Terminology<a class="headerlink" href="#terminology" title="Link to this heading"></a></h3>
+<p>Within the <strong>mudu</strong> documentation and codebase, this feature is referred to as:</p>
+<ul class="simple">
+<li><p><em>vectorized quantities</em>, or</p></li>
+<li><p><em>vectorized unit-aware computation</em>.</p></li>
+</ul>
+<p>This terminology emphasizes that vectorization applies to the numerical magnitude, while the unit and dimension remain single, coherent entities.</p>
+</section>
+<section id="future-work">
+<h3>Future Work<a class="headerlink" href="#future-work" title="Link to this heading"></a></h3>
+<p>Planned improvements may include:</p>
+<ul class="simple">
+<li><p>explicit NumPy array support,</p></li>
+<li><p>clearer broadcasting semantics,</p></li>
+<li><p>optional strict shape validation,</p></li>
+<li><p>performance optimizations.</p></li>
+</ul>
+<p>Users are encouraged to treat this feature as provisional and to report issues or edge cases encountered during use.</p>
+<section id="custom-units-experimental">
+<h4>Custom Units (Experimental)<a class="headerlink" href="#custom-units-experimental" title="Link to this heading"></a></h4>
+<p><strong>mudu</strong> provides experimental support for <em>ad-hoc custom units</em> via the <cite>custom_unit</cite> interface. This feature allows users to construct a physical quantity directly from a numerator–denominator unit specification without defining a formal dimension or derived quantity class.</p>
+<p>The primary intent of this feature is to support rapid prototyping, exploratory calculations, and situations where defining a full dimension class would be unnecessarily heavy.</p>
+<p>Unlike standard dimension objects (e.g. <cite>Length</cite>, <cite>Force</cite>), a <cite>custom_unit</cite> instance represents a <strong>generic physical quantity</strong> with:</p>
+<ul class="simple">
+<li><p>a scalar numerical value,</p></li>
+<li><p>an explicitly defined unit expression,</p></li>
+<li><p>and an automatically inferred symbolic dimension.</p></li>
+</ul>
+</section>
+</section>
+<section id="creating-a-custom-unit">
+<h3>Creating a Custom Unit<a class="headerlink" href="#creating-a-custom-unit" title="Link to this heading"></a></h3>
+<p>A custom unit is created by providing:
+- a numerical value, and
+- a numerator (<cite>num</cite>) and denominator (<cite>per</cite>) tuple describing the unit composition.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">custom_unit</span><span class="p">,</span> <span class="n">METER</span><span class="p">,</span> <span class="n">SECOND</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">custom_unit</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="p">(</span><span class="n">METER</span><span class="p">,),</span> <span class="n">per</span><span class="o">=</span><span class="p">(</span><span class="n">SECOND</span><span class="p">,))</span>
+<span class="n">c</span>
+
+<span class="c1"># Output:</span>
+<span class="c1"># 20 m/s</span>
+</pre></div>
+</div>
+<p>Here, the unit expression <cite>m/s</cite> is constructed dynamically, and the dimension is inferred as L/T.</p>
+</section>
+<section id="inspecting-attributes">
+<h3>Inspecting Attributes<a class="headerlink" href="#inspecting-attributes" title="Link to this heading"></a></h3>
+<p>A <cite>custom_unit</cite> object exposes a limited but well-defined interface.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">value</span>        <span class="c1"># numerical magnitude</span>
+<span class="n">c</span><span class="o">.</span><span class="n">unit_type</span>    <span class="c1"># unit expression</span>
+<span class="n">c</span><span class="o">.</span><span class="n">dimension</span>    <span class="c1"># symbolic dimension</span>
+<span class="n">c</span><span class="o">.</span><span class="n">quantity</span>     <span class="c1"># generic quantity label</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">value</span>        <span class="c1"># 20</span>
+<span class="n">c</span><span class="o">.</span><span class="n">unit_type</span>    <span class="c1"># m/s</span>
+<span class="n">c</span><span class="o">.</span><span class="n">dimension</span>    <span class="c1"># L/T</span>
+<span class="n">c</span><span class="o">.</span><span class="n">quantity</span>     <span class="c1"># &#39;generic_quantity&#39;</span>
+</pre></div>
+</div>
+<p>Note that <cite>custom_unit</cite> does not expose a <cite>unit</cite> attribute. Instead, the unit expression is accessible via <cite>unit_type</cite>.</p>
+</section>
+<section id="arithmetic-and-comparison-semantics">
+<h3>Arithmetic and Comparison Semantics<a class="headerlink" href="#arithmetic-and-comparison-semantics" title="Link to this heading"></a></h3>
+<p><cite>custom_unit</cite> objects support limited arithmetic and comparison operations with scalars.</p>
+<p>Scalar arithmetic:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">+</span> <span class="mi">10</span>     <span class="c1"># returns a scalar</span>
+<span class="n">c</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">/</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Comparison operations compare the underlying numerical value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">==</span> <span class="mi">20</span>        <span class="c1"># True</span>
+<span class="n">c</span> <span class="o">&gt;</span> <span class="mi">20</span>         <span class="c1"># False</span>
+<span class="n">c</span> <span class="o">&lt;</span> <span class="mi">20</span>         <span class="c1"># False</span>
+</pre></div>
+</div>
+<p>This behavior is equivalent to comparing <cite>c.value</cite> directly.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">20</span>  <span class="c1"># True</span>
+</pre></div>
+</div>
+<p><strong>Important:</strong> Arithmetic or comparison with other dimensioned objects is intentionally restricted in the current implementation.</p>
+</section>
+<section id="id1">
+<h3>Dimensional Semantics<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Although <cite>custom_unit</cite> instances do not correspond to a named dimension class, they still participate in symbolic dimensional analysis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">dimension</span>   <span class="c1"># L/T</span>
+</pre></div>
+</div>
+<p>The dimension is inferred from the unit composition (<cite>num</cite> and <cite>per</cite>) using the same symbolic machinery as standard derived quantities.</p>
+</section>
+<section id="conversion-limitations">
+<h3>Conversion Limitations<a class="headerlink" href="#conversion-limitations" title="Link to this heading"></a></h3>
+<p>Unit conversion is <strong>not yet implemented</strong> for <cite>custom_unit</cite>.</p>
+<p>Attempting to convert a custom unit raises a <cite>NotImplementedError</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">convert_to</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="p">(</span><span class="n">METER</span><span class="p">,),</span> <span class="n">per</span><span class="o">=</span><span class="p">(</span><span class="n">SECOND</span><span class="p">,))</span>
+
+<span class="c1"># NotImplementedError:</span>
+<span class="c1"># custom_unit is an experimental feature and has not been completely implemented yet</span>
+</pre></div>
+</div>
+<p>Users requiring full conversion support should define a proper derived quantity or extend conversion standards explicitly.</p>
+</section>
+<section id="design-rationale">
+<h3>Design Rationale<a class="headerlink" href="#design-rationale" title="Link to this heading"></a></h3>
+<p>The <cite>custom_unit</cite> feature exists to fill a gap between:</p>
+<ul class="simple">
+<li><p>fully defined dimension classes (rigorous but verbose), and</p></li>
+<li><p>raw numerical computation (flexible but dimensionally unsafe).</p></li>
+</ul>
+<p>It enables quick expression of physically meaningful values without requiring:
+- subclassing <cite>DerivedQuantity</cite>,
+- defining conversion standards,
+- or registering units globally.</p>
+<p>This makes it particularly useful for:
+- interactive exploration,
+- prototyping new physical models,
+- temporary or one-off unit expressions.</p>
+</section>
+<section id="limitations-and-experimental-status">
+<h3>Limitations and Experimental Status<a class="headerlink" href="#limitations-and-experimental-status" title="Link to this heading"></a></h3>
+<p>This feature is <strong>experimental</strong> and subject to change. Known limitations include:</p>
+<ul class="simple">
+<li><p>No unit conversion support</p></li>
+<li><p>Restricted arithmetic with other quantities</p></li>
+<li><p>Generic (unnamed) quantity semantics</p></li>
+<li><p>Potential API changes in future releases</p></li>
+</ul>
+<p>Users should avoid relying on <cite>custom_unit</cite> in production-critical code.</p>
+</section>
+<section id="future-directions">
+<h3>Future Directions<a class="headerlink" href="#future-directions" title="Link to this heading"></a></h3>
+<p>Potential future enhancements include:</p>
+<ul class="simple">
+<li><p>full conversion support,</p></li>
+<li><p>interoperability with vectorized quantities,</p></li>
+<li><p>optional promotion to formal derived quantities,</p></li>
+<li><p>stricter arithmetic rules.</p></li>
+</ul>
+<p>Feedback on usage patterns and edge cases is encouraged.</p>
+</section>
 </section>
 </section>
 
@@ -546,7 +815,7 @@ I hope you now have a grasp on how to use <strong>mudu</strong> and its features
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation mudu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="examples.html" class="btn btn-neutral float-right" title="An Example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

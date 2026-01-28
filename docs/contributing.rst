@@ -1,10 +1,3 @@
-Below is a revised and technically polished version of your **Contributing** documentation. The changes focus on correctness, professional tone, clarity of process, and alignment with standard open-source contribution guidelines, while keeping it concise and approachable.
-
----
-
-### Reworked `contributing.rst`
-
-```
 ============
 Contributing
 ============
@@ -54,14 +47,3 @@ Testing
 Pull requests that introduce new functionality should include corresponding test coverage.
 
 Thank you for helping improve **mudu** and for contributing to its continued development.
-```
-
----
-
-If you want to go one level more formal, the next refinements could include:
-
-* a short “Development Setup” subsection,
-* contribution scope expectations (e.g. API stability),
-* or a lightweight code-of-conduct reference.
-
-At this point, your documentation is already at a level consistent with serious technical Python libraries.

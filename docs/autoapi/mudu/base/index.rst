@@ -11,13 +11,6 @@ mudu.base
 
    base module for mudu.
 
-   For more information, read the documenation using
-
-   .. code-block:: shell
-       mudu --doc
-
-   in your cli
-
 
 
 Attributes
@@ -39,6 +32,7 @@ Attributes
    mudu.base.ENERGY
    mudu.base.DENSITY
    mudu.base.POWER
+   mudu.base.SPEED
    mudu.base.ILLUMINANCE
    mudu.base.VOLTAGE
    mudu.base.CAPACITANCE
@@ -119,6 +113,10 @@ Module Contents
 
 .. py:data:: POWER
    :value: 'power'
+
+
+.. py:data:: SPEED
+   :value: 'speed'
 
 
 .. py:data:: ILLUMINANCE

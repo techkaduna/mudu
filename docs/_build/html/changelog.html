@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>An Example &mdash; mudu 1.1.500 documentation</title>
+  <title>Changelog &mdash; mudu 1.1.500 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Changelog" href="changelog.html" />
-    <link rel="prev" title="Usage Guide" href="usage.html" /> 
+    <link rel="next" title="Contributing" href="contributing.html" />
+    <link rel="prev" title="An Example" href="examples.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -95,17 +95,17 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">An Example</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-tr-curve">The Tr-curve</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#problem-statement">Problem statement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#solution">Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">An Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#the-tr-curve">The Tr-curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#problem-statement">Problem statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#solution">Solution</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0-2026-01-28">Version 1.2.0 (2026-01-28)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="changelog.html#added">Added</a></li>
-<li class="toctree-l3"><a class="reference internal" href="changelog.html#changed">Changed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="changelog.html#fixed">Fixed</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-2-0-2026-01-28">Version 1.2.0 (2026-01-28)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#added">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changed">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed">Fixed</a></li>
 </ul>
 </li>
 </ul>
@@ -289,9 +289,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">An Example</li>
+      <li class="breadcrumb-item active">Changelog</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/examples.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/changelog.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -299,115 +299,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="an-example">
-<h1>An Example<a class="headerlink" href="#an-example" title="Link to this heading"></a></h1>
-<section id="the-tr-curve">
-<h2>The Tr-curve<a class="headerlink" href="#the-tr-curve" title="Link to this heading"></a></h2>
-<p>The Tr-curve (Tr stands for thrust required) is a graphical representation of the thrust required by an aircraft to maintain steady and level flight for a range of operating velocities. For an aircraft in steady and level flight (cruise), the thrust required to maintain flight at a particular altitude and velocity is theoritically equal to the drag force experienced by the aircraft. The Tr-curve gives an insight about the aircraft behaviour (stable and unstable flight regions) as it relates to the aircraft velocity. Speaking more about the Tr-curve will be more than the scope of this section, so lets get down to dealing with some aircraft performance problem.</p>
-</section>
-<section id="problem-statement">
-<h2>Problem statement<a class="headerlink" href="#problem-statement" title="Link to this heading"></a></h2>
-<p>For an aircraft in steady level flight at an altitude of 30,000 ft, plot the Tr-curve for the aircraft between a velocity range of 300 ft/s to 1500 ft/s.</p>
-<p>The following are the required aircraft parameters:</p>
+  <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h1>
+<section id="version-1-2-0-2026-01-28">
+<h2>Version 1.2.0 (2026-01-28)<a class="headerlink" href="#version-1-2-0-2026-01-28" title="Link to this heading"></a></h2>
+<section id="added">
+<h3>Added<a class="headerlink" href="#added" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>weight, <em>W</em> = 73, 000 lb</p></li>
-<li><p>flight altitude, <em>h</em> =  30, 000 ft</p></li>
-<li><p>wing span, <em>S</em> = 950 sqr ft</p></li>
-<li><p>ISA density &#64; 30,000 ft, <em>po</em> = 0.00089068 slug/cube(ft)</p></li>
-<li><p>drag polar co.eff, <em>K</em> = 0.08</p></li>
-<li><p>zero-lift drag, <em>Cd,o</em> = 0.015</p></li>
+<li><p>Support for speed (and, implicitly, velocity) quantities, including unit conversion</p></li>
+<li><p>Official introduction of <cite>GenericUnit</cite> and <cite>GenericUnit2</cite></p></li>
+<li><p>Official introduction of experimental vectorized unit-aware computation</p></li>
+<li><p>Official introduction of the experimental <cite>custom_unit</cite> interface</p></li>
 </ul>
 </section>
-<section id="solution">
-<h2>Solution<a class="headerlink" href="#solution" title="Link to this heading"></a></h2>
-<p>The following are the data required to plot the Tr-curve.</p>
+<section id="changed">
+<h3>Changed<a class="headerlink" href="#changed" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>velocity</p></li>
-<li><p>coefficient of lift, <em>Cl</em></p></li>
-<li><p>coeefficient of drag, <em>Cd</em></p></li>
-<li><p>thrust required, <em>Tr</em></p></li>
+<li><p>Refactored and reorganized project documentation for clarity and consistency</p></li>
 </ul>
-<p>So first step, import the neccesary and define the constants</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">mudu</span><span class="w"> </span><span class="kn">import</span> <span class="n">Force</span><span class="p">,</span> <span class="n">POUND_FORCE</span><span class="p">,</span> <span class="n">Length</span><span class="p">,</span> <span class="n">FOOT</span><span class="p">,</span> <span class="n">MASS</span><span class="p">,</span> <span class="n">Mass</span><span class="p">,</span> <span class="n">Time</span><span class="p">,</span> <span class="n">SECOND</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">mudu.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">_UnitType</span>
-
-<span class="n">SLUG</span> <span class="o">=</span> <span class="n">_UnitType</span><span class="p">(</span>
-    <span class="n">_dimension</span><span class="o">=</span><span class="n">MASS</span><span class="p">,</span>
-    <span class="n">_unit_name</span><span class="o">=</span><span class="s2">&quot;slug&quot;</span><span class="p">,</span>
-    <span class="n">_unit_symbol</span><span class="o">=</span><span class="s2">&quot;slug&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">WEIGHT</span> <span class="o">=</span> <span class="n">Force</span><span class="p">(</span><span class="mi">73_000</span><span class="p">,</span> <span class="n">POUND_FORCE</span><span class="p">)</span>
-<span class="n">ALTITUDE</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="mi">30_000</span><span class="p">,</span> <span class="n">FOOT</span><span class="p">)</span>
-<span class="n">WING_SPAN</span> <span class="o">=</span> <span class="mi">950</span> <span class="o">*</span> <span class="p">(</span><span class="n">Length</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">FOOT</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># wing_span is in sqr ft</span>
-<span class="n">DRAG_POLAR</span><span class="p">,</span> <span class="n">ZERO_LIFT_DRAG</span> <span class="o">=</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.015</span>
-
-<span class="c1"># a work around</span>
-<span class="n">arb_mass</span> <span class="o">=</span> <span class="n">Mass</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">SLUG</span><span class="p">)</span>
-<span class="n">arb_length</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">FOOT</span><span class="p">)</span>
-<span class="n">arb_volume</span> <span class="o">=</span> <span class="n">arb_length</span><span class="o">**</span><span class="mi">3</span>
-<span class="n">arb_density</span> <span class="o">=</span> <span class="n">arb_mass</span> <span class="o">/</span> <span class="n">arb_volume</span>
-<span class="n">DENSITY</span> <span class="o">=</span> <span class="mf">0.00089068</span> <span class="o">*</span> <span class="n">arb_density</span>
-</pre></div>
-</div>
-<p><strong>NOTE</strong> The code block above has couple of interesting (<em>I hope</em>) manipulations, but lets dig in.
-First, we created a unit to represent <cite>SLUG</cite> which is a unit of <cite>Mass</cite>. Also, when defining the <cite>WING_SPAN</cite> parameter which is in square feet, we squared the length object which results in a <cite>DerivedQuantity</cite> and multiplied it with a scalar, it also result is a <cite>DerivedQuantity</cite> object in square feet. This method is used throughout this example.
-Similar method is used to define the <cite>DENSITY</cite> parameter, maybe a bit more elaborate, but quintensentially the same idea.</p>
-<p>Next, we continue by defining functions to calculate the coefficient of lift and some <cite>lambda</cite> to evaluate the coefficient of drag and thrust_required, <cite>drag_co_eff</cite> and <cite>thrust_required</cite> respectively.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">lift_co_eff</span><span class="p">(</span><span class="n">velocity</span><span class="p">):</span>
-
-    <span class="n">numerator</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">WEIGHT</span>
-    <span class="n">denuminator</span> <span class="o">=</span> <span class="n">DENSITY</span> <span class="o">*</span> <span class="p">(</span><span class="n">velocity</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">WING_SPAN</span>
-    <span class="n">denuminator</span> <span class="o">=</span> <span class="n">Force</span><span class="p">(</span><span class="n">denuminator</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">POUND_FORCE</span><span class="p">)</span> <span class="c1"># coercing to pound force</span>
-
-    <span class="k">return</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denuminator</span>
-
-<span class="n">drag_co_eff</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">c_l</span><span class="p">:</span> <span class="n">ZERO_LIFT_DRAG</span> <span class="o">+</span> <span class="p">(</span><span class="n">DRAG_POLAR</span> <span class="o">*</span> <span class="p">(</span><span class="n">c_l</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">thrust_required</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">vel</span><span class="p">,</span> <span class="n">c_d</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">DENSITY</span> <span class="o">*</span> <span class="p">(</span><span class="n">vel</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">WING_SPAN</span> <span class="o">*</span> <span class="n">c_d</span>
-</pre></div>
-</div>
-<p>then we define a range of velocities for which we are going to calculate the thrust required to maintain the flight at an altitude of 30,000 ft. We also define a list of corresponding coefficients of lift, <cite>c_l</cite>, coefficients of drag <cite>c_d</cite>, and thrusts required <cite>t_r</cite>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">velocity</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span> <span class="o">*</span> <span class="n">Length</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">FOOT</span><span class="p">)</span><span class="o">/</span><span class="n">Time</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">SECOND</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">1600</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>   <span class="c1"># v in ft/s</span>
-<span class="n">c_l</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">lift_co_eff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">velocity</span><span class="p">]</span>  <span class="c1"># dimensionless</span>
-<span class="n">c_d</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">drag_co_eff</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">c_l</span><span class="p">]</span>   <span class="c1"># dimensionless</span>
-<span class="n">t_r</span> <span class="o">=</span> <span class="p">[</span><span class="n">Force</span><span class="p">(</span><span class="n">thrust_required</span><span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">c_d</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">POUND_FORCE</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">velocity</span><span class="p">))]</span>    <span class="c1"># in pounds</span>
-<span class="n">t_r</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">t_r</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>For clarity, we used the pandas DataFrame object to create a table-like structure of our data, printing the data in this format improves data presentation.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s2">&quot;velocity [ft/s]&quot;</span><span class="p">:</span> <span class="n">velocity</span><span class="p">,</span>
-    <span class="s2">&quot;c_l&quot;</span><span class="p">:</span> <span class="n">c_l</span><span class="p">,</span>
-    <span class="s2">&quot;c_d&quot;</span><span class="p">:</span> <span class="n">c_d</span><span class="p">,</span>
-    <span class="s2">&quot;Tr [lb_f]&quot;</span><span class="p">:</span> <span class="n">t_r</span>
-<span class="p">})</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>The result of the above code block looks like this:</p>
-<a class="reference internal image-reference" href="_images/tr_curve_df.png"><img alt="DataFrame representation" class="align-center" src="_images/tr_curve_df.png" style="width: 800px; height: 400px;" />
-</a>
-<p>and finally, plotting the graph using matplotlib</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vel_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">velocity</span><span class="p">]</span>
-<span class="n">t_r_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">t_r</span><span class="p">]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vel_values</span><span class="p">,</span> <span class="n">t_r_values</span><span class="p">,</span> <span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Thrust required curve for the aircraft&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Velocity (ft/s)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Thrust required (lbf)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>The resulting plot looks like this:</p>
-<a class="reference internal image-reference" href="_images/tr_curve.png"><img alt="Tr-curve" class="align-center" src="_images/tr_curve.png" style="width: 800px; height: 400px;" />
-</a>
-<p>In this example, we tried to use as much as object methods as possible to solve the problem at hand with minimal concern for speed, or coding style. This is to emphasise that there are other ways, mostly better ways to solving this problem, exploring those ways is left to the reader.</p>
-<p>For more examples, visit the Github repo at <a class="reference external" href="https://github.com/techkaduna/mudu">https://github.com/techkaduna/mudu</a>.</p>
+</section>
+<section id="fixed">
+<h3>Fixed<a class="headerlink" href="#fixed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Removal of obsolete and unused experimental code</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -415,8 +331,8 @@ Similar method is used to define the <cite>DENSITY</cite> parameter, maybe a bit
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="usage.html" class="btn btn-neutral float-left" title="Usage Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="examples.html" class="btn btn-neutral float-left" title="An Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
-      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=9edaacbc" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=3454c4f8" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
@@ -47,19 +47,52 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../installation.html#installing-mudu">Installing <strong>mudu</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation <strong>mudu</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#requirements">Requirements</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../usage.html#preresquisites">Preresquisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../usage.html#basic-usage">Basic Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../usage.html#specifying-units">Specifying units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../usage.html#unit-conversion">Unit conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../usage.html#operating-with-units-multiple-prefix">Operating with units multiple prefix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../usage.html#arithemetic-operations">Arithemetic Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../usage.html#more-usage">More Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#prerequisites">Prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#basic-usage">Basic Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#specifying-dimensions-and-units">Specifying Dimensions and Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#unit-conversion">Unit Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#inspecting-quantity-attributes">Inspecting Quantity Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#units-with-order-prefixes">Units with Order Prefixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#arithmetic-operations">Arithmetic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#type-hierarchy">Type Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#other-supported-operations">Other Supported Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#dimensional-homogeneity-example">Dimensional Homogeneity Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#advanced-usage">Advanced Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#generic-quantities">Generic Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#derived-generic-quantities">Derived Generic Quantities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#extending-conversion-standards">Extending Conversion Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#custom-dimensions">Custom Dimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#interactive-exploration">Interactive Exploration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#creating-vectorized-quantities">Creating Vectorized Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#element-wise-arithmetic">Element-wise Arithmetic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#operations-with-other-quantities">Operations with Other Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#vectorized-derived-quantities">Vectorized Derived Quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#dimensional-semantics">Dimensional Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#design-notes-and-limitations">Design Notes and Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#terminology">Terminology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#future-work">Future Work</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../usage.html#custom-units-experimental">Custom Units (Experimental)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#creating-a-custom-unit">Creating a Custom Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#inspecting-attributes">Inspecting Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#arithmetic-and-comparison-semantics">Arithmetic and Comparison Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#id1">Dimensional Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#conversion-limitations">Conversion Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#design-rationale">Design Rationale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#limitations-and-experimental-status">Limitations and Experimental Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#future-directions">Future Directions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples.html">An Example</a><ul>
@@ -68,10 +101,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#solution">Solution</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#version-1-2-0-2026-01-28">Version 1.2.0 (2026-01-28)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../changelog.html#added">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../changelog.html#changed">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../changelog.html#fixed">Fixed</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#contributing-to-mudu">Contributing to <strong>mudu</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#how-to-contribute">How To Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#coding-guideline">Coding guideline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#how-to-contribute">How to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#coding-guidelines">Coding Guidelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing.html#testing">Testing</a></li>
 </ul>
 </li>
@@ -98,6 +139,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#mudu.AMOUNT_OF_SUBSTANCE"><code class="docutils literal notranslate"><span class="pre">AMOUNT_OF_SUBSTANCE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.LUMINOUS_INTENSITY"><code class="docutils literal notranslate"><span class="pre">LUMINOUS_INTENSITY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.FORCE"><code class="docutils literal notranslate"><span class="pre">FORCE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mudu.SPEED"><code class="docutils literal notranslate"><span class="pre">SPEED</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.ENERGY"><code class="docutils literal notranslate"><span class="pre">ENERGY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.DENSITY"><code class="docutils literal notranslate"><span class="pre">DENSITY</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.GENERIC_DIMENSION"><code class="docutils literal notranslate"><span class="pre">GENERIC_DIMENSION</span></code></a></li>
@@ -183,12 +225,17 @@
 <li class="toctree-l4"><a class="reference internal" href="#mudu.RAD"><code class="docutils literal notranslate"><span class="pre">RAD</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.SIEVERT"><code class="docutils literal notranslate"><span class="pre">SIEVERT</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.REM"><code class="docutils literal notranslate"><span class="pre">REM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mudu.METER_PER_SECOND"><code class="docutils literal notranslate"><span class="pre">METER_PER_SECOND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mudu.MILE_PER_HOUR"><code class="docutils literal notranslate"><span class="pre">MILE_PER_HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mudu.KM_PER_HOUR"><code class="docutils literal notranslate"><span class="pre">KM_PER_HOUR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mudu.FOOT_PER_SECOND"><code class="docutils literal notranslate"><span class="pre">FOOT_PER_SECOND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mudu.KNOT"><code class="docutils literal notranslate"><span class="pre">KNOT</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu._DimensionUnitBase"><code class="docutils literal notranslate"><span class="pre">_DimensionUnitBase</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu._DimensionType"><code class="docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.DerivedQuantity"><code class="docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mudu.custom_unit"><code class="docutils literal notranslate"><span class="pre">custom_unit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.GenericUnit"><code class="docutils literal notranslate"><span class="pre">GenericUnit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.GenericUnit2"><code class="docutils literal notranslate"><span class="pre">GenericUnit2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mudu.custom_unit"><code class="docutils literal notranslate"><span class="pre">custom_unit</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.Length"><code class="docutils literal notranslate"><span class="pre">Length</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.Mass"><code class="docutils literal notranslate"><span class="pre">Mass</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.Time"><code class="docutils literal notranslate"><span class="pre">Time</span></code></a></li>
@@ -214,6 +261,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#mudu.Radioactivity"><code class="docutils literal notranslate"><span class="pre">Radioactivity</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.AbsorbedDose"><code class="docutils literal notranslate"><span class="pre">AbsorbedDose</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.DoseEquivalent"><code class="docutils literal notranslate"><span class="pre">DoseEquivalent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mudu.Speed"><code class="docutils literal notranslate"><span class="pre">Speed</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.DimensionError"><code class="docutils literal notranslate"><span class="pre">DimensionError</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.ConversionError"><code class="docutils literal notranslate"><span class="pre">ConversionError</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mudu.NotIterableError"><code class="docutils literal notranslate"><span class="pre">NotIterableError</span></code></a></li>
@@ -255,10 +303,6 @@
   <section id="module-mudu">
 <span id="mudu"></span><h1>mudu<a class="headerlink" href="#module-mudu" title="Link to this heading"></a></h1>
 <p>A Python package for unit and dimension handling, unit conversion, units arithemtic, with support for custom units definition.</p>
-<p>To read a well written web version of the package documentation, go to your cli and try</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mudu<span class="w"> </span>--doc
-</pre></div>
-</div>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
@@ -304,256 +348,274 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#mudu.FORCE" title="mudu.FORCE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FORCE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.ENERGY" title="mudu.ENERGY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ENERGY</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.SPEED" title="mudu.SPEED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPEED</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.DENSITY" title="mudu.DENSITY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DENSITY</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.ENERGY" title="mudu.ENERGY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ENERGY</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.GENERIC_DIMENSION" title="mudu.GENERIC_DIMENSION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GENERIC_DIMENSION</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.DENSITY" title="mudu.DENSITY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DENSITY</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.GENERIC_QUANTITY" title="mudu.GENERIC_QUANTITY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GENERIC_QUANTITY</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.GENERIC_DIMENSION" title="mudu.GENERIC_DIMENSION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GENERIC_DIMENSION</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.GENERIC_UNIT" title="mudu.GENERIC_UNIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GENERIC_UNIT</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.GENERIC_QUANTITY" title="mudu.GENERIC_QUANTITY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GENERIC_QUANTITY</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.DIMENSIONLESS" title="mudu.DIMENSIONLESS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DIMENSIONLESS</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.GENERIC_UNIT" title="mudu.GENERIC_UNIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GENERIC_UNIT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.DIMENSIONLESS_UNIT" title="mudu.DIMENSIONLESS_UNIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DIMENSIONLESS_UNIT</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.DIMENSIONLESS" title="mudu.DIMENSIONLESS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DIMENSIONLESS</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.GIGA" title="mudu.GIGA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GIGA</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.DIMENSIONLESS_UNIT" title="mudu.DIMENSIONLESS_UNIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DIMENSIONLESS_UNIT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.MEGA" title="mudu.MEGA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MEGA</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.GIGA" title="mudu.GIGA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GIGA</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.KILO" title="mudu.KILO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KILO</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.MEGA" title="mudu.MEGA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MEGA</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.CENTI" title="mudu.CENTI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CENTI</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.KILO" title="mudu.KILO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KILO</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.MILLI" title="mudu.MILLI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MILLI</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.CENTI" title="mudu.CENTI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CENTI</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.MICRO" title="mudu.MICRO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MICRO</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.MILLI" title="mudu.MILLI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MILLI</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.NANO" title="mudu.NANO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NANO</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.MICRO" title="mudu.MICRO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MICRO</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.PICO" title="mudu.PICO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PICO</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.NANO" title="mudu.NANO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NANO</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.FEMTO" title="mudu.FEMTO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FEMTO</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.PICO" title="mudu.PICO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PICO</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.ATTO" title="mudu.ATTO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ATTO</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.FEMTO" title="mudu.FEMTO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FEMTO</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.OrderUnit" title="mudu.OrderUnit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OrderUnit</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.ATTO" title="mudu.ATTO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ATTO</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.INCH" title="mudu.INCH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">INCH</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.OrderUnit" title="mudu.OrderUnit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OrderUnit</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.METER" title="mudu.METER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METER</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.INCH" title="mudu.INCH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">INCH</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.KILOMETER" title="mudu.KILOMETER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KILOMETER</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.METER" title="mudu.METER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METER</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.FEET" title="mudu.FEET"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FEET</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.KILOMETER" title="mudu.KILOMETER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KILOMETER</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.YARD" title="mudu.YARD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">YARD</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.FEET" title="mudu.FEET"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FEET</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.MILE" title="mudu.MILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MILE</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.YARD" title="mudu.YARD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">YARD</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.NAUTICAL_MILE" title="mudu.NAUTICAL_MILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NAUTICAL_MILE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.MILE" title="mudu.MILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MILE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.GRAM" title="mudu.GRAM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAM</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.NAUTICAL_MILE" title="mudu.NAUTICAL_MILE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NAUTICAL_MILE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.KILOGRAM" title="mudu.KILOGRAM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KILOGRAM</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.GRAM" title="mudu.GRAM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAM</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.POUND" title="mudu.POUND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUND</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.KILOGRAM" title="mudu.KILOGRAM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KILOGRAM</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.SLUG" title="mudu.SLUG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SLUG</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.POUND" title="mudu.POUND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUND</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.SHORT_TON" title="mudu.SHORT_TON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SHORT_TON</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.SLUG" title="mudu.SLUG"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SLUG</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.LONG_TON" title="mudu.LONG_TON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LONG_TON</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.SHORT_TON" title="mudu.SHORT_TON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SHORT_TON</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.METRIC_TON" title="mudu.METRIC_TON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METRIC_TON</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.LONG_TON" title="mudu.LONG_TON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LONG_TON</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.SECOND" title="mudu.SECOND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SECOND</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.METRIC_TON" title="mudu.METRIC_TON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METRIC_TON</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.MINUTE" title="mudu.MINUTE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MINUTE</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.SECOND" title="mudu.SECOND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SECOND</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.HOUR" title="mudu.HOUR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HOUR</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.MINUTE" title="mudu.MINUTE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MINUTE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.KELVIN" title="mudu.KELVIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KELVIN</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.HOUR" title="mudu.HOUR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HOUR</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.RANKINE" title="mudu.RANKINE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RANKINE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.KELVIN" title="mudu.KELVIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KELVIN</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.CELSIUS" title="mudu.CELSIUS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CELSIUS</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.RANKINE" title="mudu.RANKINE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RANKINE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.FARENHEIT" title="mudu.FARENHEIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FARENHEIT</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.CELSIUS" title="mudu.CELSIUS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CELSIUS</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.DEGREE" title="mudu.DEGREE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEGREE</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.FARENHEIT" title="mudu.FARENHEIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FARENHEIT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.RADIAN" title="mudu.RADIAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RADIAN</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.DEGREE" title="mudu.DEGREE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEGREE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.STERADIAN" title="mudu.STERADIAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STERADIAN</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.RADIAN" title="mudu.RADIAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RADIAN</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.AMPERE" title="mudu.AMPERE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AMPERE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.STERADIAN" title="mudu.STERADIAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STERADIAN</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.MOLE" title="mudu.MOLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MOLE</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.AMPERE" title="mudu.AMPERE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AMPERE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.CANDELA" title="mudu.CANDELA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CANDELA</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.MOLE" title="mudu.MOLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MOLE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.NEWTON" title="mudu.NEWTON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NEWTON</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.CANDELA" title="mudu.CANDELA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CANDELA</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.POUND_FORCE" title="mudu.POUND_FORCE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUND_FORCE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.NEWTON" title="mudu.NEWTON"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NEWTON</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.POUNDAL" title="mudu.POUNDAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUNDAL</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.POUND_FORCE" title="mudu.POUND_FORCE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUND_FORCE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.DYNE" title="mudu.DYNE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DYNE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.POUNDAL" title="mudu.POUNDAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUNDAL</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.PASCAL" title="mudu.PASCAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PASCAL</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.DYNE" title="mudu.DYNE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DYNE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.PSI" title="mudu.PSI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PSI</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.PASCAL" title="mudu.PASCAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PASCAL</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.mmHg" title="mudu.mmHg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mmHg</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.PSI" title="mudu.PSI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PSI</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.inHg" title="mudu.inHg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inHg</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.mmHg" title="mudu.mmHg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mmHg</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.BAR" title="mudu.BAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BAR</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.inHg" title="mudu.inHg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inHg</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.ATM" title="mudu.ATM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ATM</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.BAR" title="mudu.BAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BAR</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.POUND_PER_SQUARE_FOOT" title="mudu.POUND_PER_SQUARE_FOOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUND_PER_SQUARE_FOOT</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.ATM" title="mudu.ATM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ATM</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.JOULE" title="mudu.JOULE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">JOULE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.POUND_PER_SQUARE_FOOT" title="mudu.POUND_PER_SQUARE_FOOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUND_PER_SQUARE_FOOT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.BRITISH_THERMAL_UNIT" title="mudu.BRITISH_THERMAL_UNIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BRITISH_THERMAL_UNIT</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.JOULE" title="mudu.JOULE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">JOULE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.CALORIE" title="mudu.CALORIE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CALORIE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.BRITISH_THERMAL_UNIT" title="mudu.BRITISH_THERMAL_UNIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BRITISH_THERMAL_UNIT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.WATT_HOUR" title="mudu.WATT_HOUR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WATT_HOUR</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.CALORIE" title="mudu.CALORIE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CALORIE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.ELECTRON_VOLT" title="mudu.ELECTRON_VOLT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ELECTRON_VOLT</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.WATT_HOUR" title="mudu.WATT_HOUR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WATT_HOUR</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.KILOGRAM_PER_CUBIC_METER" title="mudu.KILOGRAM_PER_CUBIC_METER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KILOGRAM_PER_CUBIC_METER</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.ELECTRON_VOLT" title="mudu.ELECTRON_VOLT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ELECTRON_VOLT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.GRAM_PER_CUBIC_CENTIMETER" title="mudu.GRAM_PER_CUBIC_CENTIMETER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAM_PER_CUBIC_CENTIMETER</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.KILOGRAM_PER_CUBIC_METER" title="mudu.KILOGRAM_PER_CUBIC_METER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KILOGRAM_PER_CUBIC_METER</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.GRAM_PER_CUBIC_MILLILITER" title="mudu.GRAM_PER_CUBIC_MILLILITER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAM_PER_CUBIC_MILLILITER</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.GRAM_PER_CUBIC_CENTIMETER" title="mudu.GRAM_PER_CUBIC_CENTIMETER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAM_PER_CUBIC_CENTIMETER</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.POUND_PER_CUBIC_FOOT" title="mudu.POUND_PER_CUBIC_FOOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUND_PER_CUBIC_FOOT</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.GRAM_PER_CUBIC_MILLILITER" title="mudu.GRAM_PER_CUBIC_MILLILITER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAM_PER_CUBIC_MILLILITER</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.POUND_PER_CUBIC_INCH" title="mudu.POUND_PER_CUBIC_INCH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUND_PER_CUBIC_INCH</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.POUND_PER_CUBIC_FOOT" title="mudu.POUND_PER_CUBIC_FOOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUND_PER_CUBIC_FOOT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.SLUG_PER_CUBIC_FOOT" title="mudu.SLUG_PER_CUBIC_FOOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SLUG_PER_CUBIC_FOOT</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.POUND_PER_CUBIC_INCH" title="mudu.POUND_PER_CUBIC_INCH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POUND_PER_CUBIC_INCH</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.WATT" title="mudu.WATT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WATT</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.SLUG_PER_CUBIC_FOOT" title="mudu.SLUG_PER_CUBIC_FOOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SLUG_PER_CUBIC_FOOT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.HORSEPOWER" title="mudu.HORSEPOWER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HORSEPOWER</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.WATT" title="mudu.WATT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WATT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.BTU_PER_HOUR" title="mudu.BTU_PER_HOUR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BTU_PER_HOUR</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.HORSEPOWER" title="mudu.HORSEPOWER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HORSEPOWER</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.VOLT" title="mudu.VOLT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOLT</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.BTU_PER_HOUR" title="mudu.BTU_PER_HOUR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BTU_PER_HOUR</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.FARAD" title="mudu.FARAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FARAD</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.VOLT" title="mudu.VOLT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VOLT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.HENRY" title="mudu.HENRY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HENRY</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.FARAD" title="mudu.FARAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FARAD</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.WEBER" title="mudu.WEBER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WEBER</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.HENRY" title="mudu.HENRY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HENRY</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.OHMS" title="mudu.OHMS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OHMS</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.WEBER" title="mudu.WEBER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WEBER</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.TESLA" title="mudu.TESLA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TESLA</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.OHMS" title="mudu.OHMS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OHMS</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.SIEMENS" title="mudu.SIEMENS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SIEMENS</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.TESLA" title="mudu.TESLA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TESLA</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.LUX" title="mudu.LUX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LUX</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.SIEMENS" title="mudu.SIEMENS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SIEMENS</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.BECQUEREL" title="mudu.BECQUEREL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BECQUEREL</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.LUX" title="mudu.LUX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LUX</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.CURIE" title="mudu.CURIE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CURIE</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.BECQUEREL" title="mudu.BECQUEREL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BECQUEREL</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.GRAY" title="mudu.GRAY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAY</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.CURIE" title="mudu.CURIE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CURIE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.RAD" title="mudu.RAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RAD</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.GRAY" title="mudu.GRAY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAY</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.SIEVERT" title="mudu.SIEVERT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SIEVERT</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.RAD" title="mudu.RAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RAD</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.REM" title="mudu.REM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">REM</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.SIEVERT" title="mudu.SIEVERT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SIEVERT</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.REM" title="mudu.REM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">REM</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.METER_PER_SECOND" title="mudu.METER_PER_SECOND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METER_PER_SECOND</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.MILE_PER_HOUR" title="mudu.MILE_PER_HOUR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MILE_PER_HOUR</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.KM_PER_HOUR" title="mudu.KM_PER_HOUR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KM_PER_HOUR</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.FOOT_PER_SECOND" title="mudu.FOOT_PER_SECOND"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FOOT_PER_SECOND</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.KNOT" title="mudu.KNOT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KNOT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mudu.SolidAngle" title="mudu.SolidAngle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SolidAngle</span></code></a></p></td>
@@ -633,14 +695,14 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#mudu.DerivedQuantity" title="mudu.DerivedQuantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p></td>
 <td><p>Base class for all derived quantities.  As an example,</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.custom_unit" title="mudu.custom_unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">custom_unit</span></code></a></p></td>
-<td><p>Custom units</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#mudu.GenericUnit" title="mudu.GenericUnit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericUnit</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.GenericUnit" title="mudu.GenericUnit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericUnit</span></code></a></p></td>
 <td><p>Base class for all fundamental quantities.  As an example,</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.GenericUnit2" title="mudu.GenericUnit2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericUnit2</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mudu.GenericUnit2" title="mudu.GenericUnit2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericUnit2</span></code></a></p></td>
 <td><p>Base class for all derived quantities.  As an example,</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.custom_unit" title="mudu.custom_unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">custom_unit</span></code></a></p></td>
+<td><p>Custom units</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mudu.Length" title="mudu.Length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Length</span></code></a></p></td>
 <td><p>Base class for all fundamental quantities.  As an example,</p></td>
@@ -679,6 +741,9 @@
 <td><p>Base class for all derived quantities.  As an example,</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mudu.DoseEquivalent" title="mudu.DoseEquivalent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DoseEquivalent</span></code></a></p></td>
+<td><p>Base class for all derived quantities.  As an example,</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mudu.Speed" title="mudu.Speed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Speed</span></code></a></p></td>
 <td><p>Base class for all derived quantities.  As an example,</p></td>
 </tr>
 </tbody>
@@ -734,6 +799,11 @@
 <dl class="py data">
 <dt class="sig sig-object py" id="mudu.FORCE">
 <span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">FORCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'force'</span></em><a class="headerlink" href="#mudu.FORCE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mudu.SPEED">
+<span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">SPEED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'speed'</span></em><a class="headerlink" href="#mudu.SPEED" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py data">
@@ -1361,6 +1431,31 @@ unit <cite>METER</cite>.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="mudu.REM">
 <span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">REM</span></span><a class="headerlink" href="#mudu.REM" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mudu.METER_PER_SECOND">
+<span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">METER_PER_SECOND</span></span><a class="headerlink" href="#mudu.METER_PER_SECOND" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mudu.MILE_PER_HOUR">
+<span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">MILE_PER_HOUR</span></span><a class="headerlink" href="#mudu.MILE_PER_HOUR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mudu.KM_PER_HOUR">
+<span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">KM_PER_HOUR</span></span><a class="headerlink" href="#mudu.KM_PER_HOUR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mudu.FOOT_PER_SECOND">
+<span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">FOOT_PER_SECOND</span></span><a class="headerlink" href="#mudu.FOOT_PER_SECOND" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mudu.KNOT">
+<span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">KNOT</span></span><a class="headerlink" href="#mudu.KNOT" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
@@ -2011,53 +2106,6 @@ defined for the units involved.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="mudu.custom_unit">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">custom_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">collections.abc.Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">mudu.base._UnitType</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">mudu.base._UnitType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">per</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">collections.abc.Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">mudu.base._UnitType</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">mudu.base._UnitType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">GENERIC_QUANTITY</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.custom_unit" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#mudu.DerivedQuantity" title="mudu.DerivedQuantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
-<p>Custom units</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mudu.custom_unit.__numerator_unit">
-<span class="sig-name descname"><span class="pre">__numerator_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#mudu.custom_unit.__numerator_unit" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mudu.custom_unit.__denuminator_unit">
-<span class="sig-name descname"><span class="pre">__denuminator_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#mudu.custom_unit.__denuminator_unit" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mudu.custom_unit.__numerator">
-<span class="sig-name descname"><span class="pre">__numerator</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#mudu.custom_unit.__numerator" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="mudu.custom_unit.__denuminator">
-<span class="sig-name descname"><span class="pre">__denuminator</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#mudu.custom_unit.__denuminator" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mudu.custom_unit.__list2unit">
-<span class="sig-name descname"><span class="pre">__list2unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_from</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">mudu.base._UnitType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">collections.abc.Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">mudu.base._UnitType</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.custom_unit.__list2unit" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="mudu.custom_unit.convert_to">
-<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">mudu.base._UnitType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">collections.abc.Sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.custom_unit.convert_to" title="Link to this definition"></a></dt>
-<dd><p>Converts from one unit to another, provided that there is a conversion standard
-defined for the units involved.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>unit_type</strong> (<a class="reference internal" href="#mudu._UnitType" title="mudu._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
-<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="mudu.GenericUnit">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">GenericUnit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.GenericUnit" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#mudu._DimensionType" title="mudu._DimensionType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_DimensionType</span></code></a></p>
@@ -2254,6 +2302,69 @@ with the same argument signature as init.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_to</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.custom_unit">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">custom_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">collections.abc.Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">mudu.base._UnitType</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">collections.abc.Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">collections.abc.Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">mudu.base._UnitType</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(1,)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">GENERIC_QUANTITY</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.custom_unit" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.DerivedQuantity" title="mudu.DerivedQuantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<p>Custom units</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.custom_unit.__numerator_unit">
+<span class="sig-name descname"><span class="pre">__numerator_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#mudu.custom_unit.__numerator_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.custom_unit.__denominator_unit">
+<span class="sig-name descname"><span class="pre">__denominator_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#mudu.custom_unit.__denominator_unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.custom_unit.__numerator">
+<span class="sig-name descname"><span class="pre">__numerator</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#mudu.custom_unit.__numerator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.custom_unit.__denominator">
+<span class="sig-name descname"><span class="pre">__denominator</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#mudu.custom_unit.__denominator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.custom_unit.__unit_definition">
+<span class="sig-name descname"><span class="pre">__unit_definition</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0</span></em><a class="headerlink" href="#mudu.custom_unit.__unit_definition" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.custom_unit.__check_condition">
+<span class="sig-name descname"><span class="pre">__check_condition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_from</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_int</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.custom_unit.__check_condition" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.custom_unit.__list2unit">
+<span class="sig-name descname"><span class="pre">__list2unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_from</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">collections.abc.Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="base/index.html#mudu.base._UnitType" title="mudu.base._UnitType"><span class="pre">mudu.base._UnitType</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_int</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.custom_unit.__list2unit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.custom_unit.__repr_only_one_quantity">
+<span class="sig-name descname"><span class="pre">__repr_only_one_quantity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_from</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">collections.abc.Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_denum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.custom_unit.__repr_only_one_quantity" title="Link to this definition"></a></dt>
+<dd><p>Ensure that each unit represent exclusively only one quanitity</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mudu.custom_unit.convert_to">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">collections.abc.Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">collections.abc.Sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.custom_unit.convert_to" title="Link to this definition"></a></dt>
+<dd><p>Converts from one unit to another, provided that there is a conversion standard
+defined for the units involved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit_type</strong> (<a class="reference internal" href="#mudu._UnitType" title="mudu._UnitType"><em>_UnitType</em></a>) – The _UnitType instance to be converted to.</p></li>
+<li><p><strong>return</strong> (_DimensionType object with the <cite>unit_type</cite> as the unit.)</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -3713,6 +3824,110 @@ with the same argument signature as init.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id47">
 <span class="sig-name descname"><span class="pre">_conversion_standards</span></span><a class="headerlink" href="#id47" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mudu.Speed">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mudu.</span></span><span class="sig-name descname"><span class="pre">Speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_definition</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mudu.Speed" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mudu.DerivedQuantity" title="mudu.DerivedQuantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DerivedQuantity</span></code></a></p>
+<p>Base class for all derived quantities.  As an example,
+<cite>Force</cite> class is a child class of <cite>DerivedQuantity</cite>. Check
+the documenation at by running <cite>mudu –doc</cite> on the cli
+on how to extend this class.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.Speed._conversion_standards">
+<span class="sig-name descname"><span class="pre">_conversion_standards</span></span><a class="headerlink" href="#mudu.Speed._conversion_standards" title="Link to this definition"></a></dt>
+<dd><p>Same as in <cite>_DimensionUnitBase</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="base/index.html#mudu.base._ConversionTableType" title="mudu.base._ConversionTableType">_ConversionTableType</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.Speed._dimension">
+<span class="sig-name descname"><span class="pre">_dimension</span></span><a class="headerlink" href="#mudu.Speed._dimension" title="Link to this definition"></a></dt>
+<dd><p>Same as in  <cite>DimensionUnitBase</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.Speed.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#mudu.Speed.value" title="Link to this definition"></a></dt>
+<dd><p>Scalar value of the quantity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="base/index.html#mudu.base._SetOnce" title="mudu.base._SetOnce">_SetOnce</a>[int | float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.Speed.unit_type">
+<span class="sig-name descname"><span class="pre">unit_type</span></span><a class="headerlink" href="#mudu.Speed.unit_type" title="Link to this definition"></a></dt>
+<dd><p>unit definition of the quantity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mudu._UnitType" title="mudu._UnitType">_UnitType</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.Speed.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><a class="headerlink" href="#mudu.Speed.symbol" title="Link to this definition"></a></dt>
+<dd><p>Symbolic representation of the quantity unit</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sympy.Symbol</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.Speed.create_unit">
+<span class="sig-name descname"><span class="pre">create_unit</span></span><a class="headerlink" href="#mudu.Speed.create_unit" title="Link to this definition"></a></dt>
+<dd><p>Internal class method for creating a new DerivedQuantity object instance
+with the same argument signature as init.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mudu.DerivedQuantity" title="mudu.DerivedQuantity">DerivedQuantity</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.Speed._check_and_convert">
+<span class="sig-name descname"><span class="pre">_check_and_convert</span></span><a class="headerlink" href="#mudu.Speed._check_and_convert" title="Link to this definition"></a></dt>
+<dd><p>same as the base class  ((_DimensionUnitBase))</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>x: Any, operator: Callable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mudu.Speed.convert_to">
+<span class="sig-name descname"><span class="pre">convert_to</span></span><a class="headerlink" href="#mudu.Speed.convert_to" title="Link to this definition"></a></dt>
+<dd><p>same as the base class (_DimensionUnitBase)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_to</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id48">
+<span class="sig-name descname"><span class="pre">_conversion_standards</span></span><a class="headerlink" href="#id48" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
