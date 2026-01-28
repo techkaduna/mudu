@@ -76,7 +76,7 @@ df = pd.DataFrame(
     {"velocity [ft/s]": velocity, "c_l": c_l, "c_d": c_d, "Tr [lb_f]": t_r}
 )
 
-# print(df)
+print(df)
 
 vel_values = [x.value for x in velocity]
 t_r_values = [y.value for y in t_r]

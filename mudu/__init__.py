@@ -118,7 +118,6 @@ from .dimensions import (
     _DimensionUnitBase,
     _DimensionType,
     DerivedQuantity,
-    custom_unit,
     GenericUnit,
     GenericUnit2,
     Length,

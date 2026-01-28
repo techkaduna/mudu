@@ -1,9 +1,6 @@
-============
-Installation
-============
-
-Installing **mudu**
-"""""""""""""""""""
+=====================
+Installation **mudu**
+=====================
 
 Installing the latest version of **mudu** can be done by using:
 
@@ -22,5 +19,5 @@ Or cloning the repository and installing locally:
 Requirements
 """"""""""""
 
-- Python >= 3.6
+- Python >= 3.10
 - sympy

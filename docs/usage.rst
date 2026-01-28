@@ -2,25 +2,30 @@
 Usage Guide
 ===========
 
-This section provides a brief but comprehensive tutorial on how to use mudu and its features. The section is divided into two sub-sections:
+This section provides a structured tutorial on the usage of **mudu**. It introduces the fundamental concepts required to work with unit-aware numerical data and progressively moves toward advanced usage patterns such as custom units, custom dimensions, and extension of conversion standards.
 
-- Basic usage: covers the basics of specifying units and dimensions as well as arithemetic operations using mudu
-- More usage: which covers more advanced features such as extending conversion standards, creating custom unit and dimensions e.t.c
+The guide is divided into two main parts:
 
-Preresquisites
-""""""""""""""
+- **Basic usage**: specification of units and dimensions, unit conversion, and arithmetic operations
+- **Advanced usage**: extension of conversion standards, creation of custom units, and definition of custom quantities
 
-To follow this tutorial and get the most out of it, it is assumed that readers have:
+Prerequisites
+"""""""""""""
 
-- Basic understanding of Python programming language
-- Secondary school (or equivalent) knowledge of dimensions and dimensional analysis
+To follow this guide effectively, the reader is expected to have:
+
+- Basic proficiency in Python programming
+- Secondary school–level understanding of physical dimensions and dimensional analysis
 
 Basic Usage
-"""""""""""
+-----------
 
-Specifying units
-""""""""""""""""
-To specify units, simply import the neccesary dimensions and units, and create a dimension object.
+Specifying Dimensions and Units
+"""""""""""""""""""""""""""""""
+
+In **mudu**, numerical values are associated with physical meaning through *dimensions* and *units*. A dimension represents a physical quantity (e.g. length, time, force), while a unit represents a particular scale or measurement standard for that dimension.
+
+To create a quantity, import the required dimension class and unit, then instantiate the dimension with a numerical value and unit definition.
 
 .. code-block:: python
 
@@ -29,233 +34,274 @@ To specify units, simply import the neccesary dimensions and units, and create a
     from mudu import Force, NEWTON, DYNE
     from mudu import Pressure, PASCAL, mmHg
 
-    # create a fundamental quantity
     length = Length(12, INCH)
-
     t0 = Time(2, HOUR)
 
-    # create a derived quantity
     force = Force(1, NEWTON)
-
     pressure = Pressure(12, PASCAL)
 
-Objects like `Length`, `Mass`, `Time` are  called dimensions while `METER`, `INCH` and `NEWTON` are called units. Also note that `dimensions are defined in title case`, while `units are defined in all caps`. For a more comprehensive list of dimensions and unit, check the `API Reference` section.
+Here, `Length`, `Time`, `Force`, and `Pressure` are *dimension classes*, while `INCH`, `METER`, and `NEWTON` are *unit definitions*.
 
-Unit conversion
+By convention:
+- Dimension classes are defined in *TitleCase*
+- Unit definitions are defined in *UPPERCASE*
+
+A complete list of available dimensions and units is provided in the API Reference.
+
+Unit Conversion
 """""""""""""""
-Unit conversion is done by using the dimension `convert_to` method.
+
+Unit conversion is performed using the `convert_to` method of a dimension instance.
 
 .. code-block:: python
 
     length.convert_to(METER)
-
     t0.convert_to(SECOND)
 
-    t0.convert_to(METER)    # does not make sense
+Attempting to convert between incompatible dimensions raises an exception.
 
-    # there is also support for conversion between some derived quantities
+.. code-block:: python
+
+    t0.convert_to(METER)      # invalid
+    pressure.convert_to(NEWTON)  # invalid
+
+Conversions between compatible derived units are supported when conversion standards exist.
+
+.. code-block:: python
+
     force.convert_to(DYNE)
     pressure.convert_to(mmHg)
 
-    pressure.convert_to(NEWTON)     # definitely does not make sense
+**Note:** Converting between units of different dimensions raises `exceptions.ConversionError`.
 
-**NOTE** Converting between units representing different dimensions raises an `exceptions.ConversionError`.
+Inspecting Quantity Attributes
+""""""""""""""""""""""""""""""
 
-The scalar value, symbol, dimension and quantity (for derived quantities) can also be accessed e.g.
-
-.. code-block:: python
-
-    # for fundamental quantites
-    length.value    # -> 12
-    length.symbol   # -> in
-    length.dimension    # -> L
-
-    # for derived quantity
-    force.value # -> 1
-    force.quantity  # -> Force
-    force.dimension # -> L*M/T**2
-    force.unit_type # -> N
-
-**NOTE** *obj.dimension* returns a sympy `sympy.core` child object that represents the dimension of the unit, and in the case of derived quantities, it does some sort dimensional analysis.
+Each dimension object exposes several useful attributes.
 
 .. code-block:: python
 
-    velocity = length/t0
-    velocity.dimension  # -> L/T
+    length.value        # numerical value
+    length.symbol       # unit symbol
+    length.dimension    # symbolic dimension (e.g. L)
 
-Operating with units multiple prefix
-""""""""""""""""""""""""""""""""""""
-It is also possible to create units with multiples by specifying their multiple prefixes.
+For derived quantities:
 
 .. code-block:: python
 
-    from mudu import Length, METER, INCH, Force, KILO, MILLI, OrderUnit
+    force.value
+    force.quantity
+    force.dimension     # e.g. L*M/T**2
+    force.unit_type
 
-    # creating units in their multiples
+The `dimension` attribute returns a SymPy symbolic expression representing the dimensional form of the quantity. This enables automatic dimensional analysis during arithmetic operations.
+
+Example:
+
+.. code-block:: python
+
+    velocity = length / t0
+    velocity.dimension   # -> L/T
+
+Units with Order Prefixes
+"""""""""""""""""""""""""
+
+**mudu** supports the construction of units with metric order prefixes such as kilo-, milli-, etc.
+
+.. code-block:: python
+
+    from mudu import OrderUnit, KILO, MILLI
+
     KILONEWTON = OrderUnit(KILO, NEWTON)
     MILLIMETER = OrderUnit(MILLI, METER)
-    KILOINCH = OrderUnit(KILO, INCH)    # if it makes sense to you
 
     l = Length(1000, MILLIMETER)
     F = Force(20, KILONEWTON)
 
-    area = l * l
-
-    # you can also convert units with multiples 
-    l_in_meter = l.convert_to(METER)    # very valid
-    new_area = l_in_meter * l_in_meter
-
-    # Note
-    err_area = area.convert_to(METER)   # throws an error
-
-    pressure = F / new_area
-
-The `OrderUnit` is subclass of `_UnitType` used to create units in their multiples, and supports the same operations as `_UnitType`. `KILO` and `MILLI` (and other multiple prefixes) are instances of `_OrderType`. See the API Reference page for more information.
-
-Arithemetic Operations
-""""""""""""""""""""""
-mudu objects also support arithemetic operations provided they are legal in the context provided. Illegal operations trigger exceptions. For example:
+These prefixed units behave identically to base units and support conversion and arithmetic.
 
 .. code-block:: python
 
-    # legal arthemetic operations
-    total_length = length + length  # in inches
+    l.convert_to(METER)
 
-    # adding a unit object to a scalar returns a scalar
-    small_length = total_length + 1     # same as total_length.value + 1
-    large_length = 5.3 + small_length  # same as 5.3 + small_length.value
+Attempting to convert quantities with incompatible dimensions still raises errors.
 
-Subraction operator treats data just like the addition operator would.
+Arithmetic Operations
+"""""""""""""""""""""
+
+Dimension objects support arithmetic operations where mathematically valid.
+
+Addition and subtraction are permitted only between quantities of the same dimension.
 
 .. code-block:: python
 
-    small_length = Length(1, INCH)
-    total_length = length - small_length  # in inches
+    total_length = length + length
+    reduced_length = length - Length(1, INCH)
 
-    # adding a unit object to a scalar returns a scalar
-    smaller_length = total_length - 1     # same as total_length.value - 1
+Adding or subtracting scalars returns a scalar value.
 
-**NOTE** Not all addition and subtraction operations are valid, some would cause errors because they are dimensionally incompatible. For example:
+.. code-block:: python
+
+    total_length + 1
+    5.3 + total_length
+
+Illegal operations raise `exceptions.DimensionError`.
 
 .. code-block:: python
 
     t = Time(12, SECOND)
     l = Length(144, METER)
 
-    # an illegal arithemetic would look like
-    t_l = t + l     # adding time and length dimensions does not make sense
+    t + l   # invalid
 
-adding time and length dimension objects does not make sense, so this operation raises an `exceptions.DimensionError`.
-
-Multiplication and division operation follow all dimensional rules as well.
+Multiplication and division follow dimensional rules and typically produce derived quantities.
 
 .. code-block:: python
 
-    # unit multiplication and division operation
-    area = length ** 2  # result is a DerivedQuantity object
-    pressure = force / area # also a DerivedQuantity object
+    area = length ** 2
+    pressure = force / area
 
-    # and you can still check the following
+These derived quantities retain accessible attributes.
+
+.. code-block:: python
+
     pressure.value
     pressure.quantity
     pressure.dimension
     pressure.symbol
 
-    # operations like these are also allowed
-    p0 = 3 * pressure
-    p_inv = 1 / pressure
+Scalar interactions are also supported.
 
-**NOTE** It is important to note that, multiplication and division operations between two or more `_DimensionType` objects return a `DerivedQuantity` object, its mathematics really. In the case where the arithemetic operation is between data of the same dimension but different unit, the right hand operand is implicity converted to the same unit as the left operand.
+.. code-block:: python
+
+    3 * pressure
+    1 / pressure
+
+When operating on quantities of the same dimension but different units, the right-hand operand is implicitly converted to the unit of the left-hand operand.
 
 .. code-block:: python
 
     length_in_m = Length(2, METER)
+    total_length = length + length_in_m
 
-    total_length = length + length_in_m # total_length is now in INCHes
+Type Hierarchy
+""""""""""""""
 
-    l_sqr = length_in_m * length    # l_sqr is in METERs
+Fundamental quantities (e.g. `Length`, `Time`) inherit from `_DimensionType`, while derived quantities inherit from `DerivedQuantity`. Both derive from `_DimensionUnitBase`.
 
-By checking the type of `length` and `force`, their types are `mudu.dimensions.Length` and `mudu.dimensions.Force` respectively, but if you try:
+Example:
 
 .. code-block:: python
 
     surface_tension = force * length
-    isinstance(force, type(surface_tension))    # the result is True
+    isinstance(surface_tension, force.__class__)  # False
 
-So it is worthy to note that every derived quantity is a child class of `mudu.dimensions.DerivedQuantity` while every fundamental quantity is a child class of `mudu.dimensions._DimensionType`. Both classes inherit from `_DimensionUnitBase`.
+All derived quantities are instances of `DerivedQuantity`.
 
-Other operations such as `int`, `float`, `round` are also possible. For more information about possible operators and operations, check the `API Reference` section.
+Other Supported Operations
+""""""""""""""""""""""""""
+
+Built-in numerical operations are supported.
 
 .. code-block:: python
 
-    # same as int(length.value)
     int(length)
-
-    # same as float(length.value)
     float(length)
+    round(length * 0.0122, 2)
 
-    # round length.value to x decimal place, the unit is preserved
-    round(length*0.0122, 2) # round to 2 decimal places
+Floor division is also defined.
 
-    # floor division is also possible
+.. code-block:: python
+
     r = Length(12.23, METER)
-    r // 2  # -> 6.0
+    r // 2
 
-Lets try something
+Dimensional Homogeneity Example
+""""""""""""""""""""""""""""""
 
 .. code-block:: python
 
     from mudu import Length, METER, Pressure, PSI, Force, NEWTON
-    
+
     length = Length(12, METER)
     force = Force(112, NEWTON)
-    pressure = Pressure(12, PSI)
 
     area = length * length
     pressure_2 = force / area
 
-    pressure == pressure_2  # is False
-    
-    pressure.dimension == pressure_2.dimension  # is True
+    pressure = Pressure(12, PSI)
 
-That example was intended to show the idea of dimensional homogeniety - I hope it did. For more information about available methods and functionalities, check the API reference.
+    pressure == pressure_2               # False
+    pressure.dimension == pressure_2.dimension  # True
 
-More Usage
-""""""""""
+This illustrates dimensional homogeneity: quantities may differ numerically yet share the same dimension.
 
-Dimension objects like `Length`, `Time` and `Force` have some built-in conversion standards defined as the class attribute, `_conversion_standards`, that is why it is possible to convert between units provided the dimensions are the same. This is not always the case for all dimensions or quantites, hence, to convert a dimension objects with an empty `_conversion_standards` attribute to a new unit, the new unit must:
+Advanced Usage
+--------------
 
-- first be created
-- then the conversion standard is defined
-- then the  `Dimension._conversion_standards` is extended
+Generic Quantities
+""""""""""""""""""
 
-This process, though it seems like a lot, is actually very simple and straightforward. This topic will be the main course of this tutorial section.
+Some quantities are defined using `GenericUnit`, such as electric current and solid angle.
 
-So with the problem defined, lets get coding.
+.. code-block:: python
+
+    import functools
+    from mudu import GenericUnit, AMPERE, STERADIAN
+
+    ElectricCurrent = functools.partial(GenericUnit, unit=AMPERE)
+    SolidAngle = functools.partial(GenericUnit, unit=STERADIAN)
+
+Usage:
+
+.. code-block:: python
+
+    a = ElectricCurrent(10)
+    s = SolidAngle(1)
+
+Derived Generic Quantities
+"""""""""""""""""""""""""
+
+For derived quantities without explicit dimension classes, `GenericUnit2` is provided.
+
+.. code-block:: python
+
+    import functools
+    from mudu import GenericUnit2, VOLT
+
+    Voltage = functools.partial(GenericUnit2, unit_definition=VOLT)
+
+Extending Conversion Standards
+"""""""""""""""""""""""""""""
+
+Dimension classes store conversion logic in `_conversion_standards`. To extend conversion support:
+
+1. Define a new unit
+2. Define a conversion function
+3. Extend the dimension’s conversion table
 
 .. code-block:: python
 
     from mudu import Pressure, PSI
     from mudu.base import _UnitType
     from mudu.units import _basic_unit_converter
+    import functools
 
-    # define a new unit type
     NEW_UNIT = _UnitType(
-        _dimension=LENGTH,
+        _dimension=Pressure._dimension,
         _unit_name="new_unit",
         _unit_symbol="nu",
-        )
+    )
 
-    # create a conversion standard with METER
-    seq = ((NEW_UNIT, PSI), functools.partial(_basic_unit_converter, y=0.001))
+    seq = ((NEW_UNIT, PSI),
+           functools.partial(_basic_unit_converter, y=0.001))
 
-    # extend the conversion table
     Pressure._conversion_standards.extend(seq)
 
-    p1 = Pressure(12, PSI)
-    p2 = p1.convert_to(NEW_UNIT) + 4    # p2 is in units of NEW_UNIT
+Custom Dimensions
+"""""""""""""""""
 
-To create a custom quantity or 'dimension', simply inherit from `_DimensionType` class or `DerivedQuantity` class. The API reference has more details about the implementation of both classes.
+Custom quantities can be defined by subclassing `DerivedQuantity` or `_DimensionType`.
 
 .. code-block:: python
 
@@ -267,61 +313,165 @@ To create a custom quantity or 'dimension', simply inherit from `_DimensionType`
         def __init__(self, value, unit_definition):
             super().__init__(value, unit_definition, quantity="power")
 
-    JOULES = _UnitType(
-        _dimension=((NEWTON*METER)/SECOND)._dimension,
-        _unit_name="joules",
-        _unit_symbol="J",
-        _quantity="power",
-        _order=None,
-    )
+**Note:** Some quantities are not yet implemented in the current version. Users are encouraged to define custom units and quantities as needed.
 
-    power = Power(12, JOULES)
+Interactive Exploration
+"""""""""""""""""""""""
 
-**NOTE** As of this current version, some derived quantites have not been implemented, other quantites and units will be implemented as soon as possible. A good practice will be creating all custom defined units in a different file and then extending the dimension in the main file, but then, the decision is up to you.
-
-As a way of ending this tutorial, I recommend trying out the following on Python repl.
+The Python REPL is a useful environment for exploring unit arithmetic.
 
 .. code-block:: shell
 
-    C:\Users\USER\Desktop\mudu>python
-    Python 3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)] on win32
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>>
-    >>> from mudu import Pressure, PSI, METER, SECOND
-    >>>
-    >>> METER
-    m
-    >>>
-    >>> METER * METER
-    m^2
-    >>>
-    >>> PSI / METER
-    psi/m
-    >>>
-    >>> 3 * PSI
-    psi
-    >>>
-    >>> PSI / 3
-    psi
-    >>>
-    >>> PSI * 3
-    psi
-    >>>
-    >>> 4 / PSI
+    >>> from mudu import PSI, METER
+    >>> PSI * METER
+    psi·m
+    >>> 1 / PSI
     1/psi
-    >>>
-    >>>
     >>> PSI + METER
-    Traceback (most recent call last):
-    File "<python-input-18>", line 1, in <module>
-        PSI + METER
-        ~~~~^~~~~~~
-    TypeError: unsupported operand type(s) for +: '_UnitType' and '_UnitType'
-    >>>
-    >>> 1 / (PSI * METER)
-    1/(mpsi)
-    >>>
-    >>>
+    TypeError
 
-The idea behind the above example is to illustrate the way `_UnitType` objects can perform arithemetic operations.
-I hope you now have a grasp on how to use **mudu** and its features. I hope you find mudu useful and beneficial to your scientific computation projects.
+Vectorized Quantities (Experimental)
+====================================
+
+In addition to scalar-valued quantities, **mudu** provides *experimental* support for **vectorized quantities**, where the numerical magnitude of a dimension object is an array-like structure (e.g. list or iterable). This enables element-wise arithmetic, unit conversion, and dimensional analysis over collections of values while preserving unit safety and dimensional correctness.
+
+This feature is intended to support lightweight batch computations and exploratory numerical analysis without requiring explicit NumPy arrays or external vectorization frameworks.
+
+Conceptually, a vectorized quantity in **mudu** is:
+
+- a *single physical quantity*,
+- with a *uniform unit definition*,
+- and an *array-valued magnitude*.
+
+This is distinct from an array of independent quantity objects.
+
+Creating Vectorized Quantities
+-------------------------------
+
+A vectorized quantity is created by passing an iterable as the value argument when instantiating a dimension object.
+
+.. code-block:: python
+
+    from mudu import Length, METER
+
+    l = Length([i for i in range(12)], METER)
+    l
+
+    # Output:
+    # [0 m 1 m 2 m 3 m 4 m 5 m 6 m 7 m 8 m 9 m 10 m 11 m]
+
+Here, `l` represents a vectorized length quantity whose magnitude is a sequence of values, all expressed in meters.
+
+Element-wise Arithmetic
+-----------------------
+
+Arithmetic operations involving vectorized quantities are applied **element-wise** to the underlying magnitude, provided the operation is dimensionally valid.
+
+Scalar operations:
+
+.. code-block:: python
+
+    l / 2
+
+    # Output:
+    # [0.0 m 0.5 m 1.0 m 1.5 m 2.0 m 2.5 m 3.0 m 3.5 m 4.0 m 4.5 m 5.0 m 5.5 m]
+
+Division by a scalar preserves the unit and applies the operation to each element independently.
+
+Operations with Other Quantities
+--------------------------------
+
+Vectorized quantities may participate in arithmetic with scalar-valued quantities of compatible dimensions.
+
+.. code-block:: python
+
+    from mudu import Time, SECOND
+
+    t = Time(12, SECOND)
+    speed = l / t
+    speed
+
+    # Output:
+    # [0 m/s 12 m/s 24 m/s 36 m/s 48 m/s 60 m/s
+    #  72 m/s 84 m/s 96 m/s 108 m/s 120 m/s 132 m/s]
+
+In this example, division is performed element-wise, producing a vectorized derived quantity with dimension L/T.
+
+Vectorized Derived Quantities
+-----------------------------
+
+Derived quantities may also be vectorized.
+
+.. code-block:: python
+
+    from mudu import Force, NEWTON
+
+    f = Force([12, 24, 45], NEWTON)
+    f
+
+    # Output:
+    # [12 N 24 N 45 N]
+
+Unit conversion remains fully supported.
+
+.. code-block:: python
+
+    from mudu import DYNE
+
+    f.convert_to(DYNE)
+
+    # Output:
+    # [1200000.0 dyn 2400000.0 dyn 4500000.0 dyn]
+
+Conversion is applied element-wise while enforcing dimensional compatibility.
+
+Dimensional Semantics
+---------------------
+
+Vectorized quantities in **mudu** obey the same dimensional rules as scalar quantities:
+
+- All arithmetic operations are checked for dimensional validity.
+- Illegal operations raise the same exceptions (`DimensionError`, `ConversionError`).
+- The resulting object retains a well-defined dimension and unit.
+
+The `dimension` attribute of a vectorized quantity represents the *symbolic dimension* of the quantity, not the shape or size of the underlying data.
+
+Design Notes and Limitations
+----------------------------
+
+This feature is currently **experimental** and subject to change. In particular:
+
+- Broadcasting rules are minimal and intentionally conservative.
+- Mixed-shape vector operations are not guaranteed to behave consistently.
+- Performance is not optimized for large numerical arrays.
+- NumPy interoperability is not yet formalized.
+
+Vectorized quantities are best suited for:
+- small to medium-sized datasets,
+- exploratory analysis,
+- pedagogical demonstrations of dimensional analysis.
+
+For large-scale numerical computation, explicit NumPy-based workflows may be more appropriate.
+
+Terminology
+-----------
+
+Within the **mudu** documentation and codebase, this feature is referred to as:
+
+- *vectorized quantities*, or
+- *vectorized unit-aware computation*.
+
+This terminology emphasizes that vectorization applies to the numerical magnitude, while the unit and dimension remain single, coherent entities.
+
+Future Work
+-----------
+
+Planned improvements may include:
+
+- explicit NumPy array support,
+- clearer broadcasting semantics,
+- optional strict shape validation,
+- performance optimizations.
+
+Users are encouraged to treat this feature as provisional and to report issues or edge cases encountered during use.
+
