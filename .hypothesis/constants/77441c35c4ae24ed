@@ -1,0 +1,4 @@
+# file: C:\Users\USER\Desktop\Published Packages\MUDU-DEV\mudu\mudu\base.py
+# hypothesis_version: 6.151.3
+
+['*', '**', 'G', 'I', 'J', 'L', 'M', 'N', 'T', '^', 'a', 'absorbed_dose', 'atto', 'c', 'capacitance', 'centi', 'conductance', 'density', 'dimensionless', 'dimensionless_unit', 'dose_equivalent', 'energy', 'f', 'femto', 'force', 'generic_dimension', 'generic_quantity', 'generic_unit', 'giga', 'illuminance', 'inductance', 'k', 'kilo', 'm', 'magnetic_flux', 'mega', 'micro', 'milli', 'n', 'nano', 'p', 'pico', 'power', 'pressure', 'radioactivity', 'resistance', 'speed', 'u', 'voltage', 'Ɵ']

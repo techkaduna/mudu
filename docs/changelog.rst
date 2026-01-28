@@ -7,14 +7,15 @@ Version 1.2.0 (2026-01-28)
 
 Added
 """""
-- Support for Speed (and implicitly velocity) and its conversion
-- Officially introduced GenericUnit and GenericUnit2
-- Officially introduced experimental vectorised computation
+- Support for speed (and, implicitly, velocity) quantities, including unit conversion
+- Official introduction of `GenericUnit` and `GenericUnit2`
+- Official introduction of experimental vectorized unit-aware computation
+- Official introduction of the experimental `custom_unit` interface
 
 Changed
 """""""
-- Refactored Documentation
+- Refactored and reorganized project documentation for clarity and consistency
 
 Fixed
 """""
-- Omitted experimental codes removed
+- Removal of obsolete and unused experimental code

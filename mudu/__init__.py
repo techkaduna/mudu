@@ -120,6 +120,7 @@ from .dimensions import (
     DerivedQuantity,
     GenericUnit,
     GenericUnit2,
+    custom_unit,
     Length,
     Mass,
     Time,

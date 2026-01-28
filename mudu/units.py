@@ -10,11 +10,10 @@ For more information, read the documenation using
 
 .. code-block:: shell
     mudu --doc
-    
+
 in your cli
 
 """
-
 
 import functools
 import math
@@ -51,7 +50,6 @@ from .base import (
     KILO,
     _ConversionTableType,
 )
-
 
 # ================================ UNIT TYPE DEFINITIONS ===========================================
 
@@ -112,9 +110,13 @@ GRAM = _UnitType(
     _unit_symbol="g",
 )
 
-OUNCE = _UnitType(_quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="ounce", _unit_symbol="oz")
+OUNCE = _UnitType(
+    _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="ounce", _unit_symbol="oz"
+)
 
-POUND = _UnitType(_quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="pound", _unit_symbol="lb")
+POUND = _UnitType(
+    _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="pound", _unit_symbol="lb"
+)
 
 SLUG = _UnitType(
     _quantity=MASS_QUANTITY,
@@ -123,11 +125,17 @@ SLUG = _UnitType(
     _unit_symbol="slug",
 )
 
-SHORT_TON = _UnitType(_quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="short_ton", _unit_symbol="t")
+SHORT_TON = _UnitType(
+    _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="short_ton", _unit_symbol="t"
+)
 
-LONG_TON = _UnitType(_quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="long_ton", _unit_symbol="t")
+LONG_TON = _UnitType(
+    _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="long_ton", _unit_symbol="t"
+)
 
-METRIC_TON = _UnitType(_quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="metric_ton", _unit_symbol="t")
+METRIC_TON = _UnitType(
+    _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="metric_ton", _unit_symbol="t"
+)
 
 # ===========
 # Time Units
@@ -159,36 +167,68 @@ HOUR = _UnitType(
 # ==================
 TEMP_QUANTITY = "temperature"
 KELVIN = _UnitType(
-    _quantity=TEMP_QUANTITY, _dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="kelvin", _unit_symbol="K"
+    _quantity=TEMP_QUANTITY,
+    _dimension=THERMODYNAMIC_TEMPERATURE,
+    _unit_name="kelvin",
+    _unit_symbol="K",
 )
 
 RANKINE = _UnitType(
-    _quantity=TEMP_QUANTITY, _dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="rankine", _unit_symbol="R"
+    _quantity=TEMP_QUANTITY,
+    _dimension=THERMODYNAMIC_TEMPERATURE,
+    _unit_name="rankine",
+    _unit_symbol="R",
 )
 
 CELSIUS = _UnitType(
-    _quantity=TEMP_QUANTITY,_dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="celsius", _unit_symbol="C"
+    _quantity=TEMP_QUANTITY,
+    _dimension=THERMODYNAMIC_TEMPERATURE,
+    _unit_name="celsius",
+    _unit_symbol="C",
 )
 
 FARENHEIT = _UnitType(
-    _quantity=TEMP_QUANTITY,_dimension=THERMODYNAMIC_TEMPERATURE, _unit_name="farenheit", _unit_symbol="F"
+    _quantity=TEMP_QUANTITY,
+    _dimension=THERMODYNAMIC_TEMPERATURE,
+    _unit_name="farenheit",
+    _unit_symbol="F",
 )
 
 # ============
 # Angle Units
 # ============
 ANGLE_QUANTITY = "angle"
-RADIAN = _UnitType(_quantity=ANGLE_QUANTITY,_dimension=PLANE_ANGLE, _unit_name="radian", _unit_symbol="rad")
+RADIAN = _UnitType(
+    _quantity=ANGLE_QUANTITY,
+    _dimension=PLANE_ANGLE,
+    _unit_name="radian",
+    _unit_symbol="rad",
+)
 
-DEGREE = _UnitType(_quantity=ANGLE_QUANTITY,_dimension=PLANE_ANGLE, _unit_name="degree", _unit_symbol="deg")
+DEGREE = _UnitType(
+    _quantity=ANGLE_QUANTITY,
+    _dimension=PLANE_ANGLE,
+    _unit_name="degree",
+    _unit_symbol="deg",
+)
 
 # SOLID ANGLE
-STERADIAN = _UnitType(_quantity=ANGLE_QUANTITY,_dimension=SOLID_ANGLE, _unit_name="steradian", _unit_symbol="sr")
+STERADIAN = _UnitType(
+    _quantity=ANGLE_QUANTITY,
+    _dimension=SOLID_ANGLE,
+    _unit_name="steradian",
+    _unit_symbol="sr",
+)
 
 # ==============
 # AMPERE UNIT
 # ==============
-AMPERE = _UnitType(_quantity=ELECTRIC_CURRENT,_dimension=ELECTRIC_CURRENT, _unit_name="current", _unit_symbol="A")
+AMPERE = _UnitType(
+    _quantity=ELECTRIC_CURRENT,
+    _dimension=ELECTRIC_CURRENT,
+    _unit_name="current",
+    _unit_symbol="A",
+)
 
 # ===================================
 # Units for the amount of substances
@@ -204,7 +244,12 @@ MOLE = _UnitType(
 # =========================
 # Luminous Intensity Unit
 # =========================
-CANDELA = _UnitType(_quantity=LUMINOUS_INTENSITY,_dimension=LUMINOUS_INTENSITY, _unit_name="candela", _unit_symbol="cd")
+CANDELA = _UnitType(
+    _quantity=LUMINOUS_INTENSITY,
+    _dimension=LUMINOUS_INTENSITY,
+    _unit_name="candela",
+    _unit_symbol="cd",
+)
 
 # ==================================================================================
 
@@ -560,7 +605,7 @@ BECQUEREL = _UnitType(
 
 CURIE = _UnitType(
     _quantity=RADIOACTIVITY,
-    _dimension=(1/SECOND)._dimension,
+    _dimension=(1 / SECOND)._dimension,
     _unit_name="curie",
     _unit_symbol="Ci",
     _order=None,
@@ -634,7 +679,6 @@ _MASS_CONVERSION_TABLE = _ConversionTableType(
         ((SHORT_TON, GRAM), functools.partial(_basic_unit_converter, y=907000)),
         ((LONG_TON, GRAM), functools.partial(_basic_unit_converter, y=1016000)),
         ((METRIC_TON, GRAM), functools.partial(_basic_unit_converter, y=1000000)),
-        
     ],
 )
 
@@ -682,19 +726,10 @@ _ANGLE_CONVERSION_TABLE = _ConversionTableType(
 _FORCE_CONVERSION_TABLE = _ConversionTableType(
     dimension=FORCE,
     conversion_table=(
-        (
-            (DYNE, NEWTON),
-            functools.partial(_basic_unit_converter, y=0.00001)
-        ),
-        (
-            (POUND_FORCE, NEWTON),
-                functools.partial(_basic_unit_converter, y=4.44822)
-        ),
-        (
-            (POUNDAL, NEWTON),
-                functools.partial(_basic_unit_converter, y=0.138255)
-        ),
-    )
+        ((DYNE, NEWTON), functools.partial(_basic_unit_converter, y=0.00001)),
+        ((POUND_FORCE, NEWTON), functools.partial(_basic_unit_converter, y=4.44822)),
+        ((POUNDAL, NEWTON), functools.partial(_basic_unit_converter, y=0.138255)),
+    ),
 )
 
 _SPEED_CONVERSION_TABLE = _ConversionTableType(
@@ -702,73 +737,52 @@ _SPEED_CONVERSION_TABLE = _ConversionTableType(
     conversion_table=(
         (
             (KM_PER_HOUR, METER_PER_SECOND),
-            functools.partial(_basic_unit_converter, y=1000/3600)
+            functools.partial(_basic_unit_converter, y=1000 / 3600),
         ),
         (
             (MILE_PER_HOUR, METER_PER_SECOND),
-                functools.partial(_basic_unit_converter, y=0.44704)
+            functools.partial(_basic_unit_converter, y=0.44704),
         ),
         (
             (KNOT, METER_PER_SECOND),
-                functools.partial(_basic_unit_converter, y=1852/3600)
+            functools.partial(_basic_unit_converter, y=1852 / 3600),
         ),
         (
             (FOOT_PER_SECOND, METER_PER_SECOND),
-                functools.partial(_basic_unit_converter, y=0.3048)
+            functools.partial(_basic_unit_converter, y=0.3048),
         ),
-    )
+    ),
 )
 
 _PRESSURE_CONVERSION_TABLE = _ConversionTableType(
     dimension=PRESSURE,
     conversion_table=(
-        (
-            (PSI, PASCAL),
-                functools.partial(_basic_unit_converter, y=6894.76)
-        ),
-        (
-            (ATM, PASCAL),
-                functools.partial(_basic_unit_converter, y=101325)
-        ),
-        (
-            (BAR, PASCAL),
-                functools.partial(_basic_unit_converter, y=100000)
-        ),
-        (
-            (mmHg, PASCAL),
-                functools.partial(_basic_unit_converter, y=133.322)
-        ),
-        (
-            (inHg, PASCAL),
-                functools.partial(_basic_unit_converter, y=3386.389)
-        ),
+        ((PSI, PASCAL), functools.partial(_basic_unit_converter, y=6894.76)),
+        ((ATM, PASCAL), functools.partial(_basic_unit_converter, y=101325)),
+        ((BAR, PASCAL), functools.partial(_basic_unit_converter, y=100000)),
+        ((mmHg, PASCAL), functools.partial(_basic_unit_converter, y=133.322)),
+        ((inHg, PASCAL), functools.partial(_basic_unit_converter, y=3386.389)),
         (
             (POUND_PER_SQUARE_FOOT, PASCAL),
-                functools.partial(_basic_unit_converter, y=47.8803)
+            functools.partial(_basic_unit_converter, y=47.8803),
         ),
-)
+    ),
 )
 
 _ENERGY_CONVERSION_TABLE = _ConversionTableType(
     dimension=ENERGY,
     conversion_table=(
-        (
-            (CALORIE, JOULE),
-                functools.partial(_basic_unit_converter, y=4.184)
-        ),
-        (
-            (WATT_HOUR, JOULE),
-                functools.partial(_basic_unit_converter, y=3600)
-        ),
+        ((CALORIE, JOULE), functools.partial(_basic_unit_converter, y=4.184)),
+        ((WATT_HOUR, JOULE), functools.partial(_basic_unit_converter, y=3600)),
         (
             (ELECTRON_VOLT, JOULE),
-                functools.partial(_basic_unit_converter, y=1.60217662e-19)
+            functools.partial(_basic_unit_converter, y=1.60217662e-19),
         ),
         (
             (BRITISH_THERMAL_UNIT, JOULE),
-                functools.partial(_basic_unit_converter, y=1055)
+            functools.partial(_basic_unit_converter, y=1055),
         ),
-    )
+    ),
 )
 
 _DENSITY_CONVERSION_TABLE = _ConversionTableType(
@@ -776,69 +790,52 @@ _DENSITY_CONVERSION_TABLE = _ConversionTableType(
     conversion_table=(
         (
             (GRAM_PER_CUBIC_CENTIMETER, KILOGRAM_PER_CUBIC_METER),
-                functools.partial(_basic_unit_converter, y=1000)
+            functools.partial(_basic_unit_converter, y=1000),
         ),
         (
             (GRAM_PER_CUBIC_MILLILITER, KILOGRAM_PER_CUBIC_METER),
-                functools.partial(_basic_unit_converter, y=1000)
+            functools.partial(_basic_unit_converter, y=1000),
         ),
         (
             (POUND_PER_CUBIC_FOOT, KILOGRAM_PER_CUBIC_METER),
-                functools.partial(_basic_unit_converter, y=16.0185)
+            functools.partial(_basic_unit_converter, y=16.0185),
         ),
         (
             (POUND_PER_CUBIC_INCH, KILOGRAM_PER_CUBIC_METER),
-                functools.partial(_basic_unit_converter, y=27679.9)
+            functools.partial(_basic_unit_converter, y=27679.9),
         ),
         (
             (SLUG_PER_CUBIC_FOOT, KILOGRAM_PER_CUBIC_METER),
-                functools.partial(_basic_unit_converter, y=515.3788)
+            functools.partial(_basic_unit_converter, y=515.3788),
         ),
-    )
+    ),
 )
 
 _POWER_CONVERSION_TABLE = _ConversionTableType(
     dimension=POWER,
     conversion_table=(
-        (
-            (HORSEPOWER, WATT),
-                functools.partial(_basic_unit_converter, y=745.7)
-        ),
-        (
-            (BTU_PER_HOUR, WATT),
-                functools.partial(_basic_unit_converter, y=0.293071)
-        ),
-    )
+        ((HORSEPOWER, WATT), functools.partial(_basic_unit_converter, y=745.7)),
+        ((BTU_PER_HOUR, WATT), functools.partial(_basic_unit_converter, y=0.293071)),
+    ),
 )
 
 _RADIOACTIVITY_CONVERSION_TABLE = _ConversionTableType(
     dimension=RADIOACTIVITY,
     conversion_table=(
-        (
-            (CURIE, BECQUEREL),
-                functools.partial(_basic_unit_converter, y=3.7e10)
-        ),
-    )
+        ((CURIE, BECQUEREL), functools.partial(_basic_unit_converter, y=3.7e10)),
+    ),
 )
 
 _ABSORBED_DOSE_CONVERSION_TABLE = _ConversionTableType(
     dimension=ABSORBED_DOSE,
-    conversion_table=(
-        (
-            (GRAY, RAD),
-                functools.partial(_basic_unit_converter, y=100)
-        ),
-    )
+    conversion_table=(((GRAY, RAD), functools.partial(_basic_unit_converter, y=100)),),
 )
 
 _DOSE_EQUIVALENT_TABLE = _ConversionTableType(
     dimension=DOSE_EQUIVALENT,
     conversion_table=(
-        (
-            (SIEVERT, REM),
-                functools.partial(_basic_unit_converter, y=100)
-        ),
-    )
+        ((SIEVERT, REM), functools.partial(_basic_unit_converter, y=100)),
+    ),
 )
 
 # =========================================================================================

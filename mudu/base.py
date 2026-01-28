@@ -29,14 +29,14 @@ LUMINOUS_INTENSITY = sym.Symbol("J")
 # Derived units
 # ==============
 FORCE = "force"
-PRESSURE = "pressure"   # same unit as stress
-ENERGY = "energy"   # same as heat and work
+PRESSURE = "pressure"  # same unit as stress
+ENERGY = "energy"  # same as heat and work
 DENSITY = "density"
 POWER = "power"
-SPEED = "speed" # also doubles for velocity vector
-ILLUMINANCE = "illuminance" # physics -> optics
+SPEED = "speed"  # also doubles for velocity vector
+ILLUMINANCE = "illuminance"  # physics -> optics
 # === Electrical Derived Units ======
-VOLTAGE = "voltage" # Electromotive Force or Potential Difference
+VOLTAGE = "voltage"  # Electromotive Force or Potential Difference
 CAPACITANCE = "capacitance"
 RESISTANCE = "resistance"
 CONDUCTANCE = "conductance"
@@ -216,13 +216,13 @@ class _UnitType:
                 _unit_name=GENERIC_DIMENSION,
                 _unit_symbol=self._unit_symbol * x._unit_symbol,
             )
-        
+
         elif isinstance(x, int | float):
             return self
-        
+
         else:
             raise TypeError(f"operand must be type _UnitType or {type(1)}")
-    
+
     def __rmul__(self, x: Self):
 
         if isinstance(x, int | float):
@@ -238,10 +238,10 @@ class _UnitType:
                 _unit_name=GENERIC_DIMENSION,
                 _unit_symbol=self._unit_symbol / x._unit_symbol,
             )
-        
+
         elif isinstance(x, int | float):
             return self
-        
+
         else:
             raise TypeError(f"operand must be type _UnitType or {type(1)}")
 

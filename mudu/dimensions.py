@@ -9,7 +9,7 @@ For more information, read the documenation using
 
 .. code-block:: shell
     mudu --doc
-    
+
 in your cli
 
 """
@@ -77,6 +77,7 @@ from .units import (
 )
 from . import exceptions
 
+
 def _unit_conversion(self, _to):
     """Converts from one unit to another, provided that there is a conversion standard
     defined for the units involved.
@@ -88,10 +89,10 @@ def _unit_conversion(self, _to):
 
     return: _DimensionType object with the `unit_type` as the unit.
     """
-    
+
     @property
     def __value_not_seq(self):
-        """ value is not a sequence"""
+        """value is not a sequence"""
         return isinstance(self.value, (int, float))
 
     if self._conversion_standards is None:
@@ -141,17 +142,18 @@ def _unit_conversion(self, _to):
                 # converting between the same unit and multiple prefix
                 if _to == self.unit_type:
                     return self.create_unit(unit=self.unit_type, value=self.value)
-                    
+
                 # converting between the same unit but different multiple prefix
                 elif to_base_unit == base_unit:
-                    if __value_not_seq is True: value = (self.value * _multiple) / to_multiple
+                    if __value_not_seq is True:
+                        value = (self.value * _multiple) / to_multiple
                     else:
                         value = [
-                            (i.value * _multiple) / to_multiple \
+                            (i.value * _multiple) / to_multiple
                             for i in iter(self.value)
                         ]
                     return self.create_unit(unit=base_unit, value=value)
-                
+
                 # conversion between different units with or without
                 for _conv_std in self._conversion_standards.conversion_table:
                     (_from, to), value = _conv_std
@@ -164,7 +166,7 @@ def _unit_conversion(self, _to):
                             new_value = value(x=(self.value * _multiple)) / to_multiple
                         else:
                             new_value = [
-                                value(x=(i.value * _multiple)) / to_multiple \
+                                value(x=(i.value * _multiple)) / to_multiple
                                 for i in iter(self.value)
                             ]
 
@@ -180,7 +182,7 @@ def _unit_conversion(self, _to):
                         else:
                             new_value = [
                                 value(x=(_multiple * i.value), invert=True)
-                                / to_multiple \
+                                / to_multiple
                                 for i in iter(self.value)
                             ]
 
@@ -372,7 +374,7 @@ class DerivedQuantity(_DimensionUnitBase):
         unit_definition: _UnitType,
         quantity: str = GENERIC_QUANTITY,
     ):
-        
+
         self.unit_type = unit_definition
         self.symbol = unit_definition._unit_symbol
         self.quantity = quantity
@@ -383,13 +385,12 @@ class DerivedQuantity(_DimensionUnitBase):
                 raise exceptions.DimensionError(
                     f"{self.unit_type._unit_name} is not a unit of {self._dimension}"
                 )
-            
+
         if isinstance(value, (abc.Sequence, np.ndarray)):
             self.value = np.array(
                 [
-                    self.create_unit(
-                        unit_definition=unit_definition, value=i
-                    ) for i in value
+                    self.create_unit(unit_definition=unit_definition, value=i)
+                    for i in value
                 ]
             )
         elif isinstance(value, (int, float)):
@@ -402,8 +403,11 @@ class DerivedQuantity(_DimensionUnitBase):
 
     def __repr__(self):
 
-        return f"{self.value} {self.symbol}" if self.__value_not_seq is True \
-        else f"{self.value}"
+        return (
+            f"{self.value} {self.symbol}"
+            if self.__value_not_seq is True
+            else f"{self.value}"
+        )
 
     def __str__(self):
 
@@ -411,49 +415,40 @@ class DerivedQuantity(_DimensionUnitBase):
             return f"{self.value} {self.symbol}"
         else:
             return f"{self.value}"
-        
+
     def __len__(self):
 
-        if self.__value_not_seq is False: return len(self.value)
+        if self.__value_not_seq is False:
+            return len(self.value)
         return 1
 
     def __iter__(self):
-        if self.__value_not_seq is False: 
+        if self.__value_not_seq is False:
             return iter(self.value)
         else:
             return iter([self.value])
-        #raise exceptions.NotIterableError(f"Iteration is only supported for sequence value entries")
+        # raise exceptions.NotIterableError(f"Iteration is only supported for sequence value entries")
 
     def __round__(self, y=0):
 
         if self.__value_not_seq is True:
             value = round(self.value, y)
         else:
-            value = [
-                round(i, y).value for i in iter(self.value)
-            ]
+            value = [round(i, y).value for i in iter(self.value)]
 
-        return self.create_unit(
-            value=value, unit_definition=self.unit_type
-        )
+        return self.create_unit(value=value, unit_definition=self.unit_type)
 
     def __mul__(self, x):
 
-        if (
-            isinstance(x, (DerivedQuantity, _DimensionType)) is True
-        ):  
+        if isinstance(x, (DerivedQuantity, _DimensionType)) is True:
 
             if self.__value_not_seq is True:
                 if isinstance(x.value, (int, float)):
                     value = self.value * x.value
-                else:   # x is a sequence
-                    value = [
-                        i.value * self.value for i in iter(x.value)
-                        ]
-            else: # self.value is sequence
-                value = [
-                    i.value * x.value for i in iter(self.value)
-                    ]
+                else:  # x is a sequence
+                    value = [i.value * self.value for i in iter(x.value)]
+            else:  # self.value is sequence
+                value = [i.value * x.value for i in iter(self.value)]
 
             unit_definition = self.unit_type * x.unit_type
             return DerivedQuantity.create_unit(
@@ -461,7 +456,11 @@ class DerivedQuantity(_DimensionUnitBase):
             )
 
         elif isinstance(x, (int, float)) is True:
-            value = self.value * x if self.__value_not_seq else [i.value * x for i in iter(self.value)]
+            value = (
+                self.value * x
+                if self.__value_not_seq
+                else [i.value * x for i in iter(self.value)]
+            )
 
             return DerivedQuantity.create_unit(
                 value=value, unit_definition=self.unit_type
@@ -474,30 +473,27 @@ class DerivedQuantity(_DimensionUnitBase):
             if self.unit_type._dimension == x.unit_type._dimension:  # e.g Force / Force
 
                 if self.unit_type == x.unit_type:
-                    if self.__value_not_seq is True: return self.value / x.value  # return a scalar
+                    if self.__value_not_seq is True:
+                        return self.value / x.value  # return a scalar
                     else:
-                        return np.array([
-                            i.value / x.value for i in iter(self.value)
-                        ])
-                    
+                        return np.array([i.value / x.value for i in iter(self.value)])
+
                 else:
-                    if self.__value_not_seq is True: value = self.value / x.value
+                    if self.__value_not_seq is True:
+                        value = self.value / x.value
                     else:
-                        value = [
-                            i.value / x.value for i in iter(self.value)
-                        ]
-                        
+                        value = [i.value / x.value for i in iter(self.value)]
+
                     unit_definition = self.unit_type / x.unit_type
                     return DerivedQuantity.create_unit(
                         value=value, unit_definition=unit_definition
                     )
             else:
-                
-                if self.__value_not_seq is True: value = self.value / x.value
+
+                if self.__value_not_seq is True:
+                    value = self.value / x.value
                 else:
-                    value = [
-                        i.value / x.value for i in iter(self.value)
-                    ]
+                    value = [i.value / x.value for i in iter(self.value)]
 
                 unit_definition = self.unit_type / x.unit_type
                 return DerivedQuantity.create_unit(
@@ -505,13 +501,12 @@ class DerivedQuantity(_DimensionUnitBase):
                 )
 
         elif isinstance(x, _DimensionType) is True:
-            
-            if self.__value_not_seq is True: value = self.value / x.value
+
+            if self.__value_not_seq is True:
+                value = self.value / x.value
             else:
-                value = [
-                    i.value / x.value for i in iter(self.value)
-                ]
-            
+                value = [i.value / x.value for i in iter(self.value)]
+
             unit_definition = self.unit_type / x.unit_type
             return DerivedQuantity.create_unit(
                 value=value, unit_definition=unit_definition
@@ -519,9 +514,11 @@ class DerivedQuantity(_DimensionUnitBase):
 
         elif isinstance(x, (int, float)) is True:
 
-            value = [
-                i.value / x for i in iter(self.value)
-            ] if self.__value_not_seq is False else self.value / x
+            value = (
+                [i.value / x for i in iter(self.value)]
+                if self.__value_not_seq is False
+                else self.value / x
+            )
 
             return DerivedQuantity.create_unit(
                 value=value, unit_definition=self.unit_type
@@ -537,13 +534,17 @@ class DerivedQuantity(_DimensionUnitBase):
                     # e.g. Newton * Dyne -> coerce to Newton
                     pass
                 elif self.unit_type == x.unit_type:
-                    return [
-                        x.value / i.value for i in iter(self.value)
-                    ] if self.__value_not_seq is False else x.value / self.value  # return a scalar
+                    return (
+                        [x.value / i.value for i in iter(self.value)]
+                        if self.__value_not_seq is False
+                        else x.value / self.value
+                    )  # return a scalar
                 else:
-                    value = x.value / self.value if self.__value_not_seq is True else [
-                        x.value / i.value for i in iter(self.value)
-                    ]
+                    value = (
+                        x.value / self.value
+                        if self.__value_not_seq is True
+                        else [x.value / i.value for i in iter(self.value)]
+                    )
                     unit_definition = x.unit_type / self.unit_type
 
                     return DerivedQuantity.create_unit(
@@ -551,9 +552,11 @@ class DerivedQuantity(_DimensionUnitBase):
                     )
             else:
                 # e.g. Force * Area
-                value = x.value / self.value if self.__value_not_seq is True else [
-                    x.value / i.value for i in iter(self.value)
-                ]
+                value = (
+                    x.value / self.value
+                    if self.__value_not_seq is True
+                    else [x.value / i.value for i in iter(self.value)]
+                )
                 unit_definition = x.unit_type / self.unit_type
 
                 return DerivedQuantity.create_unit(
@@ -562,9 +565,11 @@ class DerivedQuantity(_DimensionUnitBase):
 
         elif isinstance(x, _DimensionType) is True:
 
-            value = x.value / self.value if self.__value is True else [
-                x.value / i.value for i in iter(self.value)
-            ]
+            value = (
+                x.value / self.value
+                if self.__value is True
+                else [x.value / i.value for i in iter(self.value)]
+            )
             unit_definition = x.unit_type / self.unit_type
 
             return DerivedQuantity.create_unit(
@@ -572,9 +577,11 @@ class DerivedQuantity(_DimensionUnitBase):
             )
 
         elif isinstance(x, (int, float)) is True:
-            value = x / self.value if self.__value_not_seq is True else [
-                x / i.value for i in iter(self.value)
-            ]
+            value = (
+                x / self.value
+                if self.__value_not_seq is True
+                else [x / i.value for i in iter(self.value)]
+            )
             return DerivedQuantity.create_unit(
                 value=value, unit_definition=x / self.unit_type
             )
@@ -582,9 +589,11 @@ class DerivedQuantity(_DimensionUnitBase):
     def __pow__(self, x):
 
         if isinstance(x, (int, float)) is True:
-            value = self.value**x if self.__value_not_seq is True else [
-                i.value**x for i in iter(self.value)
-            ]
+            value = (
+                self.value**x
+                if self.__value_not_seq is True
+                else [i.value**x for i in iter(self.value)]
+            )
             unit_definition = self.unit_type**x
 
             return DerivedQuantity.create_unit(
@@ -668,9 +677,11 @@ class DerivedQuantity(_DimensionUnitBase):
 
         return: _DimensionType object with the `unit_type` as the unit.
         """
-        
+
         if self._conversion_standards is None:
-            raise exceptions.ConversionError("this quantity has no conversion unit defined")
+            raise exceptions.ConversionError(
+                "this quantity has no conversion unit defined"
+            )
 
         if isinstance(_to, _UnitType) is True:
 
@@ -715,18 +726,21 @@ class DerivedQuantity(_DimensionUnitBase):
 
                     # converting between the same unit and multiple prefix
                     if _to == self.unit_type:
-                        return self.create_unit(unit_definition=self.unit_type, value=self.value)
-                        
+                        return self.create_unit(
+                            unit_definition=self.unit_type, value=self.value
+                        )
+
                     # converting between the same unit but different multiple prefix
                     elif to_base_unit == base_unit:
-                        if self.__value_not_seq is True: value = (self.value * _multiple) / to_multiple
+                        if self.__value_not_seq is True:
+                            value = (self.value * _multiple) / to_multiple
                         else:
                             value = [
-                                (i.value * _multiple) / to_multiple \
+                                (i.value * _multiple) / to_multiple
                                 for i in iter(self.value)
                             ]
                         return self.create_unit(unit_definition=base_unit, value=value)
-                    
+
                     # conversion between different units with or without
                     for _conv_std in self._conversion_standards.conversion_table:
                         (_from, to), value = _conv_std
@@ -736,10 +750,12 @@ class DerivedQuantity(_DimensionUnitBase):
                             to,
                         ):
                             if self.__value_not_seq is True:
-                                new_value = value(x=(self.value * _multiple)) / to_multiple
+                                new_value = (
+                                    value(x=(self.value * _multiple)) / to_multiple
+                                )
                             else:
                                 new_value = [
-                                    value(x=(i.value * _multiple)) / to_multiple \
+                                    value(x=(i.value * _multiple)) / to_multiple
                                     for i in iter(self.value)
                                 ]
 
@@ -755,7 +771,7 @@ class DerivedQuantity(_DimensionUnitBase):
                             else:
                                 new_value = [
                                     value(x=(_multiple * i.value), invert=True)
-                                    / to_multiple \
+                                    / to_multiple
                                     for i in iter(self.value)
                                 ]
 
@@ -831,47 +847,50 @@ class _DimensionType(_DimensionUnitBase):
         self.symbol = unit._unit_symbol
 
         if isinstance(value, abc.Sequence):
-            self.value = np.array(
-                [
-                    self.create_unit(
-                        unit=unit, value=i
-                    ) for i in value
-                ]
-            )
+            self.value = np.array([self.create_unit(unit=unit, value=i) for i in value])
         elif isinstance(value, (int, float)):
             self.value = value
 
     @property
     def __value_not_seq(self):
-        """ value is not a sequence"""
+        """value is not a sequence"""
         return isinstance(self.value, (int, float))
 
     def __repr__(self):
 
-        return f"{self.value} {self.symbol}" if self.__value_not_seq is True \
-        else f"{self.value}"
-    
+        return (
+            f"{self.value} {self.symbol}"
+            if self.__value_not_seq is True
+            else f"{self.value}"
+        )
+
     def __str__(self):
-            
-        return f"{self.value} {self.symbol}" if self.__value_not_seq is True \
-        else f"{self.value}"
-        
+
+        return (
+            f"{self.value} {self.symbol}"
+            if self.__value_not_seq is True
+            else f"{self.value}"
+        )
+
     def __len__(self):
 
         return 1 if self.value is True else len(self.value)
-    
+
     def __iter__(self):
         if self.__value_not_seq is False:
             return iter(self.value)
         else:
             return iter([self.value])
-        
+
         # raise exceptions.NotItera(f"Iteration is only supported for sequence value entries")
 
     def __round__(self, y=0):
 
-        value = round(self.value, y) if self.__value_not_seq is True \
-        else [round(i, y).value for i in iter(self.value)]
+        value = (
+            round(self.value, y)
+            if self.__value_not_seq is True
+            else [round(i, y).value for i in iter(self.value)]
+        )
 
         return self.create_unit(value=value, unit=self.unit_type)
 
@@ -880,18 +899,22 @@ class _DimensionType(_DimensionUnitBase):
         # multiplication of unit by a non-unit (scalar)
         if isinstance(x, (int, float)) is True:
 
-            value = value = self.value * x if self.__value_not_seq is True \
-            else [(i.__mul__(x)).value for i in iter(self.value)]
+            value = value = (
+                self.value * x
+                if self.__value_not_seq is True
+                else [(i.__mul__(x)).value for i in iter(self.value)]
+            )
 
             return self.create_unit(unit=self.unit_type, value=value)
-        
+
         # multiplication by a derived quantity
         elif isinstance(x, DerivedQuantity) is True:
 
-            value = self.value * x.value if self.__value_not_seq is True \
-            else [
-                (i.value) * (x.value) for i in iter(self.value)
-                ]
+            value = (
+                self.value * x.value
+                if self.__value_not_seq is True
+                else [(i.value) * (x.value) for i in iter(self.value)]
+            )
             unit_definition = self.unit_type * x.unit_type
 
             return DerivedQuantity(value=value, unit_definition=unit_definition)
@@ -900,18 +923,26 @@ class _DimensionType(_DimensionUnitBase):
             # multiplication by _DimensionType
 
             # if self.unit_type._dimension == x.unit_type._dimension:
-                # they are of the same dimension, e.g. LENGTH * LENGTH
+            # they are of the same dimension, e.g. LENGTH * LENGTH
 
             # are they of the same dimension
             is_same_dimension = self.dimension == x.dimension
-            
+
             # are they of the same unit or not?
             # if they are of different dimensions, always return True
-            is_same_unit = (self.unit_type._unit_name == x.unit_type._unit_name) if is_same_dimension else True
+            is_same_unit = (
+                (self.unit_type._unit_name == x.unit_type._unit_name)
+                if is_same_dimension
+                else True
+            )
 
             # only is conversion is needed
             need_conversion = is_same_dimension and (not is_same_unit)
-            equiv, x_unit = (x.convert_to(self.unit_type).value, self.unit_type) if need_conversion else (x.value, x.unit_type)
+            equiv, x_unit = (
+                (x.convert_to(self.unit_type).value, self.unit_type)
+                if need_conversion
+                else (x.value, x.unit_type)
+            )
 
             if self.__value_not_seq is True:
                 # self.value is an int | float
@@ -920,15 +951,11 @@ class _DimensionType(_DimensionUnitBase):
                     value = self.value * equiv
                 else:
                     # assumes that self.value is not a sequence
-                    value = [
-                        i.value * self.value for i in iter(equiv)
-                    ]
+                    value = [i.value * self.value for i in iter(equiv)]
             else:
                 # self.value is a sequence
                 # assuming equiv is not an sequence which can be untrue
-                value = [
-                    i.value * equiv for i in iter(self.value)
-                ]
+                value = [i.value * equiv for i in iter(self.value)]
 
             unit_definition = self.unit_type * x_unit
             return DerivedQuantity(value=value, unit_definition=unit_definition)
@@ -938,11 +965,12 @@ class _DimensionType(_DimensionUnitBase):
         # unit divided by a scalar return an instance of _DimensionType
         if isinstance(x, (int, float)) is True:
 
-            value = self.value / x if self.__value_not_seq is True \
-            else [
-                    i.value / x for i in iter(self.value)
-                ]
-            
+            value = (
+                self.value / x
+                if self.__value_not_seq is True
+                else [i.value / x for i in iter(self.value)]
+            )
+
             return self.create_unit(value=value, unit=self.unit_type)
 
         # unit divided by another unit (or same unit object)
@@ -951,35 +979,42 @@ class _DimensionType(_DimensionUnitBase):
             # return dimensionless number (float) if they have the same dimension ( e.g. length/length)
             is_same_dimension = self.dimension == x.dimension
 
-            is_same_unit =(self.unit_type._unit_name == x.unit_type._unit_name) if is_same_dimension else True
+            is_same_unit = (
+                (self.unit_type._unit_name == x.unit_type._unit_name)
+                if is_same_dimension
+                else True
+            )
 
             need_conversion = is_same_dimension and (not is_same_unit)
-            equiv, x_unit = (x.convert_to(self.unit_type).value, None) if need_conversion else (x.value, x.unit_type)
+            equiv, x_unit = (
+                (x.convert_to(self.unit_type).value, None)
+                if need_conversion
+                else (x.value, x.unit_type)
+            )
 
             if self.__value_not_seq is True:
                 # self.value is int | float
                 if isinstance(x.value, (int, float)):
                     value = self.value / x.value
                 else:
-                    value = [
-                        i.value / self.value for i in iter(equiv)
-                    ]
+                    value = [i.value / self.value for i in iter(equiv)]
             else:
-                value = [
-                    i.value * equiv for i in iter(self.value)
-                ]
-                
-            if x_unit  in (self.unit_type, None):
+                value = [i.value * equiv for i in iter(self.value)]
+
+            if x_unit in (self.unit_type, None):
                 return value if isinstance(value, (int, float)) else np.array(value)
             else:
-                return DerivedQuantity(value=value, unit_definition=self.unit_type / x_unit)
-        
+                return DerivedQuantity(
+                    value=value, unit_definition=self.unit_type / x_unit
+                )
+
         elif isinstance(x, DerivedQuantity):
 
-            value = self.value / x.value if self.__value_not_seq is True \
-            else [
-                    i.value / x.value for i in iter(self.value)
-                ]
+            value = (
+                self.value / x.value
+                if self.__value_not_seq is True
+                else [i.value / x.value for i in iter(self.value)]
+            )
             unit_definition = self.unit_type / x.unit_type
 
             return DerivedQuantity(value=value, unit_definition=unit_definition)
@@ -988,20 +1023,22 @@ class _DimensionType(_DimensionUnitBase):
 
         # scalar is divided by unit return an instance of derived quantity
         if isinstance(x, (int, float)) is True:
-            value = x / self.value if self.__value_not_seq is True \
-            else [
-                    x / i.value for i in iter(self.value)
-                ]
-            
+            value = (
+                x / self.value
+                if self.__value_not_seq is True
+                else [x / i.value for i in iter(self.value)]
+            )
+
             return DerivedQuantity(value=value, unit_definition=x / self.unit_type)
 
     def __pow__(self, x):
 
         if isinstance(x, (int, float)) is True:
-            value = self.value**x if self.__value_not_seq is True \
-            else [
-                    i.value**x for i in iter(self.value)
-                ]
+            value = (
+                self.value**x
+                if self.__value_not_seq is True
+                else [i.value**x for i in iter(self.value)]
+            )
             unit_definition = self.unit_type**x
 
             return DerivedQuantity.create_unit(
@@ -1038,21 +1075,22 @@ class _DimensionType(_DimensionUnitBase):
                 _equivalent = x.convert_to(self.unit_type).value
                 value = _operator(self.value, _equivalent)
                 del _equivalent
-                
+
             elif x.unit_type == self.unit_type:
                 value = _operator(self.value, x.value)
 
             if isinstance(value, np.ndarray) is True:
-                if value.dtype == bool: return value
-                else: 
+                if value.dtype == bool:
+                    return value
+                else:
                     value = [int(i) for i in iter(value)]
                     return self.create_unit(value=value, unit=self.unit_type)
-            else: return value
-            
+            else:
+                return value
 
         elif isinstance(x, (int, float)):
             value = _operator(self.value, x)
-            
+
             return value
         else:
             raise exceptions.DimensionError(
@@ -1070,9 +1108,11 @@ class _DimensionType(_DimensionUnitBase):
 
         return: _DimensionType object with the `unit_type` as the unit.
         """
-        
+
         if self._conversion_standards is None:
-            raise exceptions.ConversionError("this quantity has no conversion unit defined")
+            raise exceptions.ConversionError(
+                "this quantity has no conversion unit defined"
+            )
 
         if isinstance(_to, _UnitType) is True:
 
@@ -1118,17 +1158,18 @@ class _DimensionType(_DimensionUnitBase):
                     # converting between the same unit and multiple prefix
                     if _to == self.unit_type:
                         return self.create_unit(unit=self.unit_type, value=self.value)
-                        
+
                     # converting between the same unit but different multiple prefix
                     elif to_base_unit == base_unit:
-                        if self.__value_not_seq is True: value = (self.value * _multiple) / to_multiple
+                        if self.__value_not_seq is True:
+                            value = (self.value * _multiple) / to_multiple
                         else:
                             value = [
-                                (i.value * _multiple) / to_multiple \
+                                (i.value * _multiple) / to_multiple
                                 for i in iter(self.value)
                             ]
                         return self.create_unit(unit=base_unit, value=value)
-                    
+
                     # conversion between different units with or without
                     for _conv_std in self._conversion_standards.conversion_table:
                         (_from, to), value = _conv_std
@@ -1138,10 +1179,12 @@ class _DimensionType(_DimensionUnitBase):
                             to,
                         ):
                             if self.__value_not_seq is True:
-                                new_value = value(x=(self.value * _multiple)) / to_multiple
+                                new_value = (
+                                    value(x=(self.value * _multiple)) / to_multiple
+                                )
                             else:
                                 new_value = [
-                                    value(x=(i.value * _multiple)) / to_multiple \
+                                    value(x=(i.value * _multiple)) / to_multiple
                                     for i in iter(self.value)
                                 ]
 
@@ -1157,7 +1200,7 @@ class _DimensionType(_DimensionUnitBase):
                             else:
                                 new_value = [
                                     value(x=(_multiple * i.value), invert=True)
-                                    / to_multiple \
+                                    / to_multiple
                                     for i in iter(self.value)
                                 ]
 
@@ -1232,7 +1275,7 @@ class GenericUnit(_DimensionType):
     def __init__(self, value, unit):
         self._dimension = unit._dimension
         super().__init__(unit=unit, value=value)
-        
+
 
 # Solid Angle in steradian
 SolidAngle = functools.partial(GenericUnit, unit=STERADIAN)
@@ -1246,6 +1289,7 @@ AmountOfSubstance = functools.partial(GenericUnit, unit=MOLE)
 # Luminous Intensity
 LuminousIntensity = functools.partial(GenericUnit, CANDELA)
 # =====================================================================================
+
 
 # =========================================================================================
 # Force
@@ -1281,6 +1325,7 @@ class Energy(DerivedQuantity):
 
     def __init__(self, value, unit_definition):
         super().__init__(value, unit_definition, quantity=ENERGY)
+
 
 # ============================================================================================
 # Density
@@ -1330,7 +1375,11 @@ class DoseEquivalent(DerivedQuantity):
 # ======================Generic Unit 2 =======================================================
 class GenericUnit2(DerivedQuantity):
     def __init__(self, value, unit_definition):
-        super().__init__(unit_definition=unit_definition, value=value, quantity=unit_definition._quantity)
+        super().__init__(
+            unit_definition=unit_definition,
+            value=value,
+            quantity=unit_definition._quantity,
+        )
 
 
 # Voltage and Potential Difference
@@ -1356,3 +1405,77 @@ MageneticFieldStrength = functools.partial(GenericUnit2, unit_definition=TESLA)
 
 # Illuminance
 Illuminance = functools.partial(GenericUnit2, unit_definition=LUX)
+
+
+class custom_unit(DerivedQuantity):
+    """Custom units"""
+
+    __numerator_unit = 1
+    __denominator_unit = 1
+    __numerator = []
+    __denominator = []
+
+    def __init__(
+        self,
+        value: int | float,
+        *,
+        num: abc.Sequence[
+            _UnitType
+        ],  # numerator (even a single numerator) must be passed as a sequence
+        per: (abc.Sequence[int] | abc.Sequence[_UnitType],) = (
+            1,
+        ),  # denominator (even a single denominator) must be passed as a sequence
+        quantity=GENERIC_QUANTITY,
+    ):
+
+        self.__numerator_unit = self.__list2unit(num, allow_int=False)
+        self.__denominator_unit = self.__list2unit(per, allow_int=True)
+        self.__numerator.append(num)
+        self.__denominator.append(per)
+        self.__unit_definition = self.__numerator_unit / self.__denominator_unit
+        super().__init__(
+            value=value, unit_definition=self.__unit_definition, quantity=quantity
+        )
+
+    def __check_condition(self, _from, allow_int=False):
+        # there will be only two conditons:
+        # there must be at least one unit each
+        # at the numerator and at the denominator (denominator could be an integer)
+        if not isinstance(_from, abc.Sequence) is True:
+            raise ValueError("numerator or denominator must be a sequence of units")
+        elif allow_int is False and (
+            not all([isinstance(x, _UnitType) for x in list(_from)])
+        ):
+            # not all the input are units
+            raise ValueError("numerator sequence must contain one or more units")
+        elif allow_int is True and (
+            not all([isinstance(x, (_UnitType, int)) for x in list(_from)])
+        ):
+            # not all the units in the denominator are ints or unit
+            raise ValueError("denominator sequence must contain intergers or units")
+
+    def __list2unit(self, _from: int | abc.Sequence[_UnitType], allow_int=False):
+        _to = 1
+        self.__check_condition(_from, allow_int)
+        self.__repr_only_one_quantity(_from, is_denum=allow_int)
+        for unit in _from:
+            _to = _to * unit
+
+        return _to
+
+    def __repr_only_one_quantity(self, _from: abc.Sequence, is_denum=False):
+        """Ensure that each unit represent exclusively only one quanitity"""
+        quantities = [x._quantity for x in _from]
+        counts = Counter(quantities)
+        duplicates = [s for s, c in counts.items() if c > 1]
+
+        if duplicates:
+            err_str = f"duplicate quantities are not allowed: {counts}"
+            raise ValueError(
+                "Numerator: " + err_str if not is_denum else "Denonimator: " + err_str
+            )
+
+    def convert_to(self, num: abc.Sequence, per: abc.Sequence):
+        raise NotImplementedError(
+            "custom_unit is an experimental feature and has not been completely implemented yet"
+        )

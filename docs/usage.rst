@@ -475,3 +475,156 @@ Planned improvements may include:
 
 Users are encouraged to treat this feature as provisional and to report issues or edge cases encountered during use.
 
+Custom Units (Experimental)
+==================================
+
+**mudu** provides experimental support for *ad-hoc custom units* via the `custom_unit` interface. This feature allows users to construct a physical quantity directly from a numerator–denominator unit specification without defining a formal dimension or derived quantity class.
+
+The primary intent of this feature is to support rapid prototyping, exploratory calculations, and situations where defining a full dimension class would be unnecessarily heavy.
+
+Unlike standard dimension objects (e.g. `Length`, `Force`), a `custom_unit` instance represents a **generic physical quantity** with:
+
+- a scalar numerical value,
+- an explicitly defined unit expression,
+- and an automatically inferred symbolic dimension.
+
+Creating a Custom Unit
+----------------------
+
+A custom unit is created by providing:
+- a numerical value, and
+- a numerator (`num`) and denominator (`per`) tuple describing the unit composition.
+
+.. code-block:: python
+
+    from mudu import custom_unit, METER, SECOND
+
+    c = custom_unit(20, num=(METER,), per=(SECOND,))
+    c
+
+    # Output:
+    # 20 m/s
+
+Here, the unit expression `m/s` is constructed dynamically, and the dimension is inferred as L/T.
+
+Inspecting Attributes
+---------------------
+
+A `custom_unit` object exposes a limited but well-defined interface.
+
+.. code-block:: python
+
+    c.value        # numerical magnitude
+    c.unit_type    # unit expression
+    c.dimension    # symbolic dimension
+    c.quantity     # generic quantity label
+
+Example:
+
+.. code-block:: python
+
+    c.value        # 20
+    c.unit_type    # m/s
+    c.dimension    # L/T
+    c.quantity     # 'generic_quantity'
+
+Note that `custom_unit` does not expose a `unit` attribute. Instead, the unit expression is accessible via `unit_type`.
+
+Arithmetic and Comparison Semantics
+-----------------------------------
+
+`custom_unit` objects support limited arithmetic and comparison operations with scalars.
+
+Scalar arithmetic:
+
+.. code-block:: python
+
+    c + 10     # returns a scalar
+    c * 2
+    c / 4
+
+Comparison operations compare the underlying numerical value:
+
+.. code-block:: python
+
+    c == 20        # True
+    c > 20         # False
+    c < 20         # False
+
+This behavior is equivalent to comparing `c.value` directly.
+
+.. code-block:: python
+
+    c.value == 20  # True
+
+**Important:** Arithmetic or comparison with other dimensioned objects is intentionally restricted in the current implementation.
+
+Dimensional Semantics
+---------------------
+
+Although `custom_unit` instances do not correspond to a named dimension class, they still participate in symbolic dimensional analysis.
+
+.. code-block:: python
+
+    c.dimension   # L/T
+
+The dimension is inferred from the unit composition (`num` and `per`) using the same symbolic machinery as standard derived quantities.
+
+Conversion Limitations
+----------------------
+
+Unit conversion is **not yet implemented** for `custom_unit`.
+
+Attempting to convert a custom unit raises a `NotImplementedError`.
+
+.. code-block:: python
+
+    c.convert_to(num=(METER,), per=(SECOND,))
+
+    # NotImplementedError:
+    # custom_unit is an experimental feature and has not been completely implemented yet
+
+Users requiring full conversion support should define a proper derived quantity or extend conversion standards explicitly.
+
+Design Rationale
+----------------
+
+The `custom_unit` feature exists to fill a gap between:
+
+- fully defined dimension classes (rigorous but verbose), and
+- raw numerical computation (flexible but dimensionally unsafe).
+
+It enables quick expression of physically meaningful values without requiring:
+- subclassing `DerivedQuantity`,
+- defining conversion standards,
+- or registering units globally.
+
+This makes it particularly useful for:
+- interactive exploration,
+- prototyping new physical models,
+- temporary or one-off unit expressions.
+
+Limitations and Experimental Status
+-----------------------------------
+
+This feature is **experimental** and subject to change. Known limitations include:
+
+- No unit conversion support
+- Restricted arithmetic with other quantities
+- Generic (unnamed) quantity semantics
+- Potential API changes in future releases
+
+Users should avoid relying on `custom_unit` in production-critical code.
+
+Future Directions
+-----------------
+
+Potential future enhancements include:
+
+- full conversion support,
+- interoperability with vectorized quantities,
+- optional promotion to formal derived quantities,
+- stricter arithmetic rules.
+
+Feedback on usage patterns and edge cases is encouraged.
+

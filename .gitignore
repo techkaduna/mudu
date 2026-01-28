@@ -1,2 +1,4 @@
 mudu/__pycache__
 mudu/SCRATCH
+mudu/tests/__pycache__
+mudu/tests/.pytest_cache
