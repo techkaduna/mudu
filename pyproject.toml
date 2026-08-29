@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mudu"
-version = "1.2.0"
+version = "2.0.0"
 description = "A python package for unit-aware numerical data handling."
-readme = { file = "README.rst", content-type = "text/x-rst" }
+readme = { file = "README.md", content-type = "text/markdown" }
 license = { text = "MIT" }
 
 authors = [
@@ -16,7 +16,8 @@ authors = [
 requires-python = ">=3.12"
 
 dependencies = [
-  "sympy>=1.13.3"
+  "sympy>=1.13.3",
+  "numpy>=1.26"
 ]
 
 keywords = [
@@ -37,12 +38,108 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Topic :: Scientific/Engineering",
   "Topic :: Scientific/Engineering :: Physics",
-  "Operating System :: OS Independent"
+  "Operating System :: OS Independent",
+  "Typing :: Typed"
 ]
 
 [project.urls]
 Homepage = "https://github.com/techkaduna/mudu"
 Repository = "https://github.com/techkaduna/mudu"
+Changelog = "https://github.com/techkaduna/mudu/blob/main/CHANGELOG.md"
+Issues = "https://github.com/techkaduna/mudu/issues"
+
+# ============================================================================
+# Optional dependency groups does not affect ordinary `pip install mudu`, 
+# except one explicitly runs `pip install mudu[test]` or
+# `mudu[dev]`.
+#
+# `pint` is dev/test-only, used purely as an independent correctness
+# oracle in test_suite.py's differential-validation tests -- it is never
+# imported by mudu itself at runtime.
+# ============================================================================
+[project.optional-dependencies]
+test = [
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "hypothesis>=6.100"
+]
+dev = [
+  "mudu[test]",
+  "ruff>=0.6",
+  "mypy>=1.11",
+  "pint>=0.24",
+  "pytest-benchmark>=4.0",
+  "pre-commit>=3.7"
+]
 
 [tool.setuptools]
 packages = { find = {} }
+
+[tool.setuptools.package-data]
+mudu = ["py.typed"]
+
+# ============================================================================
+# ruff -- lint + format in one tool.
+# ============================================================================
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["mudu", "test", "examples"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "W",    # pycodestyle warnings
+    "I",    # isort (import ordering)
+    "UP",   # pyupgrade (modern syntax)
+    "B",    # flake8-bugbear (common bug patterns)
+    "N",    # pep8-naming
+    "RUF",  # ruff-specific rules
+]
+ignore = [
+    "N801",  # class naming (mudu intentionally uses lowercase for custom_unit)
+    "N802",  # function naming (SequenceOperationErrorr legacy alias, intentional)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"mudu/base.py" = ["N805"]
+"test/test_suite.py" = ["N806"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# ============================================================================
+# mypy
+# ============================================================================
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = "sympy.*"
+ignore_missing_imports = true
+
+# ============================================================================
+# pytest
+# ============================================================================
+[tool.pytest.ini_options]
+
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+filterwarnings = [
+    "error::DeprecationWarning:mudu.*",
+]
+
+[tool.coverage.run]
+source = ["mudu"]
+
+[tool.coverage.report]
+show_missing = true

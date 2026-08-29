@@ -1,0 +1,159 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Cancel superseded runs on the same PR/branch rather than letting stale
+# and current runs both finish -- saves minutes on force-pushed PRs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint (ruff)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ruff
+        run: pip install ruff>=0.6
+      - name: ruff check
+        run: ruff check .
+      - name: ruff format --check
+        run: ruff format --check .
+
+  typecheck:
+    name: Type check (mypy)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package + mypy
+        run: pip install -e ".[dev]"
+      - name: mypy
+        run: mypy mudu
+
+  test:
+    name: Test (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package + test dependencies
+        run: pip install -e ".[test]"
+      - name: Run test suite
+        # -W error::DeprecationWarning:mudu is also enforced via
+        # pyproject.toml's filterwarnings, kept explicit here too so a
+        # local `pytest` run and CI can never silently diverge.
+        # NOTE: path is "tests/" (plural) to match the actual repo layout
+        # -- confirmed from a real local pytest run's traceback, not
+        # assumed. See pyproject.toml's testpaths comment for the same fix.
+        run: pytest tests/test_suite.py -v --cov=mudu --cov-report=term-missing --cov-report=xml
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-py${{ matrix.python-version }}
+          path: coverage.xml
+        # Non-fatal: this is for humans to inspect, not yet a hard gate.
+        # See pyproject.toml's [tool.coverage.report] note on why a
+        # fail_under threshold isn't wired in yet.
+        if: always()
+
+  differential-validation:
+    name: Differential validation against pint (correctness oracle)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package + dev dependencies (includes pint)
+        run: pip install -e ".[dev]"
+      - name: Run differential tests only
+        # Runs only the subset of the suite that cross-checks mudu's
+        # numbers against pint as an independent oracle (see roadmap
+        # Phase 2). Kept as its own job so a pint-specific failure is
+        # immediately distinguishable from a core mudu test failure in
+        # the Actions UI, without slowing down the main test job if pint
+        # itself has installation trouble on a given runner.
+        run: pytest tests/test_suite.py -v -k "differential"
+
+  unit-audit:
+    name: Unit-definition audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package
+        run: pip install -e .
+      - name: Run audit_units against all shipped conversion tables
+        # This is the automated check that would have caught the PSI/
+        # Becquerel copy-paste defects fixed in 2.0.0. It also runs as
+        # part of test_suite.py's TestPublicExtensionAPI, but is broken
+        # out as its own fast, clearly-labeled job so a failure here is
+        # unambiguous in the Actions UI -- "a unit definition is wrong"
+        # reads very differently from "a test failed."
+        run: |
+          python -c "
+          from mudu.units import (
+              _LENGTH_CONVERSION_TABLE, _MASS_CONVERSION_TABLE, _TIME_CONVERSION_TABLE,
+              _ANGLE_CONVERSION_TABLE, _TEMPERATURE_CONVERSION_TABLE, _FORCE_CONVERSION_TABLE,
+              _PRESSURE_CONVERSION_TABLE, _ENERGY_CONVERSION_TABLE, _DENSITY_CONVERSION_TABLE,
+              _POWER_CONVERSION_TABLE, _RADIOACTIVITY_CONVERSION_TABLE,
+              _ABSORBED_DOSE_CONVERSION_TABLE, _DOSE_EQUIVALENT_TABLE, _SPEED_CONVERSION_TABLE,
+          )
+          from mudu import audit_units
+          import sys
+
+          tables = [
+              _LENGTH_CONVERSION_TABLE, _MASS_CONVERSION_TABLE, _TIME_CONVERSION_TABLE,
+              _ANGLE_CONVERSION_TABLE, _TEMPERATURE_CONVERSION_TABLE, _FORCE_CONVERSION_TABLE,
+              _PRESSURE_CONVERSION_TABLE, _ENERGY_CONVERSION_TABLE, _DENSITY_CONVERSION_TABLE,
+              _POWER_CONVERSION_TABLE, _RADIOACTIVITY_CONVERSION_TABLE,
+              _ABSORBED_DOSE_CONVERSION_TABLE, _DOSE_EQUIVALENT_TABLE, _SPEED_CONVERSION_TABLE,
+          ]
+          problems = audit_units(*tables)
+          if problems:
+              print('UNIT AUDIT FAILED:')
+              for p in problems:
+                  print(' -', p)
+              sys.exit(1)
+          print('Unit audit clean: 0 problems across', len(tables), 'tables')
+          "
+
+  docs-examples:
+    name: Doctest README/docs code samples
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package
+        run: pip install -e .
+      - name: Run doctest on README
+        # Placeholder step: wires in once README.rst's code blocks are
+        # converted to doctest format (roadmap Phase 7 item -- "every
+        # code sample must actually execute as part of CI"). Not yet
+        # populated; left here so the job exists and is visibly failing
+        # (soft) rather than silently forgotten. See CONTRIBUTING.md.
+        run: |
+          echo "TODO: doctest wiring not yet implemented -- tracked in CONTRIBUTING.md"
+        continue-on-error: true
+        

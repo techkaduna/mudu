@@ -3,20 +3,16 @@
 mudu.units
 =====================
 
-mudu module, defines all dimensionunit units and their
-conversion table.
+mudu module, defines all dimension/unit units and their
+conversion tables.
 
-For more information, read the documenation using
+For more information, read the documentation using
 
 .. code-block:: shell
     mudu --doc
 
 in your cli
-
 """
-
-import functools
-import math
 
 from .base import (
     SOLID_ANGLE,
@@ -48,6 +44,8 @@ from .base import (
     ELECTRIC_CURRENT,
     OrderUnit,
     KILO,
+    Linear,
+    Affine,
     _ConversionTableType,
 )
 
@@ -58,44 +56,24 @@ from .base import (
 # =============
 LENGTH_QUANTITY = "length"
 INCH = _UnitType(
-    _quantity=LENGTH_QUANTITY,
-    _dimension=LENGTH,
-    _unit_name="inch",
-    _unit_symbol="in",
+    _quantity=LENGTH_QUANTITY, _dimension=LENGTH, _unit_name="inch", _unit_symbol="in"
 )
-
 METER = _UnitType(
-    _quantity=LENGTH_QUANTITY,
-    _dimension=LENGTH,
-    _unit_name="meter",
-    _unit_symbol="m",
+    _quantity=LENGTH_QUANTITY, _dimension=LENGTH, _unit_name="meter", _unit_symbol="m"
 )
-
 FEET = _UnitType(
-    _quantity=LENGTH_QUANTITY,
-    _dimension=LENGTH,
-    _unit_name="feet",
-    _unit_symbol="ft",
+    _quantity=LENGTH_QUANTITY, _dimension=LENGTH, _unit_name="feet", _unit_symbol="ft"
 )
-
 YARD = _UnitType(
-    _quantity=LENGTH_QUANTITY,
-    _dimension=LENGTH,
-    _unit_name="yard",
-    _unit_symbol="y",
+    _quantity=LENGTH_QUANTITY, _dimension=LENGTH, _unit_name="yard", _unit_symbol="y"
 )
-
 MILE = _UnitType(
-    _quantity=LENGTH_QUANTITY,
-    _dimension=LENGTH,
-    _unit_name="mile",
-    _unit_symbol="mi",
+    _quantity=LENGTH_QUANTITY, _dimension=LENGTH, _unit_name="mile", _unit_symbol="mi"
 )
-
 NAUTICAL_MILE = _UnitType(
     _quantity=LENGTH_QUANTITY,
     _dimension=LENGTH,
-    _unit_name="nautical mile",
+    _unit_name="nautical_mile",
     _unit_symbol="NM",
 )
 
@@ -104,35 +82,23 @@ NAUTICAL_MILE = _UnitType(
 # ===========
 MASS_QUANTITY = "mass"
 GRAM = _UnitType(
-    _quantity=MASS_QUANTITY,
-    _dimension=MASS,
-    _unit_name="gram",
-    _unit_symbol="g",
+    _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="gram", _unit_symbol="g"
 )
-
 OUNCE = _UnitType(
     _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="ounce", _unit_symbol="oz"
 )
-
 POUND = _UnitType(
     _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="pound", _unit_symbol="lb"
 )
-
 SLUG = _UnitType(
-    _quantity=MASS_QUANTITY,
-    _dimension=MASS,
-    _unit_name="slug",
-    _unit_symbol="slug",
+    _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="slug", _unit_symbol="slug"
 )
-
 SHORT_TON = _UnitType(
     _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="short_ton", _unit_symbol="t"
 )
-
 LONG_TON = _UnitType(
     _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="long_ton", _unit_symbol="t"
 )
-
 METRIC_TON = _UnitType(
     _quantity=MASS_QUANTITY, _dimension=MASS, _unit_name="metric_ton", _unit_symbol="t"
 )
@@ -142,24 +108,13 @@ METRIC_TON = _UnitType(
 # ===========
 TIME_QUANTITY = "time"
 SECOND = _UnitType(
-    _quantity=TIME_QUANTITY,
-    _dimension=TIME,
-    _unit_name="second",
-    _unit_symbol="s",
+    _quantity=TIME_QUANTITY, _dimension=TIME, _unit_name="second", _unit_symbol="s"
 )
-
 MINUTE = _UnitType(
-    _quantity=TIME_QUANTITY,
-    _dimension=TIME,
-    _unit_name="minute",
-    _unit_symbol="min",
+    _quantity=TIME_QUANTITY, _dimension=TIME, _unit_name="minute", _unit_symbol="min"
 )
-
 HOUR = _UnitType(
-    _quantity=TIME_QUANTITY,
-    _dimension=TIME,
-    _unit_name="hour",
-    _unit_symbol="hr",
+    _quantity=TIME_QUANTITY, _dimension=TIME, _unit_name="hour", _unit_symbol="hr"
 )
 
 # ==================
@@ -172,21 +127,18 @@ KELVIN = _UnitType(
     _unit_name="kelvin",
     _unit_symbol="K",
 )
-
 RANKINE = _UnitType(
     _quantity=TEMP_QUANTITY,
     _dimension=THERMODYNAMIC_TEMPERATURE,
     _unit_name="rankine",
     _unit_symbol="R",
 )
-
 CELSIUS = _UnitType(
     _quantity=TEMP_QUANTITY,
     _dimension=THERMODYNAMIC_TEMPERATURE,
     _unit_name="celsius",
     _unit_symbol="C",
 )
-
 FARENHEIT = _UnitType(
     _quantity=TEMP_QUANTITY,
     _dimension=THERMODYNAMIC_TEMPERATURE,
@@ -204,7 +156,6 @@ RADIAN = _UnitType(
     _unit_name="radian",
     _unit_symbol="rad",
 )
-
 DEGREE = _UnitType(
     _quantity=ANGLE_QUANTITY,
     _dimension=PLANE_ANGLE,
@@ -226,7 +177,7 @@ STERADIAN = _UnitType(
 AMPERE = _UnitType(
     _quantity=ELECTRIC_CURRENT,
     _dimension=ELECTRIC_CURRENT,
-    _unit_name="current",
+    _unit_name="ampere",
     _unit_symbol="A",
 )
 
@@ -253,7 +204,6 @@ CANDELA = _UnitType(
 
 # ==================================================================================
 
-
 # =================== Derived Units ================================================
 KILOGRAM = OrderUnit(KILO, GRAM)
 KILOMETER = OrderUnit(KILO, METER)
@@ -269,15 +219,13 @@ NEWTON = _UnitType(
     _unit_symbol="N",
     _order=None,
 )
-
 POUND_FORCE = _UnitType(
     _quantity=FORCE,
     _dimension=__force_dimension,
-    _unit_name="pound",
+    _unit_name="pound_force",
     _unit_symbol="lbf",
     _order=None,
 )
-
 POUNDAL = _UnitType(
     _quantity=FORCE,
     _dimension=__force_dimension,
@@ -285,7 +233,6 @@ POUNDAL = _UnitType(
     _unit_symbol="pdl",
     _order=None,
 )
-
 DYNE = _UnitType(
     _quantity=FORCE,
     _dimension=__force_dimension,
@@ -305,7 +252,6 @@ METER_PER_SECOND = _UnitType(
     _unit_symbol="m/s",
     _order=None,
 )
-
 KM_PER_HOUR = _UnitType(
     _quantity=SPEED,
     _dimension=__speed_dimension,
@@ -313,7 +259,6 @@ KM_PER_HOUR = _UnitType(
     _unit_symbol="km/h",
     _order=None,
 )
-
 FOOT_PER_SECOND = _UnitType(
     _quantity=SPEED,
     _dimension=__speed_dimension,
@@ -321,7 +266,6 @@ FOOT_PER_SECOND = _UnitType(
     _unit_symbol="ft/s",
     _order=None,
 )
-
 MILE_PER_HOUR = _UnitType(
     _quantity=SPEED,
     _dimension=__speed_dimension,
@@ -329,7 +273,6 @@ MILE_PER_HOUR = _UnitType(
     _unit_symbol="mph",
     _order=None,
 )
-
 KNOT = _UnitType(
     _quantity=SPEED,
     _dimension=__speed_dimension,
@@ -349,15 +292,13 @@ PASCAL = _UnitType(
     _unit_symbol="Pa",
     _order=None,
 )
-
 PSI = _UnitType(
     _quantity=PRESSURE,
     _dimension=__pressure_dimension,
-    _unit_name="pascal",
+    _unit_name="psi",
     _unit_symbol="psi",
     _order=None,
 )
-
 ATM = _UnitType(
     _quantity=PRESSURE,
     _dimension=__pressure_dimension,
@@ -365,7 +306,6 @@ ATM = _UnitType(
     _unit_symbol="atm",
     _order=None,
 )
-
 BAR = _UnitType(
     _quantity=PRESSURE,
     _dimension=__pressure_dimension,
@@ -373,7 +313,6 @@ BAR = _UnitType(
     _unit_symbol="bar",
     _order=None,
 )
-
 mmHg = _UnitType(
     _quantity=PRESSURE,
     _dimension=__pressure_dimension,
@@ -381,7 +320,6 @@ mmHg = _UnitType(
     _unit_symbol="mmHg",
     _order=None,
 )
-
 inHg = _UnitType(
     _quantity=PRESSURE,
     _dimension=__pressure_dimension,
@@ -389,7 +327,6 @@ inHg = _UnitType(
     _unit_symbol="inHg",
     _order=None,
 )
-
 POUND_PER_SQUARE_FOOT = _UnitType(
     _quantity=PRESSURE,
     _dimension=__pressure_dimension,
@@ -409,7 +346,6 @@ JOULE = _UnitType(
     _unit_symbol="J",
     _order=None,
 )
-
 CALORIE = _UnitType(
     _quantity=ENERGY,
     _dimension=__energy_dimension,
@@ -417,7 +353,6 @@ CALORIE = _UnitType(
     _unit_symbol="cal",
     _order=None,
 )
-
 WATT_HOUR = _UnitType(
     _quantity=ENERGY,
     _dimension=__energy_dimension,
@@ -425,7 +360,6 @@ WATT_HOUR = _UnitType(
     _unit_symbol="Wh",
     _order=None,
 )
-
 ELECTRON_VOLT = _UnitType(
     _quantity=ENERGY,
     _dimension=__energy_dimension,
@@ -433,7 +367,6 @@ ELECTRON_VOLT = _UnitType(
     _unit_symbol="eV",
     _order=None,
 )
-
 BRITISH_THERMAL_UNIT = _UnitType(
     _quantity=ENERGY,
     _dimension=__energy_dimension,
@@ -453,7 +386,6 @@ KILOGRAM_PER_CUBIC_METER = _UnitType(
     _unit_symbol="kg/m3",
     _order=None,
 )
-
 GRAM_PER_CUBIC_CENTIMETER = _UnitType(
     _quantity=DENSITY,
     _dimension=__density_dimension,
@@ -461,15 +393,13 @@ GRAM_PER_CUBIC_CENTIMETER = _UnitType(
     _unit_symbol="g/cm3",
     _order=None,
 )
-
 GRAM_PER_CUBIC_MILLILITER = _UnitType(
     _quantity=DENSITY,
     _dimension=__density_dimension,
-    _unit_name="gram_per_cubic_centimeter",
-    _unit_symbol="g/cm3",
+    _unit_name="gram_per_cubic_milliliter",
+    _unit_symbol="g/mL",
     _order=None,
 )
-
 POUND_PER_CUBIC_FOOT = _UnitType(
     _quantity=DENSITY,
     _dimension=__density_dimension,
@@ -477,7 +407,6 @@ POUND_PER_CUBIC_FOOT = _UnitType(
     _unit_symbol="lb/ft3",
     _order=None,
 )
-
 POUND_PER_CUBIC_INCH = _UnitType(
     _quantity=DENSITY,
     _dimension=__density_dimension,
@@ -485,7 +414,6 @@ POUND_PER_CUBIC_INCH = _UnitType(
     _unit_symbol="lb/in3",
     _order=None,
 )
-
 SLUG_PER_CUBIC_FOOT = _UnitType(
     _quantity=DENSITY,
     _dimension=__density_dimension,
@@ -505,7 +433,6 @@ WATT = _UnitType(
     _unit_symbol="W",
     _order=None,
 )
-
 HORSEPOWER = _UnitType(
     _quantity=POWER,
     _dimension=__power_dimension,
@@ -513,7 +440,6 @@ HORSEPOWER = _UnitType(
     _unit_symbol="hp",
     _order=None,
 )
-
 BTU_PER_HOUR = _UnitType(
     _quantity=POWER,
     _dimension=__power_dimension,
@@ -532,7 +458,6 @@ VOLT = _UnitType(
     _unit_symbol="V",
     _order=None,
 )
-
 FARAD = _UnitType(
     _quantity=CAPACITANCE,
     _dimension=((SECOND**4) * AMPERE**2 / (METER**2) * KILOGRAM)._dimension,
@@ -540,7 +465,6 @@ FARAD = _UnitType(
     _unit_symbol="F",
     _order=None,
 )
-
 HENRY = _UnitType(
     _quantity=INDUCTANCE,
     _dimension=(KILOGRAM * (METER**2) / (SECOND**2) * AMPERE**2)._dimension,
@@ -548,7 +472,6 @@ HENRY = _UnitType(
     _unit_symbol="H",
     _order=None,
 )
-
 WEBER = _UnitType(
     _quantity=MAGNETIC_FLUX,
     _dimension=(KILOGRAM * (METER**2) / (SECOND**2) * AMPERE)._dimension,
@@ -556,15 +479,13 @@ WEBER = _UnitType(
     _unit_symbol="Wb",
     _order=None,
 )
-
 OHMS = _UnitType(
     _quantity=RESISTANCE,
     _dimension=(KILOGRAM * (METER**2) / (SECOND**2) * AMPERE)._dimension,
     _unit_name="ohms",
-    _unit_symbol="Ω",
+    _unit_symbol="Ω",
     _order=None,
 )
-
 SIEMENS = _UnitType(
     _quantity=CONDUCTANCE,
     _dimension=((SECOND**3) * AMPERE**2 / (METER**2) / KILOGRAM)._dimension,
@@ -572,7 +493,6 @@ SIEMENS = _UnitType(
     _unit_symbol="S",
     _order=None,
 )
-
 TESLA = _UnitType(
     _quantity=MAGNETIC_FIELD_STRENGTH,
     _dimension=(KILOGRAM / (SECOND**2) * AMPERE)._dimension,
@@ -595,17 +515,17 @@ LUX = _UnitType(
 # ==============
 # Radioactivity
 # ==============
+__radioactivity_dimension = (1 / SECOND)._dimension
 BECQUEREL = _UnitType(
     _quantity=RADIOACTIVITY,
-    _dimension=(CANDELA * STERADIAN / METER**2)._dimension,
+    _dimension=__radioactivity_dimension,
     _unit_name="becquerel",
     _unit_symbol="Bq",
     _order=None,
 )
-
 CURIE = _UnitType(
     _quantity=RADIOACTIVITY,
-    _dimension=(1 / SECOND)._dimension,
+    _dimension=__radioactivity_dimension,
     _unit_name="curie",
     _unit_symbol="Ci",
     _order=None,
@@ -622,7 +542,6 @@ GRAY = _UnitType(
     _unit_symbol="Gy",
     _order=None,
 )
-
 RAD = _UnitType(
     _quantity=ABSORBED_DOSE,
     _dimension=__radioactive_dose_dimension,
@@ -641,7 +560,6 @@ SIEVERT = _UnitType(
     _unit_symbol="Sv",
     _order=None,
 )
-
 REM = _UnitType(
     _quantity=DOSE_EQUIVALENT,
     _dimension=__radioactive_dose_dimension,
@@ -650,192 +568,214 @@ REM = _UnitType(
     _order=None,
 )
 
-# =================
-# ============================
-# utility conversion function
-# ============================
-_basic_unit_converter = lambda x, y, invert=False: x * y if invert is False else x / y
+# ============================================================================
+# CONVERSION TABLES -- star topology.
+#
+# Every table below has exactly ONE base unit per dimension, and every
+# other unit registers exactly one Conversion relative to that base unit.
+# Converting between any two non-base units is always a two-hop
+# from_unit -> base_unit -> to_unit operation handled generically in
+# dimensions.py; no pairwise entries are needed or supported.
+# r
+# Uses NIST SP 811 or common engineering reference values.
+# ============================================================================
 
-# ============================ CONVERSION TABLES =====================================
-_LENGTH_CONVERSION_TABLE = _ConversionTableType(
-    dimension=LENGTH,
-    conversion_table=[
-        ((INCH, METER), functools.partial(_basic_unit_converter, y=0.0254)),
-        ((FEET, METER), functools.partial(_basic_unit_converter, y=0.3048)),
-        ((YARD, METER), functools.partial(_basic_unit_converter, y=0.9144)),
-        ((MILE, METER), functools.partial(_basic_unit_converter, y=1609.344)),
-        ((NAUTICAL_MILE, METER), functools.partial(_basic_unit_converter, y=1852)),
-        ((INCH, FEET), functools.partial(_basic_unit_converter, y=12)),
-    ],
-)
+_LENGTH_CONVERSION_TABLE = _ConversionTableType(dimension=LENGTH, base_unit=METER)
+_LENGTH_CONVERSION_TABLE.register(INCH, Linear(0.0254))
+_LENGTH_CONVERSION_TABLE.register(FEET, Linear(0.3048))
+_LENGTH_CONVERSION_TABLE.register(YARD, Linear(0.9144))
+_LENGTH_CONVERSION_TABLE.register(MILE, Linear(1609.344))
+_LENGTH_CONVERSION_TABLE.register(NAUTICAL_MILE, Linear(1852))
 
-_MASS_CONVERSION_TABLE = _ConversionTableType(
-    dimension=MASS,
-    conversion_table=[
-        ((POUND, GRAM), functools.partial(_basic_unit_converter, y=453.59237)),
-        ((OUNCE, GRAM), functools.partial(_basic_unit_converter, y=28.3495)),
-        ((POUND, OUNCE), functools.partial(_basic_unit_converter, y=16)),
-        ((SLUG, GRAM), functools.partial(_basic_unit_converter, y=14.593903)),
-        ((SHORT_TON, GRAM), functools.partial(_basic_unit_converter, y=907000)),
-        ((LONG_TON, GRAM), functools.partial(_basic_unit_converter, y=1016000)),
-        ((METRIC_TON, GRAM), functools.partial(_basic_unit_converter, y=1000000)),
-    ],
-)
+_MASS_CONVERSION_TABLE = _ConversionTableType(dimension=MASS, base_unit=GRAM)
+_MASS_CONVERSION_TABLE.register(POUND, Linear(453.59237))
+_MASS_CONVERSION_TABLE.register(OUNCE, Linear(28.349523125))
+_MASS_CONVERSION_TABLE.register(SLUG, Linear(14593.903))
+_MASS_CONVERSION_TABLE.register(SHORT_TON, Linear(907184.74))
+_MASS_CONVERSION_TABLE.register(LONG_TON, Linear(1016046.9088))
+_MASS_CONVERSION_TABLE.register(METRIC_TON, Linear(1_000_000))
 
-_TIME_CONVERSION_TABLE = _ConversionTableType(
-    dimension=TIME,
-    conversion_table=(
-        ((MINUTE, SECOND), functools.partial(_basic_unit_converter, y=60)),
-        ((HOUR, SECOND), functools.partial(_basic_unit_converter, y=3600)),
-        ((HOUR, MINUTE), functools.partial(_basic_unit_converter, y=60)),
-    ),
-)
+_TIME_CONVERSION_TABLE = _ConversionTableType(dimension=TIME, base_unit=SECOND)
+_TIME_CONVERSION_TABLE.register(MINUTE, Linear(60))
+_TIME_CONVERSION_TABLE.register(HOUR, Linear(3600))
 
 _TEMPERATURE_CONVERSION_TABLE = _ConversionTableType(
-    dimension=THERMODYNAMIC_TEMPERATURE,
-    conversion_table=(
-        (
-            (KELVIN, RANKINE),
-            lambda x, invert=False: x * 1.8 if invert is False else x / 1.8,
-        ),
-        (
-            (KELVIN, CELSIUS),
-            lambda x, invert=False: x - 273.15 if invert is False else x + 273.15,
-        ),
-        (
-            (KELVIN, FARENHEIT),
-            lambda x, invert=False: (
-                (1.8 * x) - 459.67 if invert is False else (x + 459.67) / 1.8
-            ),
-        ),
-    ),
+    dimension=THERMODYNAMIC_TEMPERATURE, base_unit=KELVIN
+)
+_TEMPERATURE_CONVERSION_TABLE.register(RANKINE, Linear(5 / 9))
+_TEMPERATURE_CONVERSION_TABLE.register(CELSIUS, Affine(scale=1.0, offset=273.15))
+_TEMPERATURE_CONVERSION_TABLE.register(
+    FARENHEIT, Affine(scale=5 / 9, offset=273.15 - 32 * (5 / 9))
 )
 
-_ANGLE_CONVERSION_TABLE = _ConversionTableType(
-    dimension=PLANE_ANGLE,
-    conversion_table=(
-        (
-            (DEGREE, RADIAN),
-            lambda x, invert=False: (
-                math.radians(x) if invert is False else math.degrees(x)
-            ),
-        ),
-    ),
-)
+_ANGLE_CONVERSION_TABLE = _ConversionTableType(dimension=PLANE_ANGLE, base_unit=RADIAN)
+_ANGLE_CONVERSION_TABLE.register(DEGREE, Linear(3.14159265358979323846 / 180))
 
 _FORCE_CONVERSION_TABLE = _ConversionTableType(
-    dimension=FORCE,
-    conversion_table=(
-        ((DYNE, NEWTON), functools.partial(_basic_unit_converter, y=0.00001)),
-        ((POUND_FORCE, NEWTON), functools.partial(_basic_unit_converter, y=4.44822)),
-        ((POUNDAL, NEWTON), functools.partial(_basic_unit_converter, y=0.138255)),
-    ),
+    dimension=__force_dimension, base_unit=NEWTON
 )
+_FORCE_CONVERSION_TABLE.register(DYNE, Linear(0.00001))
+_FORCE_CONVERSION_TABLE.register(POUND_FORCE, Linear(4.4482216153))
+_FORCE_CONVERSION_TABLE.register(POUNDAL, Linear(0.138254954376))
 
 _SPEED_CONVERSION_TABLE = _ConversionTableType(
-    dimension=SPEED,
-    conversion_table=(
-        (
-            (KM_PER_HOUR, METER_PER_SECOND),
-            functools.partial(_basic_unit_converter, y=1000 / 3600),
-        ),
-        (
-            (MILE_PER_HOUR, METER_PER_SECOND),
-            functools.partial(_basic_unit_converter, y=0.44704),
-        ),
-        (
-            (KNOT, METER_PER_SECOND),
-            functools.partial(_basic_unit_converter, y=1852 / 3600),
-        ),
-        (
-            (FOOT_PER_SECOND, METER_PER_SECOND),
-            functools.partial(_basic_unit_converter, y=0.3048),
-        ),
-    ),
+    dimension=__speed_dimension, base_unit=METER_PER_SECOND
 )
+_SPEED_CONVERSION_TABLE.register(KM_PER_HOUR, Linear(1000 / 3600))
+_SPEED_CONVERSION_TABLE.register(MILE_PER_HOUR, Linear(0.44704))
+_SPEED_CONVERSION_TABLE.register(KNOT, Linear(1852 / 3600))
+_SPEED_CONVERSION_TABLE.register(FOOT_PER_SECOND, Linear(0.3048))
 
 _PRESSURE_CONVERSION_TABLE = _ConversionTableType(
-    dimension=PRESSURE,
-    conversion_table=(
-        ((PSI, PASCAL), functools.partial(_basic_unit_converter, y=6894.76)),
-        ((ATM, PASCAL), functools.partial(_basic_unit_converter, y=101325)),
-        ((BAR, PASCAL), functools.partial(_basic_unit_converter, y=100000)),
-        ((mmHg, PASCAL), functools.partial(_basic_unit_converter, y=133.322)),
-        ((inHg, PASCAL), functools.partial(_basic_unit_converter, y=3386.389)),
-        (
-            (POUND_PER_SQUARE_FOOT, PASCAL),
-            functools.partial(_basic_unit_converter, y=47.8803),
-        ),
-    ),
+    dimension=__pressure_dimension, base_unit=PASCAL
 )
+_PRESSURE_CONVERSION_TABLE.register(PSI, Linear(6894.757293168))
+_PRESSURE_CONVERSION_TABLE.register(ATM, Linear(101325))
+_PRESSURE_CONVERSION_TABLE.register(BAR, Linear(100000))
+_PRESSURE_CONVERSION_TABLE.register(mmHg, Linear(133.322387415))
+_PRESSURE_CONVERSION_TABLE.register(inHg, Linear(3386.389))
+_PRESSURE_CONVERSION_TABLE.register(POUND_PER_SQUARE_FOOT, Linear(47.880259))
 
 _ENERGY_CONVERSION_TABLE = _ConversionTableType(
-    dimension=ENERGY,
-    conversion_table=(
-        ((CALORIE, JOULE), functools.partial(_basic_unit_converter, y=4.184)),
-        ((WATT_HOUR, JOULE), functools.partial(_basic_unit_converter, y=3600)),
-        (
-            (ELECTRON_VOLT, JOULE),
-            functools.partial(_basic_unit_converter, y=1.60217662e-19),
-        ),
-        (
-            (BRITISH_THERMAL_UNIT, JOULE),
-            functools.partial(_basic_unit_converter, y=1055),
-        ),
-    ),
+    dimension=__energy_dimension, base_unit=JOULE
 )
+_ENERGY_CONVERSION_TABLE.register(CALORIE, Linear(4.184))
+_ENERGY_CONVERSION_TABLE.register(WATT_HOUR, Linear(3600))
+_ENERGY_CONVERSION_TABLE.register(ELECTRON_VOLT, Linear(1.602176634e-19))
+_ENERGY_CONVERSION_TABLE.register(BRITISH_THERMAL_UNIT, Linear(1055.05585262))
 
 _DENSITY_CONVERSION_TABLE = _ConversionTableType(
-    dimension=DENSITY,
-    conversion_table=(
-        (
-            (GRAM_PER_CUBIC_CENTIMETER, KILOGRAM_PER_CUBIC_METER),
-            functools.partial(_basic_unit_converter, y=1000),
-        ),
-        (
-            (GRAM_PER_CUBIC_MILLILITER, KILOGRAM_PER_CUBIC_METER),
-            functools.partial(_basic_unit_converter, y=1000),
-        ),
-        (
-            (POUND_PER_CUBIC_FOOT, KILOGRAM_PER_CUBIC_METER),
-            functools.partial(_basic_unit_converter, y=16.0185),
-        ),
-        (
-            (POUND_PER_CUBIC_INCH, KILOGRAM_PER_CUBIC_METER),
-            functools.partial(_basic_unit_converter, y=27679.9),
-        ),
-        (
-            (SLUG_PER_CUBIC_FOOT, KILOGRAM_PER_CUBIC_METER),
-            functools.partial(_basic_unit_converter, y=515.3788),
-        ),
-    ),
+    dimension=__density_dimension, base_unit=KILOGRAM_PER_CUBIC_METER
 )
+_DENSITY_CONVERSION_TABLE.register(GRAM_PER_CUBIC_CENTIMETER, Linear(1000))
+_DENSITY_CONVERSION_TABLE.register(GRAM_PER_CUBIC_MILLILITER, Linear(1000))
+_DENSITY_CONVERSION_TABLE.register(POUND_PER_CUBIC_FOOT, Linear(16.01846337))
+_DENSITY_CONVERSION_TABLE.register(POUND_PER_CUBIC_INCH, Linear(27679.90471))
+_DENSITY_CONVERSION_TABLE.register(SLUG_PER_CUBIC_FOOT, Linear(515.3788184))
 
 _POWER_CONVERSION_TABLE = _ConversionTableType(
-    dimension=POWER,
-    conversion_table=(
-        ((HORSEPOWER, WATT), functools.partial(_basic_unit_converter, y=745.7)),
-        ((BTU_PER_HOUR, WATT), functools.partial(_basic_unit_converter, y=0.293071)),
-    ),
+    dimension=__power_dimension, base_unit=WATT
 )
+_POWER_CONVERSION_TABLE.register(HORSEPOWER, Linear(745.69987158227))
+_POWER_CONVERSION_TABLE.register(BTU_PER_HOUR, Linear(0.29307107))
 
 _RADIOACTIVITY_CONVERSION_TABLE = _ConversionTableType(
-    dimension=RADIOACTIVITY,
-    conversion_table=(
-        ((CURIE, BECQUEREL), functools.partial(_basic_unit_converter, y=3.7e10)),
-    ),
+    dimension=__radioactivity_dimension, base_unit=BECQUEREL
 )
+_RADIOACTIVITY_CONVERSION_TABLE.register(CURIE, Linear(3.7e10))
 
 _ABSORBED_DOSE_CONVERSION_TABLE = _ConversionTableType(
-    dimension=ABSORBED_DOSE,
-    conversion_table=(((GRAY, RAD), functools.partial(_basic_unit_converter, y=100)),),
+    dimension=__radioactive_dose_dimension, base_unit=GRAY
 )
+_ABSORBED_DOSE_CONVERSION_TABLE.register(RAD, Linear(0.01))
 
 _DOSE_EQUIVALENT_TABLE = _ConversionTableType(
-    dimension=DOSE_EQUIVALENT,
-    conversion_table=(
-        ((SIEVERT, REM), functools.partial(_basic_unit_converter, y=100)),
-    ),
+    dimension=__radioactive_dose_dimension, base_unit=SIEVERT
 )
+_DOSE_EQUIVALENT_TABLE.register(REM, Linear(0.01))
 
 # =========================================================================================
+
+__all__ = [
+    # length
+    "INCH",
+    "METER",
+    "KILOMETER",
+    "FEET",
+    "YARD",
+    "MILE",
+    "NAUTICAL_MILE",
+    # mass
+    "GRAM",
+    "OUNCE",
+    "KILOGRAM",
+    "POUND",
+    "SLUG",
+    "SHORT_TON",
+    "LONG_TON",
+    "METRIC_TON",
+    # time
+    "SECOND",
+    "MINUTE",
+    "HOUR",
+    # temperature
+    "KELVIN",
+    "RANKINE",
+    "CELSIUS",
+    "FARENHEIT",
+    # angle
+    "DEGREE",
+    "RADIAN",
+    "STERADIAN",
+    # base SI
+    "AMPERE",
+    "MOLE",
+    "CANDELA",
+    # force
+    "NEWTON",
+    "POUND_FORCE",
+    "POUNDAL",
+    "DYNE",
+    # pressure
+    "PASCAL",
+    "PSI",
+    "mmHg",
+    "inHg",
+    "BAR",
+    "ATM",
+    "POUND_PER_SQUARE_FOOT",
+    # energy
+    "JOULE",
+    "BRITISH_THERMAL_UNIT",
+    "CALORIE",
+    "WATT_HOUR",
+    "ELECTRON_VOLT",
+    # density
+    "KILOGRAM_PER_CUBIC_METER",
+    "GRAM_PER_CUBIC_CENTIMETER",
+    "GRAM_PER_CUBIC_MILLILITER",
+    "POUND_PER_CUBIC_FOOT",
+    "POUND_PER_CUBIC_INCH",
+    "SLUG_PER_CUBIC_FOOT",
+    # power
+    "WATT",
+    "HORSEPOWER",
+    "BTU_PER_HOUR",
+    # electrical
+    "VOLT",
+    "FARAD",
+    "HENRY",
+    "WEBER",
+    "OHMS",
+    "TESLA",
+    "SIEMENS",
+    "LUX",
+    # radioactivity / dose
+    "BECQUEREL",
+    "CURIE",
+    "GRAY",
+    "RAD",
+    "SIEVERT",
+    "REM",
+    # speed
+    "METER_PER_SECOND",
+    "MILE_PER_HOUR",
+    "KM_PER_HOUR",
+    "FOOT_PER_SECOND",
+    "KNOT",
+    # conversion tables used in dimensions.py
+    "_LENGTH_CONVERSION_TABLE",
+    "_MASS_CONVERSION_TABLE",
+    "_TIME_CONVERSION_TABLE",
+    "_ANGLE_CONVERSION_TABLE",
+    "_TEMPERATURE_CONVERSION_TABLE",
+    "_FORCE_CONVERSION_TABLE",
+    "_PRESSURE_CONVERSION_TABLE",
+    "_ENERGY_CONVERSION_TABLE",
+    "_DENSITY_CONVERSION_TABLE",
+    "_POWER_CONVERSION_TABLE",
+    "_RADIOACTIVITY_CONVERSION_TABLE",
+    "_ABSORBED_DOSE_CONVERSION_TABLE",
+    "_DOSE_EQUIVALENT_TABLE",
+    "_SPEED_CONVERSION_TABLE",
+]

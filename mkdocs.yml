@@ -1,0 +1,89 @@
+site_name: Ose, Mudu
+site_url: https://mudu.readthedocs.io/
+
+theme:
+  name: material
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  palette:
+    # Light Mode (Green & White primary aesthetic)
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark Mode alternative
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  logo: assets/logo.png
+  favicon: assets/logo.png
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            docstring_style: numpy
+            heading_level: 3
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Usage Guide: usage.md
+  - Examples: examples.md
+  - Reference:
+      - API Reference: api.md
+  - Project Info:
+      - What's Changed: whats_changed.md
+      - Contributing: contributing.md
+      - Changelog: changelog.md
+      - Security: security.md
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: >
+  <img src="/assets/logo.png" alt="mudu logo" width="24" height="24" style="vertical-align: middle; margin-right: 6px;">
+  Made with Python and Love ❤️ &nbsp;Proudly Nigerian 🇳🇬 &nbsp;Proudly Christian &nbsp;|&nbsp; Logo design by <a href="https://www.instagram.com/ddesigngeek/">Odafe Megida (@Ddesigngeek)</a> <br>
+  <i>"For God so loved the world..."</i>
+
+extra:
+  generator: false
