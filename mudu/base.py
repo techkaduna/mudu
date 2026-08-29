@@ -6,11 +6,62 @@ mudu.base
 base module for mudu.
 """
 
-from typing import Self, Sequence
-from dataclasses import dataclass
+from __future__ import annotations
+
 import math
+from dataclasses import dataclass, field
+from typing import Self
 
 import sympy as sym
+
+__all__ = [
+    "ABSORBED_DOSE",
+    "AMOUNT_OF_SUBSTANCE",
+    "ATTO",
+    "CAPACITANCE",
+    "CENTI",
+    "CONDUCTANCE",
+    "DENSITY",
+    "DIMENSIONLESS",
+    "DIMENSIONLESS_UNIT",
+    "DOSE_EQUIVALENT",
+    "ELECTRIC_CURRENT",
+    "ENERGY",
+    "FEMTO",
+    "FORCE",
+    "GENERIC_DIMENSION",
+    "GENERIC_QUANTITY",
+    "GENERIC_UNIT",
+    "GIGA",
+    "ILLUMINANCE",
+    "INDUCTANCE",
+    "KILO",
+    "LENGTH",
+    "LUMINOUS_INTENSITY",
+    "MAGNETIC_FIELD_STRENGTH",
+    "MAGNETIC_FLUX",
+    "MASS",
+    "MEGA",
+    "MICRO",
+    "MILLI",
+    "NANO",
+    "PICO",
+    "PLANE_ANGLE",
+    "POWER",
+    "PRESSURE",
+    "RADIOACTIVITY",
+    "RESISTANCE",
+    "SOLID_ANGLE",
+    "SPEED",
+    "THERMODYNAMIC_TEMPERATURE",
+    "TIME",
+    "VOLTAGE",
+    "Affine",
+    "Linear",
+    "OrderUnit",
+    "_ConversionTableType",
+    "_UnitType",
+]
 
 # ==================
 # Fundamental units
@@ -18,9 +69,9 @@ import sympy as sym
 LENGTH = sym.Symbol("L")
 MASS = sym.Symbol("M")
 TIME = sym.Symbol("T")
-PLANE_ANGLE = sym.Symbol("Ɵ")
-SOLID_ANGLE = sym.Symbol("Ɵ")
-THERMODYNAMIC_TEMPERATURE = sym.Symbol("Ɵ")
+PLANE_ANGLE = sym.Symbol("θ")
+SOLID_ANGLE = sym.Symbol("ω")
+THERMODYNAMIC_TEMPERATURE = sym.Symbol("Θ")
 ELECTRIC_CURRENT = sym.Symbol("I")
 AMOUNT_OF_SUBSTANCE = sym.Symbol("N")
 LUMINOUS_INTENSITY = sym.Symbol("J")
@@ -33,7 +84,7 @@ PRESSURE = "pressure"  # same unit as stress
 ENERGY = "energy"  # same as heat and work
 DENSITY = "density"
 POWER = "power"
-SPEED = "speed"  # also doubles for velocity vector
+SPEED = "speed"  # same as velocity vector
 ILLUMINANCE = "illuminance"  # physics -> optics
 # === Electrical Derived Units ======
 VOLTAGE = "voltage"  # Electromotive Force or Potential Difference
@@ -79,61 +130,119 @@ class _OrderType:
     symbol: str
     value: float
 
+@dataclass(frozen=True)
+class Linear:
+    """A purely multiplicative conversion: base_value = value * scale.
+
+    Use for any conversion that passes through zero unchanged (nearly all
+    physical units: length, mass, force, energy, ...).
+    """
+
+    scale: float
+
+    def to_base(self, x):
+        return x * self.scale
+
+    def from_base(self, x):
+        return x / self.scale
+
+
+@dataclass(frozen=True)
+class Affine:
+    """An offset (non-multiplicative) conversion:
+    base_value = value * scale + offset.
+
+    Use for conversions that do NOT pass through zero unchanged. A
+    canonical example is temperature (Celsius/Fahrenheit <-> Kelvin).
+    """
+
+    scale: float
+    offset: float
+
+    def to_base(self, x):
+        return x * self.scale + self.offset
+
+    def from_base(self, x):
+        return (x - self.offset) / self.scale
+
+
+Conversion = Linear | Affine
+
 
 @dataclass
 class _ConversionTableType:
-    """Internal base class definition for conversion table for dimension objects.
+    """Internal base class definition for a *star-topology* conversion table.
 
+    Every non-base unit of a dimension stores exactly one `Conversion`
+    (Linear or Affine) that maps it to and from the dimension's single
+    canonical base unit (e.g. METER for LENGTH, GRAM for MASS). Converting
+    between any two units of the same dimension is always a two-hop
+    `from_unit -> base -> to_unit` operation.
+    
     Attributes
     ----------
-    dimension: str
-        Conversion table contains units of dimension. Dimension could be `LENGTH TIME MASS` e.t.c.
-    conversion_table: Sequence
-        `tuple` containing the conversion units and a lambda calculating the conversion. e.g.
-        `((INCH, METER), functools.partial(_basic_unit_converter, y=0.0254))`
-    extend: None
-        Extend an existing conversion table with more conversion standards.
-
+    dimension: sym.Basic
+        The physical dimension this table serves (e.g. LENGTH).
+    base_unit: _UnitType
+        The canonical unit that every other unit converts through.
+    table: dict[str, Conversion]
+        Maps a unit's `_unit_name` to its Conversion relative to base_unit.
     """
 
-    dimension: str
-    conversion_table: Sequence
+    dimension: sym.Basic
+    base_unit: _UnitType
+    table: dict = field(default_factory=dict)
 
-    def extend(self, seq: Sequence) -> None:
-        """Convieniece method to extend the built-in conversion standard to
-        accomodate other user defined units.
+    def register(self, unit: _UnitType, conversion: Conversion) -> None:
+        """Register (or overwrite, with a warning) a unit's conversion to
+        the dimension's base unit.
 
         Parameters
         ----------
-        seq: Sequence
-            tuple that contains:
-                a tuple of the units
-                and a callable that defines the conversion operation.
-        - **Usage example**
-
-            .. code-block:: python
-
-                import functools
-
-                from mudu import Length, METER
-                from mudu.base import _UnitType
-                from mudu.units import _basic_unit_converter
-
-                # define a new unit type
-                ME_UNIT = _UnitType(
-                    _dimension=LENGTH,
-                    _unit_name="me_unit",
-                    _unit_symbol="m_u",
-                    )
-
-                # create a conversion standard with METER
-                seq = ((ME_UNIT, METER), functools.partial(_basic_unit_converter, y=0.001))
-
-                # extend the conversion table
-                Length._conversion_standards.extend(seq)
+        unit: _UnitType
+            The unit being registered. Must belong to this table's dimension.
+        conversion: Linear | Affine
+            The conversion between `unit` and `self.base_unit`.
         """
 
-        self.conversion_table.extend((seq,))
+        if unit._dimension != self.dimension:
+            raise ValueError(
+                f"cannot register {unit._unit_name!r}: its dimension does not "
+                f"match this table's dimension"
+            )
+
+        if unit._unit_name in self.table:
+            import warnings
+
+            warnings.warn(
+                f"overwriting existing conversion for unit "
+                f"{unit._unit_name!r} in this table",
+                stacklevel=2,
+            )
+
+        self.table[unit._unit_name] = conversion
+
+    # Backward-compatible alias for the old public-facing `.extend(...)`
+    # convenience method referenced in earlier docs/examples. Prefer
+    # `register()` for new code -- this method now expects the same
+    # (unit, conversion) pair rather than a legacy pairwise-table tuple.
+    def extend(self, unit: _UnitType, conversion: Conversion) -> None:
+        self.register(unit, conversion)
+
+
+# ============================ ORDERS ==========================================================================
+# Non time order
+GIGA = _OrderType(name="giga", symbol="G", value=math.pow(10, 9))
+MEGA = _OrderType(name="mega", symbol="M", value=math.pow(10, 6))
+KILO = _OrderType(name="kilo", symbol="k", value=math.pow(10, 3))
+CENTI = _OrderType(name="centi", symbol="c", value=math.pow(10, -2))
+MILLI = _OrderType(name="milli", symbol="m", value=math.pow(10, -3))
+MICRO = _OrderType(name="micro", symbol="u", value=math.pow(10, -6))
+NANO = _OrderType(name="nano", symbol="n", value=math.pow(10, -9))
+PICO = _OrderType(name="pico", symbol="p", value=math.pow(10, -12))
+FEMTO = _OrderType(name="femto", symbol="f", value=math.pow(10, -15))
+ATTO = _OrderType(name="atto", symbol="a", value=math.pow(10, -18))
+# ==============================================================================================================
 
 
 @dataclass
@@ -142,48 +251,49 @@ class _UnitType:
 
     Attributes
     ----------
-    _dimension: str
-        The unit dimension, say, `LENGTH`, `MASS`, `TIME `
+    _dimension: sym.Basic
+        The unit dimension, say, `LENGTH`, `MASS`, `TIME`
     _unit_name: str
-        The unit name e.g.  `meter`
+        The unit name e.g. `meter`. Must be unique within a `_quantity`
+        (enforced by `audit_units()` in `mudu.dimensions`).
     _unit_symbol: str
-        Symbolic representation of the unit, usually passed as a
+        Symbolic representation of the unit, passed as a
         string, then converted to a `sympy.Symbol` object
     _order: _OrderType
         Multiple prefix, if unit is a multiple prefix
-        of a  `_UnitType`.
+        of a `_UnitType`.
     _base: _UnitType
         If a unit is a multiple prefix, then it has a base unit. e.g.
-        `CENTIMETER` is composed of the multiple prefix `CENTI` and the base
+        `KILOMETER` is composed of the multiple prefix `KILO` and the base
         unit `METER`.
     _quantity: str
         The quantity the unit represents, say Force, Energy.
     create_unit: _UnitType
         Class method to create a `_UnitType` object.
-    is_unit_type: bool
-        Internal method to validate that an object is an instance of `_UnitType`
 
     - **Usage example**
 
         .. code-block:: python
 
-            from mudu import Length, METER
-            from mudu.base import _UnitType
+            from mudu import Length, define_unit
 
-            # define a new unit type
-            ME_UNIT = _UnitType(
-                _dimension=LENGTH,
-                _unit_name="me_unit",
-                _unit_symbol="m_u",
-                )
+            # define a new unit type through the public API (preferred —
+            # see mudu.dimensions.define_unit / register_conversion; this
+            # avoids touching private classes directly).
+            ME_UNIT = define_unit(
+                dimension=Length,
+                name="me_unit",
+                symbol="m_u",
+            )
 
             some_length = Length(12, ME_UNIT)
 
     To create a conversion standard with another unit, read the documentation
-    on _ConversionTableType or read the full documentation at <https://github.com/techkaduna/mudu>_.
+    on `mudu.dimensions.register_conversion`, or the full documentation at
+    <https://github.com/techkaduna/mudu>_.
     """
 
-    _dimension: str
+    _dimension: sym.Basic
     _unit_name: str
     _unit_symbol: str | sym.Symbol
     _quantity: str = GENERIC_QUANTITY
@@ -208,6 +318,13 @@ class _UnitType:
     def __repr__(self):
         return str(self._unit_symbol).replace("**", "^").replace("*", "")  # sorry :)
 
+    def __hash__(self):
+        # _UnitType is a value object once constructed (fields are set at
+        # __post_init__ and not intended to be mutated afterwards). A
+        # consistent hash lets units be used as dict keys / in sets, e.g.
+        # in the conversion-table lookups above.
+        return hash((str(self._dimension), self._unit_name, str(self._unit_symbol)))
+
     def __mul__(self, x: Self):
 
         if isinstance(x, _UnitType) is True:
@@ -221,14 +338,14 @@ class _UnitType:
             return self
 
         else:
-            raise TypeError(f"operand must be type _UnitType or {type(1)}")
+            raise TypeError(f"operand must be type _UnitType or {int}")
 
     def __rmul__(self, x: Self):
 
         if isinstance(x, int | float):
             return self
         else:
-            raise TypeError(f"operand must be type _UnitType or {type(1)}")
+            raise TypeError(f"operand must be type _UnitType or {int}")
 
     def __truediv__(self, x):
 
@@ -243,7 +360,7 @@ class _UnitType:
             return self
 
         else:
-            raise TypeError(f"operand must be type _UnitType or {type(1)}")
+            raise TypeError(f"operand must be type _UnitType or {int}")
 
     def __rtruediv__(self, x):
 
@@ -253,6 +370,7 @@ class _UnitType:
                 _unit_name=GENERIC_DIMENSION,
                 _unit_symbol=1 / self._unit_symbol,
             )
+        raise TypeError(f"operand must be type int or float, got {type(x)}")
 
     def __pow__(self, x):
 
@@ -267,23 +385,8 @@ class _UnitType:
         )
 
 
-# ============================ ORDERS ==========================================================================
-# Non time order
-GIGA = _OrderType(name="giga", symbol="G", value=math.pow(10, 9))
-MEGA = _OrderType(name="mega", symbol="M", value=math.pow(10, 6))
-KILO = _OrderType(name="kilo", symbol="k", value=math.pow(10, 3))
-CENTI = _OrderType(name="centi", symbol="c", value=math.pow(10, -2))
-MILLI = _OrderType(name="milli", symbol="m", value=math.pow(10, -3))
-MICRO = _OrderType(name="micro", symbol="u", value=math.pow(10, -6))
-NANO = _OrderType(name="nano", symbol="n", value=math.pow(10, -9))
-PICO = _OrderType(name="pico", symbol="p", value=math.pow(10, -12))
-FEMTO = _OrderType(name="femto", symbol="f", value=math.pow(10, -15))
-ATTO = _OrderType(name="atto", symbol="a", value=math.pow(10, -18))
-# ==============================================================================================================
-
-
 class _OrderUnitType:
-    """Intenal class for creating a multiple prefix unit.
+    """Internal class for creating a multiple prefix unit.
 
     - **Usage example**
 
@@ -291,13 +394,13 @@ class _OrderUnitType:
 
             from mudu import Length, METER, OrderUnit, KILO
 
-            # define an OrderUnit
+            # define a multiple-prefix unit
             KILOMETER = OrderUnit(KILO, METER)
 
             some_length = Length(12, KILOMETER)
 
-    **NOTE** `_OrderUnit` was not used to create the multiple prefix unit,
-    `OrderUnit`, which is an instance of `_OrderUnit`, was used instead.
+    **NOTE** `_OrderUnitType` itself is internal; `OrderUnit`, the module-level
+    instance of it, is the public callable used to build prefixed units.
     """
 
     def __call__(self, _order: _OrderType, unit: _UnitType):
@@ -315,15 +418,14 @@ OrderUnit = _OrderUnitType()
 
 
 class _SetOnce:
-    """Internal base class descriptor for setting attributes only once.
+    """Internal descriptor for setting attributes only once.
 
     Attributes
     ----------
     name: str
         Attribute identifier
-    expected_types: obj | Sequence
+    expected_types: obj | tuple
         Attribute expected type(s)
-
     """
 
     def __init__(self, name: str, expected_types) -> None:
@@ -335,17 +437,18 @@ class _SetOnce:
         if instance is None:
             return self
 
-        else:
+        try:
             return instance.__dict__[self.name]
+        except KeyError:
+            raise AttributeError(
+                f"{self.name!r} has not been set on {instance!r}"
+            ) from None
 
     def __set__(self, instance, value):
 
-        try:
-            getattr(instance, self.name)
+        if self.name in instance.__dict__:
             raise ValueError(f"cannot set {self.name} after it has been set")
 
-        except KeyError:
-            # attribute does not exist; now set attribute
-            if isinstance(value, self.expected_types) is False:
-                raise TypeError(f"{self.name} must be of type {self.expected_types}")
-            instance.__dict__[self.name] = value
+        if isinstance(value, self.expected_types) is False:
+            raise TypeError(f"{self.name} must be of type {self.expected_types}")
+        instance.__dict__[self.name] = value

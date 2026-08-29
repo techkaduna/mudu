@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Fira+Code&display=swap');
+
+:root {
+  --md-text-font: "Sitka Display", "Times New Roman", -apple-system, BlinkMacSystemFont, sans-serif;
+  --md-code-font: "Fira Code", monospace;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-nav__title,
+.md-header__topic {
+  font-family: "Sitka Display", "Times New Roman", sans-serif;
+  letter-spacing: -0.01rem;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #00A86B;
+}
+
+/* ============================================
+   Typography scale
+   ============================================ */
+.md-typeset {
+  font-size: 0.80rem;
+  line-height: 1.65;
+}
+
+.md-typeset h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.md-typeset h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.md-typeset h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.md-typeset code {
+  font-size: 0.80em;
+}
+
+
+.md-typeset p,
+.md-typeset li {
+  text-align: justify;
+}
+
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  font-size: 0.80rem;
+}
+
+.md-typeset .admonition.note,
+.md-typeset .admonition.tip {
+  border-color: #008751;
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .tip > .admonition-title {
+  background-color: rgba(0, 135, 81, 0.1);
+}
+
+.md-typeset .note > .admonition-title::before,
+.md-typeset .tip > .admonition-title::before {
+  background-color: #008751;
+}
+
+.doc-heading {
+  font-size: 1rem !important;
+}
+
+.doc-heading code {
+  font-size: 0.95rem !important;
+}
+
+.md-content[data-md-component="content"] h2,
+.md-content[data-md-component="content"] h3 {
+  font-size: 1rem;
+}

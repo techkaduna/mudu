@@ -1,0 +1,42 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.11.2
+    hooks:
+      - id: mypy
+        additional_dependencies: [sympy, numpy]
+        files: ^mudu/
+
+  - repo: local
+    hooks:
+      - id: mudu-unit-audit
+        name: mudu unit-definition audit
+        description: >
+          Runs audit_units() against every shipped conversion table.
+          This is the automated check that would have caught the PSI/
+          Becquerel copy-paste defects fixed in 2.0.0 -- see CHANGELOG.md.
+        entry: python -c "
+          from mudu.units import (_LENGTH_CONVERSION_TABLE, _MASS_CONVERSION_TABLE,
+          _TIME_CONVERSION_TABLE, _ANGLE_CONVERSION_TABLE, _TEMPERATURE_CONVERSION_TABLE,
+          _FORCE_CONVERSION_TABLE, _PRESSURE_CONVERSION_TABLE, _ENERGY_CONVERSION_TABLE,
+          _DENSITY_CONVERSION_TABLE, _POWER_CONVERSION_TABLE, _RADIOACTIVITY_CONVERSION_TABLE,
+          _ABSORBED_DOSE_CONVERSION_TABLE, _DOSE_EQUIVALENT_TABLE, _SPEED_CONVERSION_TABLE);
+          from mudu import audit_units;
+          import sys;
+          tables = [_LENGTH_CONVERSION_TABLE, _MASS_CONVERSION_TABLE, _TIME_CONVERSION_TABLE,
+          _ANGLE_CONVERSION_TABLE, _TEMPERATURE_CONVERSION_TABLE, _FORCE_CONVERSION_TABLE,
+          _PRESSURE_CONVERSION_TABLE, _ENERGY_CONVERSION_TABLE, _DENSITY_CONVERSION_TABLE,
+          _POWER_CONVERSION_TABLE, _RADIOACTIVITY_CONVERSION_TABLE, _ABSORBED_DOSE_CONVERSION_TABLE,
+          _DOSE_EQUIVALENT_TABLE, _SPEED_CONVERSION_TABLE];
+          problems = audit_units(*tables);
+          sys.exit(1) if problems else sys.exit(0)
+          "
+        language: system
+        pass_filenames: false
+        files: ^mudu/units\.py$

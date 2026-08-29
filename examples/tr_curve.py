@@ -12,12 +12,11 @@ import matplotlib.pyplot as plt
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from mudu import Force, POUND_FORCE, Length, FEET, MASS, Mass, Time, SECOND
-from mudu.base import _UnitType
+from mudu import Force, POUND_FORCE, Length, FEET, Mass, Time, SECOND, SLUG
 
 """
 Problem statement:
-For an aircraft in steady level flight at an altitude of 30,000 ft, 
+For an aircraft in steady level flight at an altitude of 30,000 ft,
 plot is Tr-curve of the aircraft between a velocity range of 300 ft/s to 1500 ft/s.
 
 The following are the required aircraft parameters:
@@ -30,11 +29,14 @@ The following are the required aircraft parameters:
 
 """
 
-SLUG = _UnitType(
-    _dimension=MASS,
-    _unit_name="slug",
-    _unit_symbol="slug",
-)
+# NOTE: previously this example redefined its own local `SLUG` unit via a
+# raw `_UnitType(...)` (with no `_quantity` tag and no conversion table
+# entry), likely as a workaround for a bug in mudu's own built-in `SLUG`
+# conversion factor at the time. That bug is fixed (see CHANGELOG), and
+# mudu's built-in, properly-tagged, correctly-convertible `SLUG` unit is
+# used directly below -- no local redefinition needed. `MASS` is no
+# longer imported here since it's unused now that the built-in unit
+# supplies its own dimension.
 
 WEIGHT = Force(73_000, POUND_FORCE)
 ALTITUDE = Length(30_000, FEET)
@@ -53,7 +55,14 @@ def lift_co_eff(velocity):
     """Calculate the coefficient of lift for the given velocity."""
     numerator = 2 * WEIGHT
     denuminator = DENSITY * (velocity**2) * WING_SPAN
-    denuminator = Force(denuminator.value, POUND_FORCE)  # coercing to pound force
+    # Coercing to pound-force here is dimensionally exact, not an
+    # approximation: in the US customary "engineering" unit system, SLUG
+    # is *defined* such that 1 slug * 1 ft/s^2 == 1 lbf, with a scale
+    # factor of exactly 1 -- so as long as every input above is
+    # consistently in slug/ft/s, the raw numeric value already IS the
+    # value in pound-force, and this is just relabeling the unit, not
+    # converting a value.
+    denuminator = Force(denuminator.value, POUND_FORCE)
 
     return numerator / denuminator
 
@@ -76,7 +85,7 @@ df = pd.DataFrame(
     {"velocity [ft/s]": velocity, "c_l": c_l, "c_d": c_d, "Tr [lb_f]": t_r}
 )
 
-print(df)
+# print(df)
 
 vel_values = [x.value for x in velocity]
 t_r_values = [y.value for y in t_r]

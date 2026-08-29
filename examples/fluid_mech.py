@@ -1,6 +1,8 @@
 """
 Problem statement:
-A 400 mm diameter shaft is rotating at 200 r.p.m in a bearing of length 120 mm. If the thickness of oil film is 1.5 mm and the dynamic viscosity of the oil is 0.7 N.s/m^2, determine:
+A 400 mm diameter shaft is rotating at 200 r.p.m in a bearing of length 120 mm.
+If the thickness of oil film is 1.5 mm and the dynamic viscosity of the oil is 0.7 N.s/m^2,
+determine:
     i. the torque required to overcome friction in bearing.
     ii. the power utilized in overcoming viscous resitance.
     Assumption: The flow has a linear velocity profile.
@@ -57,7 +59,7 @@ shaft_tangent_vel = math.pi * (shaft_diameter * shaft_rotation)
 # U = co.eff of viscosity
 # du/dy = velocity profile
 # in this case:
-#   du = shaft angential velocity
+#   du = shaft tangential velocity
 #   dy = oil film thickness
 
 shear_stress = viscosity * (shaft_tangent_vel / film_thickness)
@@ -69,18 +71,30 @@ viscous_torque = shear_force * (shaft_diameter / 2)
 
 print("Viscous torque: ", viscous_torque)
 
-# 2. Power Utlized
+# 2. Power Utilized
 
 power = viscous_torque * 2 * math.pi * shaft_rotation
 
 print("Power utilized: ", power)
 
+
 ##########################################################################################
-# An alternative method of computing power would be to create a 'custom' unit and quantity
-# The unit is created by creating a new '_UnitType' dataclass instance, while the quantity
-# is created by inheriting from the 'DerivedQuantity' class.
-
-
+# An alternative method of computing power would be to create a 'custom' unit and quantity.
+#
+# NOTE on which extension pattern to use (this changed in the D-Check fix release):
+#
+#   - To add a new UNIT to an EXISTING mudu dimension (Length, Mass, Force, ...),
+#     use the public `define_unit()` / `register_conversion()` functions --
+#     see the "Extending an existing dimension" example in the docs. Do NOT
+#     instantiate `_UnitType` directly for this case; it's a private class
+#     and its direct use for existing dimensions is no longer the documented
+#     or supported path.
+#
+#   - To define an entirely NEW quantity/dimension that doesn't exist in mudu
+#     yet (as below, with `Power`) there is no existing dimension to "extend"
+#     -- this is the one case where subclassing `DerivedQuantity` and
+#     instantiating `_UnitType` directly remains the correct, intended
+#     pattern, exactly as shown below.
 class Power(DerivedQuantity):
     _conversion_standards = None
 
