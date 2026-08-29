@@ -81,7 +81,7 @@ extra_css:
   - stylesheets/extra.css
 
 copyright: >
-  <img src="/assets/logo.png" alt="mudu logo" width="24" height="24" style="vertical-align: middle; margin-right: 6px;">
+  <img src="/docs/assets/logo.png" alt="mudu logo" width="24" height="24" style="vertical-align: middle; margin-right: 6px;">
   Made with Python and Love ❤️ &nbsp;Proudly Nigerian 🇳🇬 &nbsp;Proudly Christian &nbsp;|&nbsp; Logo design by <a href="https://www.instagram.com/ddesigngeek/">Odafe Megida (@Ddesigngeek)</a> <br>
   <i>"For God so loved the world..."</i>
 
