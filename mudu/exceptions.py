@@ -16,11 +16,11 @@ in your cli
 import warnings
 
 __all__ = [
-    "DimensionError",
     "ConversionError",
+    "DimensionError",
     "NotIterableError",
-    "SequenceOperationError",
     "OperationNotAvailable",
+    "SequenceOperationError",
 ]
 
 
@@ -48,7 +48,7 @@ class SequenceOperationError(Exception):
     pass
 
 
-def SequenceOperationErrorr(*args, **kwargs):  # noqa: N802 - intentional legacy name
+def SequenceOperationErrorr(*args, **kwargs):
     """Deprecated: use `SequenceOperationError` (this name had an extra
     trailing "r" and is kept only for backward compatibility). Will be
     removed in a future major version.

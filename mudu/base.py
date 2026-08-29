@@ -8,59 +8,59 @@ base module for mudu.
 
 from __future__ import annotations
 
-from typing import Self
-from dataclasses import dataclass, field
 import math
+from dataclasses import dataclass, field
+from typing import Self
 
 import sympy as sym
 
 __all__ = [
-    "LENGTH",
-    "MASS",
-    "TIME",
-    "PLANE_ANGLE",
-    "SOLID_ANGLE",
-    "THERMODYNAMIC_TEMPERATURE",
-    "ELECTRIC_CURRENT",
-    "AMOUNT_OF_SUBSTANCE",
-    "LUMINOUS_INTENSITY",
-    "FORCE",
-    "SPEED",
-    "ENERGY",
-    "DENSITY",
-    "PRESSURE",
-    "POWER",
-    "ILLUMINANCE",
-    "VOLTAGE",
-    "CAPACITANCE",
-    "RESISTANCE",
-    "CONDUCTANCE",
-    "MAGNETIC_FLUX",
-    "MAGNETIC_FIELD_STRENGTH",
-    "INDUCTANCE",
-    "RADIOACTIVITY",
     "ABSORBED_DOSE",
+    "AMOUNT_OF_SUBSTANCE",
+    "ATTO",
+    "CAPACITANCE",
+    "CENTI",
+    "CONDUCTANCE",
+    "DENSITY",
+    "DIMENSIONLESS",
+    "DIMENSIONLESS_UNIT",
     "DOSE_EQUIVALENT",
+    "ELECTRIC_CURRENT",
+    "ENERGY",
+    "FEMTO",
+    "FORCE",
     "GENERIC_DIMENSION",
     "GENERIC_QUANTITY",
     "GENERIC_UNIT",
-    "DIMENSIONLESS",
-    "DIMENSIONLESS_UNIT",
     "GIGA",
-    "MEGA",
+    "ILLUMINANCE",
+    "INDUCTANCE",
     "KILO",
-    "CENTI",
-    "MILLI",
+    "LENGTH",
+    "LUMINOUS_INTENSITY",
+    "MAGNETIC_FIELD_STRENGTH",
+    "MAGNETIC_FLUX",
+    "MASS",
+    "MEGA",
     "MICRO",
+    "MILLI",
     "NANO",
     "PICO",
-    "FEMTO",
-    "ATTO",
-    "_UnitType",
-    "OrderUnit",
-    "Linear",
+    "PLANE_ANGLE",
+    "POWER",
+    "PRESSURE",
+    "RADIOACTIVITY",
+    "RESISTANCE",
+    "SOLID_ANGLE",
+    "SPEED",
+    "THERMODYNAMIC_TEMPERATURE",
+    "TIME",
+    "VOLTAGE",
     "Affine",
+    "Linear",
+    "OrderUnit",
     "_ConversionTableType",
+    "_UnitType",
 ]
 
 # ==================
@@ -190,10 +190,10 @@ class _ConversionTableType:
     """
 
     dimension: sym.Basic
-    base_unit: "_UnitType"
+    base_unit: _UnitType
     table: dict = field(default_factory=dict)
 
-    def register(self, unit: "_UnitType", conversion: Conversion) -> None:
+    def register(self, unit: _UnitType, conversion: Conversion) -> None:
         """Register (or overwrite, with a warning) a unit's conversion to
         the dimension's base unit.
 
@@ -226,7 +226,7 @@ class _ConversionTableType:
     # convenience method referenced in earlier docs/examples. Prefer
     # `register()` for new code -- this method now expects the same
     # (unit, conversion) pair rather than a legacy pairwise-table tuple.
-    def extend(self, unit: "_UnitType", conversion: Conversion) -> None:
+    def extend(self, unit: _UnitType, conversion: Conversion) -> None:
         self.register(unit, conversion)
 
 
@@ -338,14 +338,14 @@ class _UnitType:
             return self
 
         else:
-            raise TypeError(f"operand must be type _UnitType or {type(1)}")
+            raise TypeError(f"operand must be type _UnitType or {int}")
 
     def __rmul__(self, x: Self):
 
         if isinstance(x, int | float):
             return self
         else:
-            raise TypeError(f"operand must be type _UnitType or {type(1)}")
+            raise TypeError(f"operand must be type _UnitType or {int}")
 
     def __truediv__(self, x):
 
@@ -360,7 +360,7 @@ class _UnitType:
             return self
 
         else:
-            raise TypeError(f"operand must be type _UnitType or {type(1)}")
+            raise TypeError(f"operand must be type _UnitType or {int}")
 
     def __rtruediv__(self, x):
 
